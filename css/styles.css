@@ -1,3 +1,24 @@
+/* 1. Fontes */
+/* Roboto como padrão */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Definir a fonte Nerko One para h1 */
+h1 {
+  font-family: "Nerko One", cursive;
+}
+
+/* Definir a fonte Montserrat para h2...6 */
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* 2. Cores */
 /* Cor de fundo principal */
 .cbg-primary {
   background-color: #79b3bb;
@@ -8,13 +29,14 @@
   background-image: linear-gradient(to bottom, #79b3bb, #4a7d8c);
 }
 
+/* 3. Cabeçalho */
 /* Estilos da barra de navegação */
 .c-nav {
   height: 100px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Sutil borda inferior */
 }
 
-/* Estilos para os itens de navegação na navbar */
+/* Estilos para os itens de navegação na barra de navegação */
 .navbar-nav {
   display: flex;
   gap: 20px; /* Espaçamento entre os itens de navegação */
@@ -26,7 +48,7 @@
   font-size: large; /* Aumenta o tamanho dos ícones */
 }
 
-/* Estilos do formulário de busca na navbar */
+/* Estilos do formulário de busca na barra de navegação */
 .c-busca {
   display: flex;
   flex-grow: 1; /* Faz o formulário ocupar o máximo de espaço possível */
@@ -35,12 +57,12 @@
 
 /* Estilos para dispositivos com largura de tela até 991px */
 @media (max-width: 991px) {
-  /* Ajusta a altura da navbar para conteúdo adaptável */
+  /* Ajusta a altura da barra de navegação para conteúdo adaptável */
   .c-nav {
     height: auto;
   }
 
-  /* Centraliza o botão de hambúrguer para mobile */
+  /* Centraliza o botão de hambúrguer no mobile */
   .navbar-toggler {
     margin-left: auto;
     margin-right: auto;
@@ -76,5 +98,76 @@
     display: flex;
     justify-content: center;
     width: 100%; /* O logo ocupa toda a largura da tela no mobile */
+  }
+}
+
+/* 4. Rodapé */
+footer {
+  background-color: #eeeeee;
+  color: #333;
+  padding: 30px 0;
+  margin-top: 1px solid rgba(0, 0, 0, 0.2); /* Borda superior no rodapé */
+}
+
+footer h5 {
+  font-weight: bold;
+  text-transform: uppercase; /* Deixa o texto em maiúsculas */
+}
+
+footer a.footer-link {
+  color: #333;
+  text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+footer a.footer-link:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Logo e descrição no rodapé */
+.logo-footer {
+  width: 190px;
+}
+
+.footer-description {
+  margin-top: 10px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 0px;
+}
+
+/* Cartões de pagamento no rodapé */
+.payment-card {
+  width: 65px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-card img {
+  width: 40px;
+  height: 20px;
+}
+
+/* Ícones de redes sociais */
+.social-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Seção de direitos autorais */
+.copyright {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  footer .row .col-md-3 {
+    margin-bottom: 1.5rem; /* Espaçamento entre colunas no mobile */
   }
 }
