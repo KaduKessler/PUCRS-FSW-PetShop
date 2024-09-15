@@ -1,0 +1,7 @@
+.cbg-primary {
+  background-color: #79b3bb;
+}
+
+.cbg-gradient {
+  background-image: linear-gradient(to bottom, #79b3bb, #4a7d8c);
+}
