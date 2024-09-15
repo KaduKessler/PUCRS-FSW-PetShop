@@ -1,75 +1,80 @@
+/* Cor de fundo principal */
 .cbg-primary {
   background-color: #79b3bb;
 }
 
+/* Gradiente para o fundo */
 .cbg-gradient {
   background-image: linear-gradient(to bottom, #79b3bb, #4a7d8c);
 }
 
+/* Estilos da barra de navegação */
 .c-nav {
   height: 100px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Sutil borda inferior */
 }
 
-/* Espaçamento entre os itens da navbar */
+/* Estilos para os itens de navegação na navbar */
 .navbar-nav {
   display: flex;
-  gap: 20px; /* Espaço entre os itens do menu */
+  gap: 20px; /* Espaçamento entre os itens de navegação */
 }
 
-/* Ajuste dos ícones de carrinho e login */
+/* Ajuste de ícones nos itens de navegação (carrinho e login) */
 .navbar-nav .nav-item i {
-  margin-right: 10px;
-  font-size: large;
+  margin-right: 10px; /* Espaçamento à direita dos ícones */
+  font-size: large; /* Aumenta o tamanho dos ícones */
 }
 
+/* Estilos do formulário de busca na navbar */
 .c-busca {
   display: flex;
-  flex-grow: 1;
-  max-width: 400px;
+  flex-grow: 1; /* Faz o formulário ocupar o máximo de espaço possível */
+  max-width: 400px; /* Define a largura máxima do campo de busca */
 }
 
-/* Estilos para mobile (telas menores) */
+/* Estilos para dispositivos com largura de tela até 991px */
 @media (max-width: 991px) {
+  /* Ajusta a altura da navbar para conteúdo adaptável */
   .c-nav {
     height: auto;
   }
 
-  /* Centralizar o botão de hambúrguer */
+  /* Centraliza o botão de hambúrguer para mobile */
   .navbar-toggler {
     margin-left: auto;
     margin-right: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px; /* Ajustar tamanho do botão se necessário */
-    height: 50px;
+    width: 50px; /* Tamanho personalizado do botão */
+    height: 50px; /* Altura personalizada do botão */
   }
 
-  /* Ajustar a barra de navegação colapsada para não sobrepor o conteúdo */
+  /* Coloca a barra de navegação em coluna e centraliza os itens */
   .navbar-collapse {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  /* Centralizar os itens da navegação */
+  /* Coloca os itens de navegação em coluna e os centraliza */
   .navbar-nav {
     flex-direction: column;
     align-items: center;
   }
 
-  /* Centralizar o campo de busca */
+  /* Ajusta o formulário de busca no mobile */
   form.d-flex {
-    margin-left: 0; /* Remover a margem no mobile */
-    margin-top: 10px;
-    max-width: 100%; /* Fazer o campo ocupar toda a largura possível */
+    margin-left: 0; /* Remove a margem lateral no mobile */
+    margin-top: 10px; /* Adiciona margem superior no mobile */
+    max-width: 100%; /* Faz o campo de busca ocupar toda a largura disponível */
   }
 
-  /* Centralizar o logo */
+  /* Centraliza o logo no mobile */
   .navbar-brand {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 100%; /* O logo ocupa toda a largura da tela no mobile */
   }
 }
