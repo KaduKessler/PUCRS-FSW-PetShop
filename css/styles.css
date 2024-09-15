@@ -432,3 +432,59 @@ footer a.footer-link:hover {
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin: 40px auto;
 }
+
+/* Container Principal */
+/* Específicos para a página de registro */
+.register-title {
+  font-family: "Nerko One", cursive;
+  font-size: 40px;
+  color: black;
+}
+
+.register-subtitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: #6c757d;
+}
+
+/* Estilo para garantir que o olho fique dentro do input */
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  padding-right: 45px; /* Para deixar espaço para o ícone de olho */
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.password-toggle-btn i {
+  color: #6c757d;
+  font-size: 18px;
+}
+
+.password-toggle-btn:hover i {
+  color: #000;
+}
+
+.divider span {
+  background-color: white;
+  padding: 0 10px;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn-outline-secondary i {
+  font-size: 24px;
+  color: #6c757d;
+}
+
+.register-footer a {
+  color: black;
+}
