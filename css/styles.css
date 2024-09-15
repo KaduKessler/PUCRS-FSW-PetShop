@@ -5,3 +5,72 @@
 .cbg-gradient {
   background-image: linear-gradient(to bottom, #79b3bb, #4a7d8c);
 }
+
+.c-nav {
+  height: 100px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Espaçamento entre os itens da navbar */
+.navbar-nav {
+  display: flex;
+  gap: 20px; /* Espaço entre os itens do menu */
+}
+
+/* Espaçamento no formulário de busca */
+form.d-flex {
+  max-width: 400px;
+  margin-left: 20px; /* Distância entre o formulário e os itens de navegação */
+}
+
+/* Ajuste dos ícones de carrinho e login */
+.navbar-nav .nav-item i {
+  margin-right: 10px;
+}
+
+/* Ajustar o espaçamento entre os elementos do header */
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espaço entre os elementos dentro do container */
+}
+
+/* Estilos para mobile (telas menores) */
+@media (max-width: 768px) {
+  /* Centralizar o botão de hambúrguer */
+  .navbar-toggler {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Ajustar tamanho do botão se necessário */
+    height: 50px;
+  }
+
+  /* Ajustar a barra de navegação colapsada para não sobrepor o conteúdo */
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Centralizar os itens da navegação */
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Centralizar o campo de busca */
+  form.d-flex {
+    margin-left: 0; /* Remover a margem no mobile */
+    margin-top: 10px;
+    max-width: 100%; /* Fazer o campo ocupar toda a largura possível */
+  }
+
+  /* Centralizar o logo */
+  .navbar-brand {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
