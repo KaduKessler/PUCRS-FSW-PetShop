@@ -678,3 +678,104 @@ footer a.footer-link:hover {
 .card-servico .card-body .btn {
   margin-top: auto;
 }
+
+.produto-item {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.produto-item img {
+  max-width: 100%; /* Para manter a responsividade */
+  height: auto; /* Para não distorcer */
+}
+
+.produto-item .row {
+  align-items: center;
+}
+
+.produto-item .col-md-2,
+.produto-item .col-lg-2,
+.produto-item .col-xl-2 {
+  flex: 0 0 auto;
+}
+
+.produto-item .col-md-3,
+.produto-item .col-lg-3,
+.produto-item .col-xl-3 {
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+.produto-item input[type="number"] {
+  max-width: 60px; /* Tamanho reduzido para responsividade */
+}
+
+.produto-item .btn-link {
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .produto-item {
+    padding: 10px;
+  }
+
+  .produto-item .col-md-2,
+  .produto-item .col-lg-2,
+  .produto-item .col-xl-2 {
+    max-width: 100px; /* Ajuste do tamanho da coluna em telas menores */
+  }
+
+  .produto-item .col-md-3,
+  .produto-item .col-lg-3,
+  .produto-item .col-xl-3 {
+    flex: 100%;
+    text-align: center; /* Alinha o texto no centro em telas menores */
+  }
+
+  .produto-item input[type="number"] {
+    width: 50px;
+  }
+
+  .produto-item .btn-link {
+    font-size: 14px;
+    padding: 0.2rem;
+  }
+}
+
+.btn-link {
+  color: #79b3bb; /* Cor personalizada */
+  font-size: 20px; /* Tamanho ajustado */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+.btn-link:hover {
+  color: #5d99a1; /* Cor ao passar o mouse */
+}
+
+input[type="number"] {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 50px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn-minus,
+.btn-plus {
+  border: none;
+  background-color: transparent;
+  color: #79b3bb; /* Cor do projeto */
+  cursor: pointer;
+}
+
+.btn-minus:hover,
+.btn-plus:hover {
+  color: #5d99a1; /* Cor ao passar o mouse */
+}
