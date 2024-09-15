@@ -172,3 +172,34 @@ footer a.footer-link:hover {
     margin-bottom: 1.5rem; /* Espaçamento entre colunas no mobile */
   }
 }
+
+/* 5. Página Inicial (Home) */
+.custom-carousel {
+  width: 100%; /* O carousel vai ocupar 100% da largura do container */
+  max-width: 1000px; /* Define o limite máximo de 1000px */
+  height: auto; /* A altura será calculada automaticamente com base na proporção da largura */
+  border-radius: 20px; /* Bordas arredondadas */
+  overflow: hidden; /* Garante que as imagens fiquem dentro das bordas arredondadas */
+  margin: 30px auto 0; /* Adiciona 30px de espaçamento no topo, e centraliza o carousel */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Sombra ao redor */
+}
+
+.custom-carousel-img {
+  width: 100%; /* A imagem vai se ajustar à largura do carousel */
+  height: 300px; /* Define a altura das imagens para 300px */
+  object-fit: cover; /* Ajusta a imagem sem distorção */
+  object-position: center; /* Centraliza a imagem */
+  border-radius: 20px; /* Mantém as bordas arredondadas */
+}
+
+/* Para telas menores, ajustamos a altura */
+@media (max-width: 768px) {
+  .custom-carousel {
+    height: auto; /* Ajusta a altura automaticamente com base no conteúdo */
+  }
+
+  .custom-carousel-img {
+    height: auto; /* Permite que a imagem se ajuste à altura correta no mobile */
+    max-height: 200px; /* Define uma altura máxima para manter a proporção no mobile */
+  }
+}
