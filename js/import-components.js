@@ -1,4 +1,10 @@
-// Função para carregar um arquivo HTML e inserir no elemento alvo
+/**
+ * Carrega um componente HTML em um elemento alvo.
+ * @param {string} filePath - O caminho do arquivo do componente a ser carregado.
+ * @param {string} targetElement - O ID do elemento alvo onde o componente será inserido.
+ * @returns {void}
+ * @throws {Error} Se ocorrer um erro ao carregar o arquivo do componente.
+ */
 function loadComponent(filePath, targetElement) {
     fetch(filePath)
         .then(response => {
@@ -15,6 +21,5 @@ function loadComponent(filePath, targetElement) {
         });
 }
 
-// Carregar os componentes
 loadComponent('components/header.html', 'header');
 loadComponent('components/footer.html', 'footer');
