@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta Tags Essenciais -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="AmigoPet - Sua loja online para cuidados com animais" />
+    <meta name="keywords" content="petshop, animais, produtos para pets, serviços para pets" />
+
+    <!-- Título da Página -->
+    <title>AmigoPet</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo-icone.png" />
+
+    <!-- Fontes Google -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nerko+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap JS e CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Ícones -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/c68e1af131.js" crossorigin="anonymous"></script>
+
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Script para Componentes -->
+    <script src="js/import-components.js" defer></script>
+
+    <!-- Script para Carrinho -->
+    <script src="js/carrinho.js" defer></script>
+</head>
+
+
+<body>
+    <div id="header"></div>
+
+    <main class="container my-5">
+        <div class="row">
+            <!-- Seção de Produtos no Carrinho -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="text-dark title-nerko">Carrinho</h2>
+            </div>
+            <!-- Esquerda / Itens -->
+            <div class="col-md-8">
+                <div class="container h-100">
+                    <!-- Produto 1 -->
+                    <div class="card rounded-3 mb-4 produto-item" style="min-height: 100px;">
+                        <div class="card-body p-3">
+                            <div class="row d-flex justify-content-between align-items-center">
+                                <div class="col-md-2 col-lg-2 col-xl-2">
+                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="img-fluid rounded-3"
+                                        alt="Ração Seca para Cães Adultos Pedigree" style="max-width: 80px;">
+                                </div>
+                                <div class="col-md-3 col-lg-3 col-xl-3">
+                                    <p class="lead fw-normal mb-1" style="font-size: 14px;">Ração Seca para Cães Adultos
+                                        Pedigree</p>
+                                    <p><span class="text-muted" style="font-size: 12px;">Peso: </span>2,7Kg</p>
+                                </div>
+                                <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
+                                    <button class="btn btn-link px-2"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input id="form1" min="0" name="quantity" value="1" type="number"
+                                        class="form-control form-control-sm" style="max-width: 50px;" />
+                                    <button class="btn btn-link px-2"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                    <h6 class="mb-0">R$47,00</h6>
+                                </div>
+                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                    <a href="" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 2 -->
+                    <div class="card rounded-3 mb-4 produto-item" style="min-height: 100px;">
+                        <div class="card-body p-3">
+                            <div class="row d-flex justify-content-between align-items-center">
+                                <div class="col-md-2 col-lg-2 col-xl-2">
+                                    <img src="img/produtos/p1-whiskas-min.png" class="img-fluid rounded-3"
+                                        alt="Petisco para Gatos Whiskas" style="max-width: 80px;">
+                                </div>
+                                <div class="col-md-3 col-lg-3 col-xl-3">
+                                    <p class="lead fw-normal mb-1" style="font-size: 14px;">Petisco para Gatos Whiskas
+                                    </p>
+                                    <p><span class="text-muted" style="font-size: 12px;">Peso: </span>85g</p>
+                                </div>
+                                <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
+                                    <button class="btn btn-link px-2"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input id="form2" min="0" name="quantity" value="1" type="number"
+                                        class="form-control form-control-sm" style="max-width: 50px;" />
+                                    <button class="btn btn-link px-2"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                    <h6 class="mb-0">R$18,00</h6>
+                                </div>
+                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                    <a href="" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Produto 3 -->
+                    <div class="card rounded-3 mb-4 produto-item" style="min-height: 100px;">
+                        <div class="card-body p-3">
+                            <div class="row d-flex justify-content-between align-items-center">
+                                <div class="col-md-2 col-lg-2 col-xl-2">
+                                    <img src="img/produtos/p3-lippydog-bifinho-min.png" class="img-fluid rounded-3"
+                                        alt="Bifinho para Cães Lippy Dog" style="max-width: 80px;">
+                                </div>
+                                <div class="col-md-3 col-lg-3 col-xl-3">
+                                    <p class="lead fw-normal mb-1" style="font-size: 14px;">Bifinho para Cães Lippy Dog
+                                    </p>
+                                    <p><span class="text-muted" style="font-size: 12px;">Peso: </span>500g</p>
+                                </div>
+                                <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
+                                    <button class="btn btn-link px-2"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input id="form3" min="0" name="quantity" value="1" type="number"
+                                        class="form-control form-control-sm" style="max-width: 50px;" />
+                                    <button class="btn btn-link px-2"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                    <h6 class="mb-0">R$27,00</h6>
+                                </div>
+                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                    <a href="" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Direita / Resumo do Carrinho -->
+            <div class="col-md-4">
+                <div class="border rounded p-4">
+                    <h5 class="fw-bold mb-3">Resumo</h5>
+                    <div class="d-flex justify-content-between">
+                        <span>Subtotal</span>
+                        <span class="resumo-subtotal">R$92</span>
+                    </div>
+                    <div class="d-flex justify-content-between text-danger">
+                        <span>Cupom</span>
+                        <span class="resumo-cupom">-R$9,2</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span>Taxa de Entrega</span>
+                        <span class="resumo-entrega">R$15</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between fw-bold">
+                        <span>Total</span>
+                        <span class="resumo-total">R$97,8</span>
+                    </div>
+                    <!-- Campo para aplicar cupom -->
+                    <div class="input-group my-3">
+                        <span class="input-group-text"><i class="fas fa-tag"></i></span>
+                        <input type="text" class="form-control" placeholder="PUCRS">
+                        <button class="btn btn-primary">Aplicar</button>
+                    </div>
+                    <a href="#" class="btn btn-primary w-100">Finalizar <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+</body>
+
+</html>
