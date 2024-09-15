@@ -31,3 +31,60 @@
     <!-- Inclua os ícones do Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
+
+<nav class="navbar navbar-expand-lg cbg-primary c-nav">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+            <img src="../img/logo-completa.png" alt="AmigoPet Logo" style="height: 40px;">
+        </a>
+
+        <!-- Botão de colapso para mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links de navegação -->
+        <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <!-- Dropdown de Produtos -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Produtos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Rações</a></li>
+                        <li><a class="dropdown-item" href="#">Higiene</a></li>
+                        <li><a class="dropdown-item" href="#">Brinquedos</a></li>
+                        <li><a class="dropdown-item" href="#">Acessórios</a></li>
+                    </ul>
+                </li>
+                <!-- Outros links de navegação -->
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Contato</a>
+                </li>
+            </ul>
+
+            <!-- Barra de Busca -->
+            <form class="d-flex c-busca" role="search">
+                <input class="form-control me-2" type="search" placeholder="O que seu pet precisa?" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+
+            <!-- Ícones de carrinho e login -->
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#"><i class="bi bi-cart"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Entrar / Cadastre-se</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
