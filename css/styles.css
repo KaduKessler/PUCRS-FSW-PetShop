@@ -16,13 +16,6 @@
   display: flex;
   gap: 20px; /* Espaço entre os itens do menu */
 }
-
-/* Espaçamento no formulário de busca */
-form.d-flex {
-  max-width: 400px;
-  margin-left: 20px; /* Distância entre o formulário e os itens de navegação */
-}
-
 /* Ajuste dos ícones de carrinho e login */
 .navbar-nav .nav-item i {
   margin-right: 10px;
@@ -36,7 +29,7 @@ form.d-flex {
 }
 
 /* Estilos para mobile (telas menores) */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   /* Centralizar o botão de hambúrguer */
   .navbar-toggler {
     margin-left: auto;
