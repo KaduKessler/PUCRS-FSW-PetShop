@@ -320,11 +320,19 @@ footer a.footer-link:hover {
 
 .card {
   border-radius: 15px;
-  transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Classe específica para aplicar o efeito de zoom */
+.zoom-effect {
+  transition: all 0.3s ease-in-out;
+}
+
+.zoom-effect:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
@@ -388,11 +396,25 @@ footer a.footer-link:hover {
   font-size: 16px;
   text-align: center;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none; /* Evita a seleção de texto ao clicar */
 }
 
 .btn-primary:hover {
   background-color: #5d99a1;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #5d99a1; /* Mantém a cor ao clicar ou focar */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  outline: none; /* Remove o contorno de foco azul */
+  border: none; /* Remove qualquer borda */
+}
+
+.btn-primary:active {
+  transform: scale(0.98); /* Pequeno efeito de clique */
+  background-color: #5d99a1; /* Cor do botão durante o clique */
 }
 
 /* Divider */
@@ -497,4 +519,137 @@ footer a.footer-link:hover {
 
 .social-btn svg {
   font-size: 22px;
+}
+
+/* Estilo do controle de range com a classe personalizada */
+.custom-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.custom-range:hover {
+  opacity: 1;
+}
+
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #79b3bb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #79b3bb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-range::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: #79b3bb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-range::-webkit-slider-thumb:hover {
+  background: #5d99a1;
+}
+
+/* Estilo do checkbox com a classe personalizada */
+.custom-checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+  background-color: #63a6af;
+  border-color: #63a6af;
+}
+
+.custom-checkbox input[type="checkbox"]:checked::before {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  text-align: center;
+}
+
+/* Estilo customizado para o paginator */
+.custom-pagination .custom-page-link,
+.custom-pagination .custom-page-number {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 5px;
+  min-width: 50px; /* Tamanho mínimo igual para todos */
+  text-align: center;
+  text-decoration: none;
+}
+
+.custom-pagination .custom-page-link:hover,
+.custom-pagination .custom-page-number:hover {
+  background-color: #79b3bb;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para página ativa */
+.custom-pagination .custom-page-number.active {
+  background-color: #79b3bb;
+  color: white;
+  border-color: #5d99a1;
+}
+
+.custom-pagination .custom-page-link svg {
+  margin-right: 5px; /* Espaço entre a seta e o texto */
+}
+
+.custom-pagination .custom-page-link svg.fa-arrow-right {
+  margin-left: 5px; /* Espaço entre o texto e a seta à direita */
+}
+
+.breadcrumb {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb-item a {
+  color: #6c757d; /* Cinza */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: #5d99a1; /* Cor ao passar o mouse */
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: #333;
+  font-weight: bold;
 }
