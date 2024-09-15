@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta Tags Essenciais -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="AmigoPet - Sua loja online para cuidados com animais" />
+    <meta name="keywords" content="petshop, animais, produtos para pets, serviços para pets" />
+
+    <!-- Título da Página -->
+    <title>AmigoPet</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo-icone.png" />
+
+    <!-- Fontes Google -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nerko+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap JS e CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Ícones -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/c68e1af131.js" crossorigin="anonymous"></script>
+
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Script para Componentes -->
+    <script src="js/import-components.js" defer></script>
+</head>
+
+
+
+<body>
+
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Caminho de navegação (breadcrumb) -->
+    <nav aria-label="breadcrumb" class="mt-3">
+        <ol class="breadcrumb container">
+            <li class="breadcrumb-item"><a href="#">Produtos</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Ração</li>
+        </ol>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row">
+            <!-- Filtros -->
+            <aside class="col-md-3 mb-5">
+                <h5 class="mb-3 title-montserrat">Filtros</h5>
+                <div class="card p-3 mb-3">
+                    <h6 class="title-montserrat">Preço</h6>
+                    <input type="range" class="form-range custom-range" min="5" max="200" step="5" id="priceRange">
+                    <div class="d-flex justify-content-between">
+                        <span>R$5</span>
+                        <span>R$200</span>
+                    </div>
+                </div>
+
+                <div class="card p-3 mb-3">
+                    <h6 class="title-montserrat">Idade</h6>
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="filhotes">
+                        <label class="form-check-label" for="filhotes">Filhotes</label>
+                    </div>
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="adultos">
+                        <label class="form-check-label" for="adultos">Adultos</label>
+                    </div>
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="idosos">
+                        <label class="form-check-label" for="idosos">Idosos</label>
+                    </div>
+                </div>
+
+                <div class="card p-3 mb-3">
+                    <h6 class="title-montserrat">Tamanho da Raça</h6>
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="pequena">
+                        <label class="form-check-label" for="pequena">Pequena</label>
+                    </div>
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="grande">
+                        <label class="form-check-label" for="grande">Grande</label>
+                    </div>
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="media">
+                        <label class="form-check-label" for="media">Média</label>
+                    </div>
+                </div>
+
+                <div class="card p-3">
+                    <h6 class="title-montserrat">Peso</h6>
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="peso1kg">
+                        <label class="form-check-label" for="peso1kg">1kg</label>
+                    </div>
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="peso5kg">
+                        <label class="form-check-label" for="peso5kg">De 1,1kg até 5kg</label>
+                    </div>
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="peso10kg">
+                        <label class="form-check-label" for="peso10kg">De 5,1kg até 10kg</label>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary w-100 mt-4">Aplicar Filtro</button>
+            </aside>
+
+            <!-- Lista de Produtos -->
+            <div class="col-md-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="title-montserrat">Ração</h4>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Filtrar por: Mais Popular
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Mais Popular</a></li>
+                            <li><a class="dropdown-item" href="#">Menor Preço</a></li>
+                            <li><a class="dropdown-item" href="#">Maior Preço</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row justify-content-start">
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <div class="badge-container">
+                                        <span class="badge bg-primary badge-new">Novo</span>
+                                        <span class="badge bg-danger badge-discount">-15%</span>
+                                    </div>
+                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="product-img"
+                                        alt="Produto 2">
+                                </div>
+                            </a>
+                            <div class="card-body text-center">
+                                <a href="#" class="product-link">
+                                    <h6 class="card-title">Ração Seca para Adultos</h6>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0/5</span>
+                                </div>
+                                <h6 class="price"><s>R$59</s> <span class="text-danger">R$50</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <div class="badge-container">
+                                        <span class="badge bg-primary badge-new">Novo</span>
+                                        <span class="badge bg-danger badge-discount">-15%</span>
+                                    </div>
+                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="product-img"
+                                        alt="Produto 2">
+                                </div>
+                            </a>
+                            <div class="card-body text-center">
+                                <a href="#" class="product-link">
+                                    <h6 class="card-title">Ração Seca para Adultos</h6>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0/5</span>
+                                </div>
+                                <h6 class="price"><s>R$59</s> <span class="text-danger">R$50</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <div class="badge-container">
+                                        <span class="badge bg-primary badge-new">Novo</span>
+                                        <span class="badge bg-danger badge-discount">-15%</span>
+                                    </div>
+                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="product-img"
+                                        alt="Produto 2">
+                                </div>
+                            </a>
+                            <div class="card-body text-center">
+                                <a href="#" class="product-link">
+                                    <h6 class="card-title">Ração Seca para Adultos</h6>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0/5</span>
+                                </div>
+                                <h6 class="price"><s>R$59</s> <span class="text-danger">R$50</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <div class="badge-container">
+                                        <span class="badge bg-primary badge-new">Novo</span>
+                                        <span class="badge bg-danger badge-discount">-15%</span>
+                                    </div>
+                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="product-img"
+                                        alt="Produto 2">
+                                </div>
+                            </a>
+                            <div class="card-body text-center">
+                                <a href="#" class="product-link">
+                                    <h6 class="card-title">Ração Seca para Adultos</h6>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0/5</span>
+                                </div>
+                                <h6 class="price"><s>R$59</s> <span class="text-danger">R$50</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <div class="badge-container">
+                                        <span class="badge bg-primary badge-new">Novo</span>
+                                        <span class="badge bg-danger badge-discount">-15%</span>
+                                    </div>
+                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="product-img"
+                                        alt="Produto 2">
+                                </div>
+                            </a>
+                            <div class="card-body text-center">
+                                <a href="#" class="product-link">
+                                    <h6 class="card-title">Ração Seca para Adultos</h6>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0/5</span>
+                                </div>
+                                <h6 class="price"><s>R$59</s> <span class="text-danger">R$50</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <div class="badge-container">
+                                        <span class="badge bg-primary badge-new">Novo</span>
+                                        <span class="badge bg-danger badge-discount">-15%</span>
+                                    </div>
+                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="product-img"
+                                        alt="Produto 2">
+                                </div>
+                            </a>
+                            <div class="card-body text-center">
+                                <a href="#" class="product-link">
+                                    <h6 class="card-title">Ração Seca para Adultos</h6>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0/5</span>
+                                </div>
+                                <h6 class="price"><s>R$59</s> <span class="text-danger">R$50</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <div class="badge-container">
+                                        <span class="badge bg-primary badge-new">Novo</span>
+                                        <span class="badge bg-danger badge-discount">-15%</span>
+                                    </div>
+                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="product-img"
+                                        alt="Produto 2">
+                                </div>
+                            </a>
+                            <div class="card-body text-center">
+                                <a href="#" class="product-link">
+                                    <h6 class="card-title">Ração Seca para Adultos</h6>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0/5</span>
+                                </div>
+                                <h6 class="price"><s>R$59</s> <span class="text-danger">R$50</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <div class="badge-container">
+                                        <span class="badge bg-primary badge-new">Novo</span>
+                                        <span class="badge bg-danger badge-discount">-15%</span>
+                                    </div>
+                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="product-img"
+                                        alt="Produto 2">
+                                </div>
+                            </a>
+                            <div class="card-body text-center">
+                                <a href="#" class="product-link">
+                                    <h6 class="card-title">Ração Seca para Adultos</h6>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0/5</span>
+                                </div>
+                                <h6 class="price"><s>R$59</s> <span class="text-danger">R$50</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <div class="badge-container">
+                                        <span class="badge bg-primary badge-new">Novo</span>
+                                        <span class="badge bg-danger badge-discount">-15%</span>
+                                    </div>
+                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="product-img"
+                                        alt="Produto 2">
+                                </div>
+                            </a>
+                            <div class="card-body text-center">
+                                <a href="#" class="product-link">
+                                    <h6 class="card-title">Ração Seca para Adultos</h6>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0/5</span>
+                                </div>
+                                <h6 class="price"><s>R$59</s> <span class="text-danger">R$50</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <div class="badge-container">
+                                        <span class="badge bg-primary badge-new">Novo</span>
+                                        <span class="badge bg-danger badge-discount">-15%</span>
+                                    </div>
+                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="product-img"
+                                        alt="Produto 2">
+                                </div>
+                            </a>
+                            <div class="card-body text-center">
+                                <a href="#" class="product-link">
+                                    <h6 class="card-title">Ração Seca para Adultos</h6>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0/5</span>
+                                </div>
+                                <h6 class="price"><s>R$59</s> <span class="text-danger">R$50</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <div class="badge-container">
+                                        <span class="badge bg-primary badge-new">Novo</span>
+                                        <span class="badge bg-danger badge-discount">-15%</span>
+                                    </div>
+                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="product-img"
+                                        alt="Produto 2">
+                                </div>
+                            </a>
+                            <div class="card-body text-center">
+                                <a href="#" class="product-link">
+                                    <h6 class="card-title">Ração Seca para Adultos</h6>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0/5</span>
+                                </div>
+                                <h6 class="price"><s>R$59</s> <span class="text-danger">R$50</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <div class="badge-container">
+                                        <span class="badge bg-primary badge-new">Novo</span>
+                                        <span class="badge bg-danger badge-discount">-15%</span>
+                                    </div>
+                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="product-img"
+                                        alt="Produto 2">
+                                </div>
+                            </a>
+                            <div class="card-body text-center">
+                                <a href="#" class="product-link">
+                                    <h6 class="card-title">Ração Seca para Adultos</h6>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0/5</span>
+                                </div>
+                                <h6 class="price"><s>R$59</s> <span class="text-danger">R$50</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paginação -->
+                <nav aria-label="Navegação">
+                    <ul class="pagination custom-pagination justify-content-center">
+                        <!-- Botão de voltar -->
+                        <li class="page-item">
+                            <a class="custom-page-link" href="#" aria-label="Anterior">
+                                <i class="fas fa-arrow-left"></i> Voltar
+                            </a>
+                        </li>
+
+                        <!-- Números das páginas -->
+                        <li class="page-item active"><a class="custom-page-number" href="#">1</a></li>
+                        <li class="page-item"><a class="custom-page-number" href="#">2</a></li>
+                        <li class="page-item"><a class="custom-page-number" href="#">3</a></li>
+                        <li class="page-item"><a class="custom-page-number" href="#">...</a></li>
+                        <li class="page-item"><a class="custom-page-number" href="#">10</a></li>
+
+                        <!-- Botão de avançar -->
+                        <li class="page-item">
+                            <a class="custom-page-link" href="#" aria-label="Próximo">
+                                Avançar <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+</body>
+
+</html>
