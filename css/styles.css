@@ -653,3 +653,28 @@ footer a.footer-link:hover {
   color: #333;
   font-weight: bold;
 }
+
+.card-img-top {
+  border-radius: 15px 15px 0 0; /* Bordas arredondadas apenas no topo do card */
+  object-fit: cover; /* Mantém a proporção da imagem */
+  height: 200px; /* Altura ajustável conforme necessário */
+  width: 100%; /* Ajusta a largura para cobrir todo o card */
+}
+
+.card-servico {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-servico .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-servico .card-body .btn {
+  margin-top: auto;
+}
