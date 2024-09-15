@@ -16,20 +16,25 @@
   display: flex;
   gap: 20px; /* Espaço entre os itens do menu */
 }
+
 /* Ajuste dos ícones de carrinho e login */
 .navbar-nav .nav-item i {
   margin-right: 10px;
+  font-size: large;
 }
 
-/* Ajustar o espaçamento entre os elementos do header */
-.container {
+.c-busca {
   display: flex;
-  align-items: center;
-  gap: 20px; /* Espaço entre os elementos dentro do container */
+  flex-grow: 1;
+  max-width: 400px;
 }
 
 /* Estilos para mobile (telas menores) */
 @media (max-width: 991px) {
+  .c-nav {
+    height: auto;
+  }
+
   /* Centralizar o botão de hambúrguer */
   .navbar-toggler {
     margin-left: auto;
@@ -47,6 +52,7 @@
     flex-direction: column;
     align-items: center;
   }
+
   /* Centralizar os itens da navegação */
   .navbar-nav {
     flex-direction: column;
