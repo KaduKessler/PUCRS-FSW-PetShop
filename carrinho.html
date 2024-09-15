@@ -192,10 +192,33 @@
                         <input type="text" class="form-control" placeholder="PUCRS">
                         <button class="btn btn-primary">Aplicar</button>
                     </div>
-                    <a href="#" class="btn btn-primary w-100">Finalizar <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#finalizacaoModal">
+                        Finalizar <i class="fas fa-arrow-right"></i>
+                    </a>
+
                 </div>
             </div>
         </div>
+        <!-- Modal de Finalização -->
+        <div class="modal fade" id="finalizacaoModal" tabindex="-1" aria-labelledby="finalizacaoModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="finalizacaoModalLabel">Simulação de Compra</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Sua compra foi simulada com sucesso! Isso é apenas uma demonstração. Nenhuma compra real foi
+                        feita.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <div id="footer"></div>
