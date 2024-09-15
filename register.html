@@ -75,7 +75,7 @@
               <label for="name" class="form-label">Nome Completo*</label>
               <input
                 type="text"
-                class="form-control rounded-3"
+                class="form-control rounded-3 c-input1"
                 id="name"
                 placeholder="Digite seu nome completo"
               />
@@ -85,7 +85,7 @@
               <label for="email" class="form-label">E-mail*</label>
               <input
                 type="email"
-                class="form-control rounded-3"
+                class="form-control rounded-3 c-input1"
                 id="email"
                 placeholder="Digite seu e-mail"
               />
@@ -96,7 +96,7 @@
               <div class="input-wrapper">
                 <input
                   type="password"
-                  class="form-control rounded-3"
+                  class="form-control rounded-3 c-input1"
                   id="password"
                   placeholder="Digite sua senha"
                 />
@@ -116,7 +116,7 @@
               <div class="input-wrapper">
                 <input
                   type="password"
-                  class="form-control rounded-3"
+                  class="form-control rounded-3 c-input1"
                   id="confirm-password"
                   placeholder="Confirme sua senha"
                 />
@@ -129,29 +129,35 @@
               </div>
             </div>
 
-            <button class="btn btn-primary w-100 rounded-3 mb-3">
-              Registrar
-            </button>
+            <button class="btn btn-primary w-100 rounded-3">Registrar</button>
           </form>
 
-          <div class="divider text-center my-3">
-            <span>ou</span>
+          <div class="divider-container my-3 d-flex align-items-center">
+            <hr class="flex-grow-1" />
+            <span class="divider-text mx-3">ou</span>
+            <hr class="flex-grow-1" />
           </div>
 
           <div class="d-flex justify-content-between">
-            <button class="btn btn-outline-secondary w-100 me-2 rounded-3">
+            <button
+              class="btn btn-outline-secondary w-100 me-2 rounded-3 social-btn"
+            >
               <i class="fab fa-google"></i>
             </button>
-            <button class="btn btn-outline-secondary w-100 mx-2 rounded-3">
+            <button
+              class="btn btn-outline-secondary w-100 mx-2 rounded-3 social-btn"
+            >
               <i class="fab fa-github"></i>
             </button>
-            <button class="btn btn-outline-secondary w-100 ms-2 rounded-3">
+            <button
+              class="btn btn-outline-secondary w-100 ms-2 rounded-3 social-btn"
+            >
               <i class="fab fa-discord"></i>
             </button>
           </div>
         </div>
 
-        <div class="register-footer text-center mt-3">
+        <div class="register-footer text-center mt-3 mb-5">
           <span class="text-muted">Já tem uma conta? </span
           ><a href="#" class="fw-bold">Entrar</a>
         </div>

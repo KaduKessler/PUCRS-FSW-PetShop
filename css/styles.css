@@ -433,7 +433,7 @@ footer a.footer-link:hover {
   margin: 40px auto;
 }
 
-/* Container Principal */
+/* Registro */
 /* Específicos para a página de registro */
 .register-title {
   font-family: "Nerko One", cursive;
@@ -445,6 +445,13 @@ footer a.footer-link:hover {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   color: #6c757d;
+}
+
+/* Classe específica para inputs maiores */
+.c-input1 {
+  height: 45px; /* Ajuste a altura aqui */
+  padding: 15px; /* Ajuste o preenchimento interno para manter o conteúdo centralizado */
+  font-size: 15px; /* Ajuste o tamanho da fonte para manter a proporção */
 }
 
 /* Estilo para garantir que o olho fique dentro do input */
@@ -463,12 +470,13 @@ footer a.footer-link:hover {
   transform: translateY(-50%);
 }
 
-.password-toggle-btn i {
+.password-toggle-btn svg {
   color: #6c757d;
-  font-size: 18px;
+  font-size: 16px;
+  transition: color 0.25s ease-in-out;
 }
 
-.password-toggle-btn:hover i {
+.password-toggle-btn:hover svg {
   color: #000;
 }
 
@@ -487,4 +495,20 @@ footer a.footer-link:hover {
 
 .register-footer a {
   color: black;
+  text-decoration: none;
+}
+
+.register-footer a:hover {
+  text-decoration: underline;
+}
+
+.social-btn {
+  height: 45px; /* Ajuste para a altura que você deseja */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-btn svg {
+  font-size: 22px; /* Ajuste o tamanho do ícone, se necessário */
 }
