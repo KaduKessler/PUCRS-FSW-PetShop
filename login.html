@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta Tags Essenciais -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="AmigoPet - Login na sua conta" />
+    <meta name="keywords" content="login, petshop, AmigoPet" />
+
+    <!-- Título da Página -->
+    <title>Login - AmigoPet</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo-icone.png" />
+
+    <!-- Fontes Google -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nerko+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap JS e CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Ícones -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/c68e1af131.js" crossorigin="anonymous"></script>
+
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Script para Componentes -->
+    <script src="js/import-components.js" defer></script>
+
+    <!-- Script para Visualizar Senha -->
+    <script src="js/toggle-password.js" defer></script>
+
+    <!-- Script para Redirecionar ao Index -->
+    <script>
+        function redirectToHome() {
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="login-container container d-flex justify-content-center align-items-center flex-column mt-5">
+            <div class="login-header text-center mb-4">
+                <h1 class="login-title title-nerko fw-bold">Bem-vindo!</h1>
+                <p class="login-subtitle">
+                    Insira seus dados para acessar sua conta na AmigoPet!
+                </p>
+            </div>
+
+            <div class="login-form w-100" style="max-width: 600px">
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail*</label>
+                        <input type="email" class="form-control rounded-3 input-field" id="email"
+                            placeholder="Digite seu e-mail" />
+                    </div>
+
+                    <div class="mb-3 position-relative">
+                        <label for="password" class="form-label">Senha*</label>
+                        <div class="input-wrapper">
+                            <input type="password" class="form-control rounded-3 input-field" id="password"
+                                placeholder="Digite sua senha" />
+                            <button class="password-toggle-btn border-0 bg-transparent" type="button">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary w-100 rounded-3" type="button" data-bs-toggle="modal"
+                        data-bs-target="#loginSuccessModal">Entrar</button>
+                </form>
+
+                <div class="divider-container my-3 d-flex align-items-center">
+                    <hr class="flex-grow-1" />
+                    <span class="divider-text mx-3">ou</span>
+                    <hr class="flex-grow-1" />
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-outline-secondary w-100 me-2 rounded-3 social-btn" type="button"
+                        data-bs-toggle="modal" data-bs-target="#googleModal">
+                        <i class="fab fa-google"></i>
+                    </button>
+                    <button class="btn btn-outline-secondary w-100 mx-2 rounded-3 social-btn" type="button"
+                        data-bs-toggle="modal" data-bs-target="#githubModal">
+                        <i class="fab fa-github"></i>
+                    </button>
+                    <button class="btn btn-outline-secondary w-100 ms-2 rounded-3 social-btn" type="button"
+                        data-bs-toggle="modal" data-bs-target="#discordModal">
+                        <i class="fab fa-discord"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="login-footer text-center mt-3 mb-5">
+                <span class="text-muted">Não tem uma conta? </span><a href="register.html"
+                    class="fw-bold">Cadastre-se</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <!-- Modal de Sucesso para Login -->
+    <div class="modal fade" id="loginSuccessModal" tabindex="-1" aria-labelledby="loginSuccessModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginSuccessModalLabel">Login Bem-sucedido!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Você foi autenticado com sucesso. Bem-vindo de volta!
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary" onclick="redirectToHome()">Ir para Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Google -->
+    <div class="modal fade" id="googleModal" tabindex="-1" aria-labelledby="googleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="googleModalLabel">Login com Google</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Você foi autenticado via Google. Bem-vindo de volta!
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary" onclick="redirectToHome()">Ir para Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal GitHub -->
+    <div class="modal fade" id="githubModal" tabindex="-1" aria-labelledby="githubModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="githubModalLabel">Login com GitHub</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Você foi autenticado via GitHub. Bem-vindo de volta!
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary" onclick="redirectToHome()">Ir para Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Discord -->
+    <div class="modal fade" id="discordModal" tabindex="-1" aria-labelledby="discordModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="discordModalLabel">Login com Discord</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Você foi autenticado via Discord. Bem-vindo de volta!
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary" onclick="redirectToHome()">Ir para Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
