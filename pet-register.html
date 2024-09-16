@@ -5,8 +5,7 @@
     <!-- Meta Tags Essenciais -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="AmigoPet - Sua loja online para cuidados com animais" />
+    <meta name="description" content="AmigoPet - Cadastrar Pet" />
     <meta name="keywords" content="petshop, animais, produtos para pets, serviços para pets" />
 
     <!-- Título da Página -->
@@ -39,7 +38,6 @@
 
     <!-- Script de pré-visualização de imagem -->
     <script src="js/registro-pet.js"></script>
-
 </head>
 
 <body>
@@ -62,7 +60,9 @@
                 </label>
             </div>
         </div>
-        <form action="#" method="post">
+
+        <!-- Adicionando onsubmit para impedir a ação padrão -->
+        <form id="petForm" onsubmit="event.preventDefault(); handlePetSubmit();">
             <div class="row justify-content-center">
                 <div class="col-md-6">
 
@@ -146,6 +146,24 @@
             </div>
         </form>
     </section>
+
+    <!-- Modal de Sucesso -->
+    <div class="modal fade" id="sucessoModal" tabindex="-1" aria-labelledby="sucessoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sucessoModalLabel">Cadastro Realizado com Sucesso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    O pet foi cadastrado com sucesso!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <div id="footer"></div>

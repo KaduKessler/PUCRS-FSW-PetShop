@@ -15,3 +15,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// Simula o cadastro de pet e exibe o modal de sucesso
+function handlePetSubmit() {
+    // Aqui você pode adicionar validações extras se necessário
+
+    // Exibe o modal de sucesso
+    const sucessoModal = new bootstrap.Modal(document.getElementById('sucessoModal'));
+    sucessoModal.show();
+
+    // Reseta o formulário
+    document.getElementById('petForm').reset();
+    document.getElementById('imagePreview').style.display = "none"; // Oculta a pré-visualização da imagem
+    document.getElementById('cameraIcon').style.display = "block"; // Exibe o ícone novamente
+}
