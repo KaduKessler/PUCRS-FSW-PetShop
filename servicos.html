@@ -64,7 +64,7 @@
                             <h5 class="card-title fw-bold">Banho & Tosa</h5>
                             <p class="card-text">Cuidado completo para seu pet, incluindo banho, tosa, corte de unhas e
                                 muito mais.</p>
-                            <a href="#" class="btn btn-primary w-100">Agendar Agora</a>
+                            <a href="agendamento.html" class="btn btn-primary w-100">Agendar Agora</a>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,8 @@
                             <h5 class="card-title fw-bold">Consulta Veterinária</h5>
                             <p class="card-text">Consultas veterinárias para todos os tipos de pets, com diagnóstico e
                                 tratamento especializado.</p>
-                            <a href="#" class="btn btn-primary w-100">Agendar Consulta</a>
+                            <a href="#" class="btn btn-primary w-100" data-bs-toggle="modal"
+                                data-bs-target="#consultaModal">Agendar Consulta</a>
                         </div>
                     </div>
                 </div>
@@ -91,10 +92,12 @@
                             <h5 class="card-title fw-bold">Hospedagem</h5>
                             <p class="card-text">Hospedagem confortável e segura para seu pet, com alimentação
                                 balanceada e monitoramento 24h.</p>
-                            <a href="#" class="btn btn-primary w-100">Reservar Vaga</a>
+                            <a href="#" class="btn btn-primary w-100" data-bs-toggle="modal"
+                                data-bs-target="#hospedagemModal">Reservar Vaga</a>
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </section>
@@ -102,16 +105,17 @@
 
     <div id="footer"></div>
 
-    <!-- Modal para mais informações -->
-    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <!-- Modal para Consulta Veterinária -->
+    <div class="modal fade" id="consultaModal" tabindex="-1" aria-labelledby="consultaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="infoModalLabel">Mais Informações</h5>
+                    <h5 class="modal-title" id="consultaModalLabel">Consulta Veterinária</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Mais detalhes sobre o serviço selecionado serão exibidos aqui.
+                    A página de agendamento para consultas veterinárias está em desenvolvimento. Em breve estará
+                    disponível.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -119,6 +123,26 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal para Hospedagem -->
+    <div class="modal fade" id="hospedagemModal" tabindex="-1" aria-labelledby="hospedagemModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="hospedagemModalLabel">Hospedagem</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    A página de reserva para hospedagem está em desenvolvimento. Em breve estará disponível.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 
