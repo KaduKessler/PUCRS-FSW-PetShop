@@ -20,13 +20,13 @@ Para rodar o AmigoPet localmente, siga os passos abaixo:
 1. **Clone o repositório**:
 
    ```bash
-   git clone https://github.com/seu-usuario/amigopet.git
+   git clone https://github.com/KaduKessler/PUCRS-FSW-PetShop.git
    ```
 
 2. **Navegue até a pasta do projeto**:
 
    ```bash
-   cd amigopet
+   cd PUCRS-FSW-PetShop
    ```
 
 3. **Abra o arquivo `index.html`** no seu navegador de preferência:
