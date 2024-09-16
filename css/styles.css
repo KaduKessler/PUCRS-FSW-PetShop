@@ -579,8 +579,8 @@ footer a.footer-link:hover {
 }
 
 .custom-checkbox input[type="checkbox"]:checked {
-  background-color: #63a6af;
-  border-color: #63a6af;
+  background-color: #79b3bb;
+  border-color: #79b3bb;
 }
 
 .custom-checkbox input[type="checkbox"]:checked::before {
@@ -593,8 +593,8 @@ footer a.footer-link:hover {
 
 /* Custom Radio */
 .custom-radio .form-check-input:checked {
-  background-color: #63a6af;
-  border-color: #63a6af;
+  background-color: #79b3bb;
+  border-color: #79b3bb;
   cursor: pointer;
 }
 
@@ -622,7 +622,7 @@ footer a.footer-link:hover {
 
 .photo-upload i {
   font-size: 40px;
-  color: #63a6af;
+  color: #79b3bb;
 }
 
 .photo-upload input {
