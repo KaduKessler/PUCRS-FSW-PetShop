@@ -1,34 +1,48 @@
-# AmigoPet 🐾
+<p align="center">
+  <img src="https://github.com/KaduKessler/PUCRS-FSW-PetShop/blob/main/img/logo-completa.png" alt="AmigoPet" width="300"/>
+</p>
 
-**AmigoPet** é um projeto desenvolvido como parte da disciplina de **Fundamentos de Sistema Web** da **PUCRS**. O objetivo é criar uma plataforma online para uma PetShop, onde os usuários podem visualizar produtos e serviços, realizar agendamentos, cadastrar seus pets e optar pelo serviço de tele-busca.
+AmigoPet é um projeto desenvolvido para a disciplina de **Fundamentos de Sistemas Web** no curso de **Análise e Desenvolvimento de Sistemas** da **PUCRS**. O objetivo é criar um site para um petshop fictício, oferecendo uma experiência amigável e completa para donos de pets que desejam comprar produtos, agendar serviços ou cadastrar seus animais de estimação.
 
-Este projeto é focado **somente no front-end**, sem implementação de back-end ou funcionalidades reais, como login ou persistência de dados.
+## 🔗 Tecnologias Utilizadas
 
-## 🛠️ Tecnologias Utilizadas
+- **HTML5**: Estrutura e marcação do site
+- **CSS3**: Estilos personalizados para uma interface agradável
+- **JavaScript**: Scripts de interação e funcionalidades
+- **[Bootstrap 5](https://getbootstrap.com/)**: Framework CSS para responsividade e componentes prontos
+- **[Google Fonts](https://fonts.google.com/)**: Tipografia personalizada usando Montserrat, Nerko One, e Roboto
+- **[Font Awesome](https://fontawesome.com/)**: Ícones interativos para melhorar a experiência do usuário
 
-- **HTML5**: Estruturação das páginas do site.
-- **CSS3**: Estilização das páginas e layout responsivo.
-- **Bootstrap 5**: Componentes e layout responsivo.
-- **JavaScript**: Funcionalidades interativas.
-- **GitHub Pages**: Publicação da plataforma na web.
+## ⚙️ Como Rodar Localmente o Projeto
 
-## 📋 Funcionalidades (somente visual, sem funcionalidade real)
+Para rodar o AmigoPet localmente, siga os passos abaixo:
 
-- Visualização de produtos e serviços disponíveis na PetShop.
-- Formulário de cadastro de clientes.
-- Cadastro de pets, com nome, raça, tipo e temperamento.
-- Escolha de serviço, agendamento de data e hora, com opção de tele-busca.
-- Carrinho de compras para revisão de produtos.
-- Formulário de contato para dúvidas e sugestões.
+1. **Clone o repositório**:
 
-## 🚀 Como Rodar o Projeto Localmente
-
-1. Clone o repositório:
    ```bash
-   git clone https://github.com/KaduKessler/PUCRS-FSW-PetShop.git
+   git clone https://github.com/seu-usuario/amigopet.git
    ```
-2. Navegue até o diretório do projeto:
+
+2. **Navegue até a pasta do projeto**:
+
    ```bash
-   cd PUCRS-FSW-PetShop
+   cd amigopet
    ```
-3. Abra o arquivo `index.html` no navegador para visualizar o site.
+
+3. **Abra o arquivo `index.html`** no seu navegador de preferência:
+
+   - No terminal, você pode utilizar o seguinte comando:
+     ```bash
+     open index.html  # No Mac
+     start index.html  # No Windows
+     ```
+
+4. Pronto! O site estará rodando localmente.
+
+## 📁 Funcionalidades Extras
+
+Algumas funcionalidades implementadas no projeto:
+
+- 🐕 **Cadastro de Pets** com pré-visualização de imagem.
+- 🛒 **Carrinho de Compras** e **Filtros de Produtos**.
+- 🏠 **Serviços** como banho, tosa, hospedagem, e consultas veterinárias.
