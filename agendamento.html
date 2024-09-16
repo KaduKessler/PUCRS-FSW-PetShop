@@ -36,6 +36,9 @@
 
     <!-- Script para Componentes -->
     <script src="js/import-components.js" defer></script>
+
+    <!-- Script para esconder/mostrar o campo de endereço de tele-busca -->
+    <script src="js/agendamento.js"></script>
 </head>
 
 <body>
@@ -52,7 +55,7 @@
                 higiene do seu pet. Escolha o serviço desejado, a data e o horário mais convenientes para você.
             </p>
         </div>
-        <form action="#" method="post">
+        <form id="agendamentoForm">
             <div class="row justify-content-center">
                 <div class="col-md-6">
 
@@ -61,9 +64,9 @@
                         <label for="petSelect" class="form-label">Seleção de Pet</label>
                         <select class="form-select" id="petSelect" name="petSelect" required>
                             <option selected disabled>Selecione seu pet cadastrado</option>
-                            <option value="1">Annie - Cachorro</option>
-                            <option value="2">Zoe - Gato</option>
-                            <option value="3">Vite - Gato</option>
+                            <option value="Annie">Annie - Cachorro</option>
+                            <option value="Zoe">Zoe - Gato</option>
+                            <option value="Vite">Vite - Gato</option>
                         </select>
                     </div>
 
@@ -95,8 +98,8 @@
                             "Sim")</label>
                         <select class="form-select" id="enderecoTeleBusca" name="enderecoTeleBusca">
                             <option selected disabled>Selecione o endereço cadastrado</option>
-                            <option value="1">Rua das Flores, 123</option>
-                            <option value="2">Avenida Central, 456</option>
+                            <option value="Rua das Flores, 123">Rua das Flores, 123</option>
+                            <option value="Avenida Central, 456">Avenida Central, 456</option>
                         </select>
                     </div>
 
@@ -107,25 +110,51 @@
                             required>
                     </div>
 
-                    <button type="submit" class="btn btn-primary w-100">Agendar</button>
+                    <button type="button" class="btn btn-primary w-100" id="btnAgendar">Agendar</button>
                 </div>
             </div>
         </form>
     </section>
 
+    <!-- Modal de Confirmação -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmação de Agendamento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBodyContent">
+                    <!-- O conteúdo será preenchido dinamicamente com JS -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="btnConfirmarAgendamento">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Sucesso -->
+    <div class="modal fade" id="sucessoModal" tabindex="-1" aria-labelledby="sucessoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sucessoModalLabel">Agendamento Realizado com Sucesso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Seu agendamento foi realizado com sucesso! Obrigado por escolher a Amigo Pet.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <div id="footer"></div>
-
-    <!-- Script para esconder/mostrar o campo de endereço de tele-busca -->
-    <script>
-        document.getElementById("teleSim").addEventListener("change", function () {
-            document.getElementById("enderecoTeleBuscaContainer").style.display = "block";
-        });
-        document.getElementById("teleNao").addEventListener("change", function () {
-            document.getElementById("enderecoTeleBuscaContainer").style.display = "none";
-        });
-    </script>
-
 </body>
 
 </html>
