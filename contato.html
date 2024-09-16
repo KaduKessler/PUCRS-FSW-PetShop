@@ -36,6 +36,9 @@
 
     <!-- Script para Componentes -->
     <script src="js/import-components.js" defer></script>
+
+    <!-- Script Contato -->
+    <script src="js/contato.js"></script>
 </head>
 
 <body>
@@ -47,31 +50,67 @@
     <section class="container my-5">
         <div class="row text-center mb-4">
             <h1 class="text-dark title-nerko">Entre em Contato</h1>
+            <p>Estamos aqui para ajudar! Preencha o formulário abaixo ou utilize uma das formas de contato listadas.
+                Responderemos o mais breve possível!</p>
         </div>
-        <form action="#" method="post">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="nome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome" required>
-                    </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Mapa embutido -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.387947072977!2d-51.17082638489104!3d-30.06595398187869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197cfbcf76e61d%3A0xc667c4b803d12c!2sAv.%20Ipiranga%2C%206681%20-%20Partenon%2C%20Porto%20Alegre%20-%20RS%2C%2090600-000!5e0!3m2!1spt-BR!2sbr!4v1694448880731!5m2!1spt-BR!2sbr"
+                    width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    class="rounded-3" tabindex="0"></iframe>
+            </div>
+
+            <div class="col-md-5">
+                <form id="contatoForm" onsubmit="return enviarFormulario()">
                     <div class="mb-3">
                         <label for="email" class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="voce@seuemail.com"
+                            disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="usuario" class="form-label">Usuário</label>
+                        <input type="text" class="form-control" id="usuario" name="usuario"
+                            placeholder="Seria Seu Nome Aqui" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="assunto" class="form-label">Assunto</label>
+                        <input type="text" class="form-control" id="assunto" name="assunto"
+                            placeholder="Qual o motivo do seu contato?" required>
                     </div>
                     <div class="mb-3">
                         <label for="mensagem" class="form-label">Mensagem</label>
-                        <textarea class="form-control" id="mensagem" name="mensagem" rows="4" required></textarea>
+                        <textarea class="form-control" id="mensagem" name="mensagem" rows="4"
+                            placeholder="Digite sua mensagem aqui..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Confirmação -->
+    <div class="modal fade" id="sucessoModal" tabindex="-1" aria-labelledby="sucessoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sucessoModalLabel">Mensagem Enviada</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Sua mensagem foi enviada com sucesso! Em breve entraremos em contato.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
                 </div>
             </div>
-        </form>
-    </section>
+        </div>
+    </div>
 
     <!-- Footer -->
     <div id="footer"></div>
-
 </body>
 
 </html>
