@@ -80,10 +80,13 @@
                                     </button>
                                 </div>
                                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                    <h6 class="mb-0">R$47,00</h6>
+                                    <h6 class="mb-0 preco-total-item" data-preco="47.00"
+                                        style="font-size: 16px; font-weight: bold;">R$47,00</h6> <!-- Preço total -->
+                                    <p class="text-muted mb-0" style="font-size: 14px;">Preço unitário: <span
+                                            class="preco-unitario">R$47,00</span></p> <!-- Preço unitário -->
                                 </div>
                                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                    <a href="" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                    <a href="#" class="text-danger remover-item"><i class="fas fa-trash fa-lg"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -115,16 +118,17 @@
                                     </button>
                                 </div>
                                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                    <h6 class="mb-0">R$18,00</h6>
+                                    <h6 class="mb-0 preco-total-item" data-preco="18.00"
+                                        style="font-size: 16px; font-weight: bold;">R$18,00</h6> <!-- Preço total -->
+                                    <p class="text-muted mb-0" style="font-size: 14px;">Preço unitário: <span
+                                            class="preco-unitario">R$18,00</span></p> <!-- Preço unitário -->
                                 </div>
                                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                    <a href="" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                    <a href="#" class="text-danger remover-item"><i class="fas fa-trash fa-lg"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
 
                     <!-- Produto 3 -->
                     <div class="card rounded-3 mb-4 produto-item" style="min-height: 100px;">
@@ -152,10 +156,13 @@
                                     </button>
                                 </div>
                                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                    <h6 class="mb-0">R$27,00</h6>
+                                    <h6 class="mb-0 preco-total-item" data-preco="27.00"
+                                        style="font-size: 16px; font-weight: bold;">R$27,00</h6> <!-- Preço total -->
+                                    <p class="text-muted mb-0" style="font-size: 14px;">Preço unitário: <span
+                                            class="preco-unitario">R$27,00</span></p> <!-- Preço unitário -->
                                 </div>
                                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                    <a href="" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                    <a href="#" class="text-danger remover-item"><i class="fas fa-trash fa-lg"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -189,8 +196,8 @@
                     <!-- Campo para aplicar cupom -->
                     <div class="input-group my-3">
                         <span class="input-group-text"><i class="fas fa-tag"></i></span>
-                        <input type="text" class="form-control" placeholder="PUCRS">
-                        <button class="btn btn-primary">Aplicar</button>
+                        <input type="text" id="cupom-input" class="form-control" placeholder="PUCRS">
+                        <button class="btn btn-primary" id="aplicar-cupom">Aplicar</button>
                     </div>
                     <a href="#" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#finalizacaoModal">
                         Finalizar <i class="fas fa-arrow-right"></i>
