@@ -1,4 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const cupomInput = document.getElementById('cupom-input');
+    const listaCupons = document.getElementById('lista-cupons');
+
+    // Exibe a lista de cupons quando o campo de cupom é clicado (focus)
+    cupomInput.addEventListener('focus', function () {
+        listaCupons.style.display = 'block';
+    });
+
+    // Esconde a lista de cupons quando o campo de cupom perde o foco (blur)
+    cupomInput.addEventListener('blur', function () {
+        // Timeout para permitir que o clique em um cupom (se desejado) funcione antes de esconder
+        setTimeout(function () {
+            listaCupons.style.display = 'none';
+        }, 200);
+    });
 
     // Função para calcular o subtotal e atualizar os preços dos itens
     function calcularSubtotal() {

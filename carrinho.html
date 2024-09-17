@@ -182,7 +182,7 @@
                     </div>
                     <div class="d-flex justify-content-between text-danger">
                         <span>Cupom</span>
-                        <span class="resumo-cupom">-R$9,2</span>
+                        <span class="resumo-cupom">R$0,00</span>
                     </div>
                     <div class="d-flex justify-content-between mb-3">
                         <span>Taxa de Entrega</span>
@@ -194,11 +194,19 @@
                         <span class="resumo-total">R$97,8</span>
                     </div>
                     <!-- Campo para aplicar cupom -->
-                    <div class="input-group my-3">
+                    <div class="input-group my-3 position-relative">
                         <span class="input-group-text"><i class="fas fa-tag"></i></span>
-                        <input type="text" id="cupom-input" class="form-control" placeholder="PUCRS">
+                        <input type="text" id="cupom-input" class="form-control focus-custom"
+                            placeholder="Digite seu cupom">
                         <button class="btn btn-primary" id="aplicar-cupom">Aplicar</button>
+
+                        <!-- Lista de cupons disponíveis, inicialmente oculta -->
+                        <div id="lista-cupons" class="form-text text-muted position-absolute" style="display: none;">
+                            Cupons disponíveis: <strong>PUCRS</strong> (15% de desconto), <strong>AMIGOPET10</strong>
+                            (R$10 de desconto), <strong>FRETEGRATIS</strong> (Frete grátis).
+                        </div>
                     </div>
+
                     <a href="#" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#finalizacaoModal">
                         Finalizar <i class="fas fa-arrow-right"></i>
                     </a>

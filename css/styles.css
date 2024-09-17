@@ -830,3 +830,25 @@ input[type="number"]::-webkit-outer-spin-button {
   font-family: "Roboto", sans-serif; /* Fonte padronizada */
   color: #888;
 }
+
+#lista-cupons {
+  position: absolute;
+  bottom: calc(100% + 10px); /* Adiciona mais espaço entre o input e a lista */
+  left: 0;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+#aplicar-cupom {
+  border-radius: 0 0.25rem 0.25rem 0; /* Bordas arredondadas somente no lado direito */
+}
+
+.focus-custom:focus {
+  outline: none; /* Remove o brilho azul padrão */
+  border: 2px solid #63a6af; /* Adiciona uma borda personalizada */
+  box-shadow: 0 0 5px rgba(99, 166, 175, 0.7); /* Adiciona uma sombra leve */
+}
