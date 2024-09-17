@@ -45,9 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector('.resumo-total').innerText = 'R$0,00';
         } else {
             document.querySelector('.resumo-subtotal').innerText = `R$${subtotal.toFixed(2).replace('.', ',')}`;
-            atualizarTotal();
+            aplicarCupom(); // Recalcular o cupom ao remover itens
         }
     }
+
 
     // Função para atualizar o total
     function atualizarTotal(desconto = 0, taxaEntrega = 15) {
@@ -111,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         atualizarTotal(desconto, taxaEntrega);  // Recalcula o total com o desconto e a taxa de entrega
     }
-
 
 
     // Função para remover o item e recalcular o subtotal
