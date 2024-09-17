@@ -35,21 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Função para atualizar o total
-    function atualizarTotal() {
+    function atualizarTotal(desconto = 0, taxaEntrega = 15) {
         const subtotal = parseFloat(document.querySelector('.resumo-subtotal').innerText.replace('R$', '').replace(',', '.')) || 0;
-        let total = 0;
 
-        if (subtotal === 0) {
-            // Se o subtotal for zero, o total também é zero
-            document.querySelector('.resumo-cupom').innerText = 'R$0,00';
-            document.querySelector('.resumo-entrega').innerText = 'R$0,00';
-            total = 0;
-        } else {
-            const cupom = parseFloat(document.querySelector('.resumo-cupom').innerText.replace('-R$', '').replace(',', '.')) || 0;
-            const taxaEntrega = parseFloat(document.querySelector('.resumo-entrega').innerText.replace('R$', '').replace(',', '.')) || 0;
-
-            total = subtotal - cupom + taxaEntrega;
-        }
+        const total = subtotal - desconto + taxaEntrega;
 
         if (!isNaN(total)) {
             document.querySelector('.resumo-total').innerText = `R$${total.toFixed(2).replace('.', ',')}`;
@@ -58,22 +47,57 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    const cupons = {
+        'PUCRS': {
+            tipo: 'percentual',  // Tipo de desconto
+            valor: 15            // Desconto de 15%
+        },
+        'AMIGOPET10': {
+            tipo: 'valor',       // Tipo de desconto por valor fixo
+            valor: 10            // Desconto de R$10
+        },
+        'FRETEGRATIS': {
+            tipo: 'frete',       // Tipo de desconto que remove o valor do frete
+            valor: 0             // Frete grátis
+        }
+    };
 
-    // Função para aplicar o cupom PUCRS
+    // Função para aplicar cupons diversos
     function aplicarCupom() {
-        const cupomInput = document.querySelector('#cupom-input').value;
+        const cupomInput = document.querySelector('#cupom-input').value.toUpperCase();  // Captura o cupom e transforma em maiúsculas
         const subtotal = parseFloat(document.querySelector('.resumo-subtotal').innerText.replace('R$', '').replace(',', '.')) || 0;
         let desconto = 0;
+        let taxaEntrega = 15;  // Valor padrão da taxa de entrega
 
-        if (cupomInput === 'PUCRS') {
-            desconto = subtotal * 0.15; // 15% de desconto
-            document.querySelector('.resumo-cupom').innerText = `-R$${desconto.toFixed(2).replace('.', ',')}`;
+        // Verifica se o cupom existe
+        if (cupons[cupomInput]) {
+            const cupom = cupons[cupomInput];
+
+            if (cupom.tipo === 'percentual') {
+                // Desconto percentual
+                desconto = subtotal * (cupom.valor / 100);
+                document.querySelector('.resumo-cupom').innerText = `-R$${desconto.toFixed(2).replace('.', ',')}`;
+            } else if (cupom.tipo === 'valor') {
+                // Desconto por valor fixo
+                desconto = cupom.valor;
+                document.querySelector('.resumo-cupom').innerText = `-R$${desconto.toFixed(2).replace('.', ',')}`;
+            } else if (cupom.tipo === 'frete') {
+                // Frete grátis: Remove o valor do frete e zera o campo cupom
+                taxaEntrega = 0;
+                document.querySelector('.resumo-entrega').innerText = `R$0,00`;
+                document.querySelector('.resumo-cupom').innerText = `R$0,00`;  // Zera o campo cupom
+            }
         } else {
+            // Se o cupom for inválido ou removido, restaura valores padrão
             document.querySelector('.resumo-cupom').innerText = 'R$0,00';
+            document.querySelector('.resumo-entrega').innerText = `R$15,00`;  // Restaura a taxa de entrega padrão
+            taxaEntrega = 15;
         }
 
-        atualizarTotal(); // Recalcula o total com o desconto
+        atualizarTotal(desconto, taxaEntrega);  // Recalcula o total com o desconto e a taxa de entrega
     }
+
+
 
     // Função para remover o item e recalcular o subtotal
     function removerItem(element) {
