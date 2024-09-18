@@ -16,12 +16,25 @@ body {
 }
 
 /* Cores e gradientes */
+:root {
+  --primary-color: #79b3bb;
+  --secondary-color: #4a7d8c;
+  --accent-color: #5d99a1;
+  --light-gray: #eeeeee;
+  --dark-gray: #333;
+}
+
+/* Classes de utilidade */
 .amigo-bg-primary {
-  background-color: #79b3bb;
+  background-color: var(--primary-color);
 }
 
 .bg-gradient {
-  background-image: linear-gradient(to bottom, #79b3bb, #4a7d8c);
+  background-image: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--secondary-color)
+  );
 }
 
 /* Cabeçalho e Navegação */
@@ -83,10 +96,10 @@ body {
 
 /* Rodapé */
 footer {
-  background-color: #eeeeee;
-  color: #333;
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
   padding: 30px 0;
-  margin-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 footer h5 {
@@ -95,7 +108,7 @@ footer h5 {
 }
 
 footer a.footer-link {
-  color: #333;
+  color: var(--dark-gray);
   text-decoration: none;
 }
 
@@ -152,20 +165,20 @@ footer a.footer-link:hover {
   bottom: 20px;
   right: 20px;
   display: none;
-  background-color: #79b3bb;
+  background-color: var(--primary-color);
   border: none;
   color: white;
   padding: 10px;
-  border-radius: 6px; /* Bordas arredondadas */
+  border-radius: 6px;
   font-size: 16px;
-  width: 40px; /* Largura quadrada menor */
-  height: 40px; /* Altura quadrada menor */
+  width: 40px;
+  height: 40px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 #btn-back-to-top:hover {
-  background-color: #5d99a1;
+  background-color: var(--accent-color);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -267,7 +280,7 @@ footer a.footer-link:hover {
 }
 
 .dicas-carousel .btn-primary {
-  background-color: #79b3bb;
+  background-color: var(--primary-color);
   border: none;
   padding: 12px 25px;
   border-radius: 15px;
@@ -280,14 +293,14 @@ footer a.footer-link:hover {
 }
 
 .dicas-carousel .btn-primary:hover {
-  background-color: #5d99a1;
+  background-color: var(--accent-color);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Produtos */
 .product-image-container {
   height: 250px;
-  background-color: #eeeeee;
+  background-color: var(--light-gray);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -345,7 +358,7 @@ footer a.footer-link:hover {
 .product-link:hover {
   text-decoration: underline;
   transition: color 0.6s ease;
-  color: #498893;
+  color: var(--accent-color);
 }
 
 .rating {
@@ -367,7 +380,7 @@ footer a.footer-link:hover {
 .card-body h6.price {
   font-weight: bold;
   font-size: 1rem;
-  color: #79b3bb;
+  color: var(--primary-color);
   margin-top: 0.5rem;
 }
 
@@ -390,31 +403,30 @@ footer a.footer-link:hover {
 .btn-primary {
   border-radius: 15px;
   border: none;
-  background-color: #79b3bb;
+  background-color: var(--primary-color);
   color: white;
   padding: 12px 24px;
   font-size: 16px;
   text-align: center;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  user-select: none; /* Evita a seleção de texto ao clicar */
+  user-select: none;
 }
 
 .btn-primary:hover {
-  background-color: #5d99a1;
+  background-color: var(--accent-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:focus,
 .btn-primary:active {
-  background-color: #5d99a1; /* Mantém a cor ao clicar ou focar */
+  background-color: var(--accent-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  outline: none; /* Remove o contorno de foco azul */
-  border: none; /* Remove qualquer borda */
+  outline: none;
+  border: none;
 }
 
 .btn-primary:active {
-  transform: scale(0.98); /* Pequeno efeito de clique */
-  background-color: #5d99a1; /* Cor do botão durante o clique */
+  transform: scale(0.98);
 }
 
 /* Divider */
@@ -442,7 +454,7 @@ footer a.footer-link:hover {
 .form-footer a,
 .register-footer a,
 .login-footer a {
-  color: #498893; /* Cor personalizada combinando com o tema */
+  color: var(--accent-color);
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
@@ -451,8 +463,8 @@ footer a.footer-link:hover {
 .form-footer a:hover,
 .register-footer a:hover,
 .login-footer a:hover {
-  color: #31667a; /* Cor mais escura para o hover */
-  text-decoration: underline; /* Sutileza ao passar o mouse */
+  color: #31667a;
+  text-decoration: underline;
 }
 
 /* Classe específica para inputs maiores */
@@ -543,7 +555,7 @@ footer a.footer-link:hover {
   appearance: none;
   width: 20px;
   height: 20px;
-  background: #79b3bb;
+  background: var(--primary-color);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -551,7 +563,7 @@ footer a.footer-link:hover {
 .custom-range::-moz-range-thumb {
   width: 20px;
   height: 20px;
-  background: #79b3bb;
+  background: var(--primary-color);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -559,13 +571,13 @@ footer a.footer-link:hover {
 .custom-range::-ms-thumb {
   width: 20px;
   height: 20px;
-  background: #79b3bb;
+  background: var(--primary-color);
   border-radius: 50%;
   cursor: pointer;
 }
 
 .custom-range::-webkit-slider-thumb:hover {
-  background: #5d99a1;
+  background: var(--accent-color);
 }
 
 /* Estilo do checkbox com a classe personalizada */
@@ -576,25 +588,28 @@ footer a.footer-link:hover {
   border-radius: 3px;
   background-color: #fff;
   cursor: pointer;
+  border: 1px solid #ccc;
 }
 
 .custom-checkbox input[type="checkbox"]:checked {
-  background-color: #79b3bb;
-  border-color: #79b3bb;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .custom-checkbox input[type="checkbox"]:checked::before {
+  content: "✔";
   color: white;
   font-weight: bold;
   font-size: 16px;
   display: block;
   text-align: center;
+  line-height: 18px;
 }
 
 /* Custom Radio */
 .custom-radio .form-check-input:checked {
-  background-color: #79b3bb;
-  border-color: #79b3bb;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   cursor: pointer;
 }
 
@@ -622,7 +637,7 @@ footer a.footer-link:hover {
 
 .photo-upload i {
   font-size: 40px;
-  color: #79b3bb;
+  color: var(--primary-color);
 }
 
 .photo-upload input {
@@ -643,31 +658,31 @@ footer a.footer-link:hover {
   font-weight: 500;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   margin: 0 5px;
-  min-width: 50px; /* Tamanho mínimo igual para todos */
+  min-width: 50px;
   text-align: center;
   text-decoration: none;
 }
 
 .custom-pagination .custom-page-link:hover,
 .custom-pagination .custom-page-number:hover {
-  background-color: #79b3bb;
+  background-color: var(--primary-color);
   color: white;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo para página ativa */
 .custom-pagination .custom-page-number.active {
-  background-color: #79b3bb;
+  background-color: var(--primary-color);
   color: white;
-  border-color: #5d99a1;
+  border-color: var(--accent-color);
 }
 
 .custom-pagination .custom-page-link svg {
-  margin-right: 5px; /* Espaço entre a seta e o texto */
+  margin-right: 5px;
 }
 
 .custom-pagination .custom-page-link svg.fa-arrow-right {
-  margin-left: 5px; /* Espaço entre o texto e a seta à direita */
+  margin-left: 5px;
 }
 
 .breadcrumb {
@@ -677,26 +692,26 @@ footer a.footer-link:hover {
 }
 
 .breadcrumb-item a {
-  color: #6c757d; /* Cinza */
+  color: #6c757d;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .breadcrumb-item a:hover {
-  color: #5d99a1; /* Cor ao passar o mouse */
+  color: var(--accent-color);
   text-decoration: underline;
 }
 
 .breadcrumb-item.active {
-  color: #333;
+  color: var(--dark-gray);
   font-weight: bold;
 }
 
 .card-img-top {
-  border-radius: 15px 15px 0 0; /* Bordas arredondadas apenas no topo do card */
-  object-fit: cover; /* Mantém a proporção da imagem */
-  height: 200px; /* Altura ajustável conforme necessário */
-  width: 100%; /* Ajusta a largura para cobrir todo o card */
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
 }
 
 .card-servico {
@@ -725,8 +740,8 @@ footer a.footer-link:hover {
 }
 
 .produto-item img {
-  max-width: 100%; /* Para manter a responsividade */
-  height: auto; /* Para não distorcer */
+  max-width: 100%;
+  height: auto;
 }
 
 .produto-item .row {
@@ -747,7 +762,7 @@ footer a.footer-link:hover {
 }
 
 .produto-item input[type="number"] {
-  max-width: 60px; /* Tamanho reduzido para responsividade */
+  max-width: 60px;
 }
 
 .produto-item .btn-link {
@@ -762,14 +777,14 @@ footer a.footer-link:hover {
   .produto-item .col-md-2,
   .produto-item .col-lg-2,
   .produto-item .col-xl-2 {
-    max-width: 100px; /* Ajuste do tamanho da coluna em telas menores */
+    max-width: 100px;
   }
 
   .produto-item .col-md-3,
   .produto-item .col-lg-3,
   .produto-item .col-xl-3 {
     flex: 100%;
-    text-align: center; /* Alinha o texto no centro em telas menores */
+    text-align: center;
   }
 
   .produto-item input[type="number"] {
@@ -783,13 +798,13 @@ footer a.footer-link:hover {
 }
 
 .btn-link {
-  color: #79b3bb; /* Cor personalizada */
-  font-size: 20px; /* Tamanho ajustado */
-  text-decoration: none; /* Remove o sublinhado */
+  color: var(--primary-color);
+  font-size: 20px;
+  text-decoration: none;
 }
 
 .btn-link:hover {
-  color: #5d99a1; /* Cor ao passar o mouse */
+  color: var(--accent-color);
 }
 
 input[type="number"] {
@@ -809,31 +824,31 @@ input[type="number"]::-webkit-outer-spin-button {
 .btn-plus {
   border: none;
   background-color: transparent;
-  color: #79b3bb; /* Cor do projeto */
+  color: var(--primary-color);
   cursor: pointer;
 }
 
 .btn-minus:hover,
 .btn-plus:hover {
-  color: #5d99a1; /* Cor ao passar o mouse */
+  color: var(--accent-color);
 }
 
 .preco-total-item {
   font-size: 16px;
   font-weight: bold;
-  font-family: "Roboto", sans-serif; /* Fonte padronizada */
-  color: #333;
+  font-family: "Roboto", sans-serif;
+  color: var(--dark-gray);
 }
 
 .preco-unitario {
   font-size: 14px;
-  font-family: "Roboto", sans-serif; /* Fonte padronizada */
+  font-family: "Roboto", sans-serif;
   color: #888;
 }
 
 #lista-cupons {
   position: absolute;
-  bottom: calc(100% + 10px); /* Adiciona mais espaço entre o input e a lista */
+  bottom: calc(100% + 10px);
   left: 0;
   background-color: #f8f9fa;
   padding: 10px;
@@ -841,17 +856,17 @@ input[type="number"]::-webkit-outer-spin-button {
   border: 1px solid #ccc;
   width: 100%;
   z-index: 1;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #aplicar-cupom {
-  border-radius: 0 15px 15px 0; /* Bordas arredondadas somente no lado direito */
+  border-radius: 0 15px 15px 0;
 }
 
 .focus-custom:focus {
-  outline: none; /* Remove o brilho azul padrão */
-  border: 2px solid #63a6af; /* Adiciona uma borda personalizada */
-  box-shadow: 0 0 5px rgba(99, 166, 175, 0.7); /* Adiciona uma sombra leve */
+  outline: none;
+  border: 2px solid #63a6af;
+  box-shadow: 0 0 5px rgba(99, 166, 175, 0.7);
 }
 
 /* Estilos para feedback de sucesso e erro */
@@ -882,6 +897,7 @@ input[type="number"]::-webkit-outer-spin-button {
   opacity: 0;
 }
 
+/* Estilo para a mensagem de carrinho vazio */
 #carrinho-vazio {
   min-height: 60vh;
 }
