@@ -853,3 +853,31 @@ input[type="number"]::-webkit-outer-spin-button {
   border: 2px solid #63a6af; /* Adiciona uma borda personalizada */
   box-shadow: 0 0 5px rgba(99, 166, 175, 0.7); /* Adiciona uma sombra leve */
 }
+
+/* Estilos para feedback de sucesso e erro */
+.alert {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.d-none {
+  display: none;
+}
+
+.fade-out {
+  opacity: 0;
+}
