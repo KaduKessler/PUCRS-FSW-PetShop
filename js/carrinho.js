@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Referência à div de carrinho vazio
     const carrinhoVazioDiv = document.getElementById('carrinho-vazio');
 
-    // Exibe a lista de cupons quando o campo de cupom é clicado (focus)
+    // Exibe a lista de cupons quando o campo de cupom é focado
     cupomInput.addEventListener('focus', function () {
         listaCupons.style.display = 'block';
     });
 
-    // Esconde a lista de cupons quando o campo de cupom perde o foco (blur)
+    // Esconde a lista de cupons quando o campo de cupom perde o foco
     cupomInput.addEventListener('blur', function () {
         // Timeout para permitir que o clique em um cupom (se desejado) funcione antes de esconder
         setTimeout(function () {
@@ -18,7 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 200);
     });
 
-    // Função para exibir feedbacks para o usuário
+    /**
+     * Exibe uma mensagem de feedback para o usuário.
+     *
+     * @param {string} mensagem - A mensagem a ser exibida.
+     * @param {string} [tipo='success'] - O tipo de mensagem ('success' ou 'danger').
+     */
     function exibirFeedback(mensagem, tipo = 'success') {
         const feedbackElement = document.getElementById('feedback-message');
         feedbackElement.classList.remove('d-none', 'alert-success', 'alert-danger', 'fade-out');
@@ -34,12 +39,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 3000);
     }
 
-    // Função para calcular o subtotal e atualizar os preços dos itens
+    /**
+     * Calcula o subtotal dos itens no carrinho e atualiza os preços.
+     * Controla a exibição da mensagem de carrinho vazio e a habilitação do botão de finalizar compra.
+     */
     function calcularSubtotal() {
         let subtotal = 0;
         let hasItems = false;
 
-        // Pega todos os itens de produto
+        // Seleciona todos os itens de produto
         const produtos = document.querySelectorAll('.produto-item');
 
         produtos.forEach(produto => {
@@ -51,11 +59,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 hasItems = true;
             }
 
-            // Atualiza o preço do item de acordo com a quantidade
+            // Atualiza o preço total do item de acordo com a quantidade
             const precoTotalItem = precoBase * quantidade;
             produto.querySelector('.preco-total-item').innerText = `R$${precoTotalItem.toFixed(2).replace('.', ',')}`;
 
-            // Calcula subtotal de cada item (quantidade * preço)
+            // Calcula o subtotal acumulado
             subtotal += precoTotalItem;
         });
 
@@ -81,11 +89,16 @@ document.addEventListener("DOMContentLoaded", function () {
             // Habilita o botão de finalizar compra
             document.querySelector('.finalizar-compra').classList.remove('disabled');
 
-            aplicarCupom(); // Recalcular o cupom ao remover itens ou alterar quantidades
+            aplicarCupom(); // Recalcula o cupom ao remover itens ou alterar quantidades
         }
     }
 
-    // Função para atualizar o total
+    /**
+     * Atualiza o valor total do carrinho, considerando descontos e taxa de entrega.
+     *
+     * @param {number} [desconto=0] - O valor do desconto a ser aplicado.
+     * @param {number} [taxaEntrega=15] - O valor da taxa de entrega.
+     */
     function atualizarTotal(desconto = 0, taxaEntrega = 15) {
         const subtotal = parseFloat(document.querySelector('.resumo-subtotal').innerText.replace('R$', '').replace(',', '.')) || 0;
 
@@ -98,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Lista de cupons disponíveis
     const cupons = {
         'PUCRS': {
             tipo: 'percentual',  // Tipo de desconto
@@ -113,7 +127,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // Função para aplicar cupons diversos
+    /**
+     * Aplica um cupom de desconto ao carrinho, se válido.
+     *
+     * @param {boolean} [userInitiated=false] - Indica se a função foi chamada pelo usuário (para exibir mensagens de feedback).
+     */
     function aplicarCupom(userInitiated = false) {
         const cupomInputValue = document.querySelector('#cupom-input').value.trim().toUpperCase();  // Captura o cupom e transforma em maiúsculas
 
@@ -152,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     exibirFeedback('Cupom aplicado com sucesso!', 'success');
                 }
             } else if (cupom.tipo === 'frete') {
-                // Frete grátis: Remove o valor do frete e zera o campo cupom
+                // Frete grátis: Remove o valor do frete
                 taxaEntrega = 0;
                 document.querySelector('.resumo-entrega').innerText = `R$0,00`;
                 document.querySelector('.resumo-cupom').innerText = `R$0,00`;  // Zera o campo cupom
@@ -174,7 +192,11 @@ document.addEventListener("DOMContentLoaded", function () {
         atualizarTotal(desconto, taxaEntrega);  // Recalcula o total com o desconto e a taxa de entrega
     }
 
-    // Função para remover o item e recalcular o subtotal
+    /**
+     * Remove um item do carrinho e recalcula o subtotal.
+     *
+     * @param {HTMLElement} element - O elemento que acionou a remoção (usualmente o link de remover).
+     */
     function removerItem(element) {
         const item = element.closest('.produto-item');
         if (item) {
@@ -184,7 +206,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Função para aplicar eventos a elementos dinâmicos
+    /**
+     * Aplica os eventos necessários aos elementos da página, como cliques e alterações de quantidade.
+     */
     function aplicarEventos() {
         // Adiciona evento de clique nos links de remoção para remover o item e recalcular
         document.querySelectorAll('.remover-item').forEach(link => {
