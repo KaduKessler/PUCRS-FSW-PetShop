@@ -202,6 +202,14 @@ footer a.footer-link:hover {
    Animações
    ============================== */
 
+.fadeIn {
+  animation: fadeIn 0.5s forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s forwards;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
