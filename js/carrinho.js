@@ -159,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Desconto percentual
                 desconto = subtotal * (cupom.valor / 100);
                 document.querySelector('.resumo-cupom').innerText = `-R$${desconto.toFixed(2).replace('.', ',')}`;
+                document.querySelector('.resumo-entrega').innerText = `R$15,00`;
                 if (userInitiated) {
                     exibirFeedback('Cupom aplicado com sucesso!', 'success');
                 }
@@ -166,6 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Desconto por valor fixo
                 desconto = cupom.valor;
                 document.querySelector('.resumo-cupom').innerText = `-R$${desconto.toFixed(2).replace('.', ',')}`;
+                document.querySelector('.resumo-entrega').innerText = `R$15,00`;
                 if (userInitiated) {
                     exibirFeedback('Cupom aplicado com sucesso!', 'success');
                 }
@@ -218,10 +220,17 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        // Evento para alterar a quantidade e recalcular imediatamente
+        // Evento para alteração de quantidade dos produtos pelo input
         document.querySelectorAll('input[type="number"]').forEach(input => {
-            input.addEventListener('input', calcularSubtotal);
+            input.addEventListener('blur', function () {
+                if (parseInt(input.value) < 1) {
+                    removerItem(this);
+                }
+                calcularSubtotal();
+            });
         });
+
+
 
         // Eventos para os botões "+" e "-"
         document.querySelectorAll('.btn-link').forEach(button => {
@@ -231,7 +240,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (this.querySelector('.fa-plus')) {
                         input.stepUp();
                     } else if (this.querySelector('.fa-minus')) {
-                        input.stepDown();
+                        if (parseInt(input.value) <= 1) {
+                            removerItem(this);
+                        } else {
+                            input.stepDown();
+                        }
                     }
                     calcularSubtotal();
                 }
