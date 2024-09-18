@@ -881,3 +881,15 @@ input[type="number"]::-webkit-outer-spin-button {
 .fade-out {
   opacity: 0;
 }
+
+#carrinho-vazio {
+  min-height: 60vh;
+}
+
+#carrinho-vazio .d-flex {
+  height: 100%;
+}
+
+#carrinho-vazio h4 {
+  font-size: 1.5rem;
+}

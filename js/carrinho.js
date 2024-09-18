@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const cupomInput = document.getElementById('cupom-input');
     const listaCupons = document.getElementById('lista-cupons');
 
+    // Referência à div de carrinho vazio
+    const carrinhoVazioDiv = document.getElementById('carrinho-vazio');
+
     // Exibe a lista de cupons quando o campo de cupom é clicado (focus)
     cupomInput.addEventListener('focus', function () {
         listaCupons.style.display = 'block';
@@ -31,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 3000);
     }
 
-
     // Função para calcular o subtotal e atualizar os preços dos itens
     function calcularSubtotal() {
         let subtotal = 0;
@@ -60,12 +62,28 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!hasItems || produtos.length === 0) {
             document.querySelector('.resumo-subtotal').innerText = 'R$0,00';
             document.querySelector('.resumo-total').innerText = 'R$0,00';
+
+            // Exibe a mensagem de carrinho vazio
+            carrinhoVazioDiv.classList.remove('d-none');
+
+            // Oculta o conteúdo principal do carrinho
+            document.getElementById('conteudo-carrinho').classList.add('d-none');
+
+            // Desabilita o botão de finalizar compra
+            document.querySelector('.finalizar-compra').classList.add('disabled');
         } else {
             document.querySelector('.resumo-subtotal').innerText = `R$${subtotal.toFixed(2).replace('.', ',')}`;
+            carrinhoVazioDiv.classList.add('d-none');
+
+            // Exibe o conteúdo principal do carrinho
+            document.getElementById('conteudo-carrinho').classList.remove('d-none');
+
+            // Habilita o botão de finalizar compra
+            document.querySelector('.finalizar-compra').classList.remove('disabled');
+
             aplicarCupom(); // Recalcular o cupom ao remover itens ou alterar quantidades
         }
     }
-
 
     // Função para atualizar o total
     function atualizarTotal(desconto = 0, taxaEntrega = 15) {
@@ -156,7 +174,6 @@ document.addEventListener("DOMContentLoaded", function () {
         atualizarTotal(desconto, taxaEntrega);  // Recalcula o total com o desconto e a taxa de entrega
     }
 
-
     // Função para remover o item e recalcular o subtotal
     function removerItem(element) {
         const item = element.closest('.produto-item');
@@ -166,7 +183,6 @@ document.addEventListener("DOMContentLoaded", function () {
             exibirFeedback('Item removido do carrinho.', 'success');
         }
     }
-
 
     // Função para aplicar eventos a elementos dinâmicos
     function aplicarEventos() {
@@ -205,8 +221,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // Chama a função aplicarCupom com userInitiated = true
             aplicarCupom(true);
         });
-
-
     }
 
     // Inicializa a aplicação dos eventos

@@ -5,12 +5,11 @@
     <!-- Meta Tags Essenciais -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="AmigoPet - Sua loja online para cuidados com animais" />
     <meta name="keywords" content="petshop, animais, produtos para pets, serviços para pets" />
 
     <!-- Título da Página -->
-    <title>AmigoPet</title>
+    <title>AmigoPet - Carrinho</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/logo-icone.png" />
@@ -20,10 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nerko+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet" />
 
-    <!-- Bootstrap JS e CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
@@ -41,204 +37,226 @@
     <script src="js/carrinho.js" defer></script>
 </head>
 
-
 <body>
     <div id="header"></div>
 
     <main class="container my-5">
-        <div class="row">
-            <!-- Seção de Produtos no Carrinho -->
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="text-dark title-nerko">Carrinho</h2>
-            </div>
-            <!-- Esquerda / Itens -->
-            <div class="col-md-8">
-                <div class="container h-100">
-                    <!-- Produto 1 -->
-                    <div class="card rounded-3 mb-4 produto-item" style="min-height: 100px;">
-                        <div class="card-body p-3">
-                            <div class="row d-flex justify-content-between align-items-center">
-                                <div class="col-md-2 col-lg-2 col-xl-2">
-                                    <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="img-fluid rounded-3"
-                                        alt="Ração Seca para Cães Adultos Pedigree" style="max-width: 80px;">
-                                </div>
-                                <div class="col-md-3 col-lg-3 col-xl-3">
-                                    <p class="lead fw-normal mb-1" style="font-size: 14px;">Ração Seca para Cães Adultos
-                                        Pedigree</p>
-                                    <p><span class="text-muted" style="font-size: 12px;">Peso: </span>2,7Kg</p>
-                                </div>
-                                <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
-                                    <button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <input id="form1" min="0" name="quantity" value="1" type="number"
-                                        class="form-control form-control-sm" style="max-width: 50px;" />
-                                    <button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </div>
-                                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                    <h6 class="mb-0 preco-total-item" data-preco="47.00"
-                                        style="font-size: 16px; font-weight: bold;">R$47,00</h6> <!-- Preço total -->
-                                    <p class="text-muted mb-0" style="font-size: 14px;">Preço unitário: <span
-                                            class="preco-unitario">R$47,00</span></p> <!-- Preço unitário -->
-                                </div>
-                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                    <a href="#" class="text-danger remover-item"><i class="fas fa-trash fa-lg"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produto 2 -->
-                    <div class="card rounded-3 mb-4 produto-item" style="min-height: 100px;">
-                        <div class="card-body p-3">
-                            <div class="row d-flex justify-content-between align-items-center">
-                                <div class="col-md-2 col-lg-2 col-xl-2">
-                                    <img src="img/produtos/p1-whiskas-min.png" class="img-fluid rounded-3"
-                                        alt="Petisco para Gatos Whiskas" style="max-width: 80px;">
-                                </div>
-                                <div class="col-md-3 col-lg-3 col-xl-3">
-                                    <p class="lead fw-normal mb-1" style="font-size: 14px;">Petisco para Gatos Whiskas
-                                    </p>
-                                    <p><span class="text-muted" style="font-size: 12px;">Peso: </span>85g</p>
-                                </div>
-                                <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
-                                    <button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <input id="form2" min="0" name="quantity" value="1" type="number"
-                                        class="form-control form-control-sm" style="max-width: 50px;" />
-                                    <button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </div>
-                                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                    <h6 class="mb-0 preco-total-item" data-preco="18.00"
-                                        style="font-size: 16px; font-weight: bold;">R$18,00</h6> <!-- Preço total -->
-                                    <p class="text-muted mb-0" style="font-size: 14px;">Preço unitário: <span
-                                            class="preco-unitario">R$18,00</span></p> <!-- Preço unitário -->
-                                </div>
-                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                    <a href="#" class="text-danger remover-item"><i class="fas fa-trash fa-lg"></i></a>
+        <!-- Conteúdo principal do carrinho -->
+        <div id="conteudo-carrinho">
+            <div class="row">
+                <!-- Título -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="text-dark title-nerko">Carrinho</h2>
+                </div>
+                <!-- Esquerda / Itens -->
+                <div class="col-md-8">
+                    <div class="container h-100">
+                        <!-- Produto 1 -->
+                        <div class="card rounded-3 mb-4 produto-item" style="min-height: 100px;">
+                            <div class="card-body p-3">
+                                <div class="row d-flex justify-content-between align-items-center">
+                                    <div class="col-md-2 col-lg-2 col-xl-2">
+                                        <img src="img/produtos/p2-pedrigree-racaoseca-min.png"
+                                            class="img-fluid rounded-3" alt="Ração Seca para Cães Adultos Pedigree"
+                                            style="max-width: 80px;">
+                                    </div>
+                                    <div class="col-md-3 col-lg-3 col-xl-3">
+                                        <p class="lead fw-normal mb-1" style="font-size: 14px;">Ração Seca para Cães
+                                            Adultos
+                                            Pedigree</p>
+                                        <p><span class="text-muted" style="font-size: 12px;">Peso: </span>2,7Kg</p>
+                                    </div>
+                                    <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
+                                        <button class="btn btn-link px-2">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input id="form1" min="0" name="quantity" value="1" type="number"
+                                            class="form-control form-control-sm" style="max-width: 50px;" />
+                                        <button class="btn btn-link px-2">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                        <h6 class="mb-0 preco-total-item" data-preco="47.00"
+                                            style="font-size: 16px; font-weight: bold;">R$47,00</h6>
+                                        <!-- Preço total -->
+                                        <p class="text-muted mb-0" style="font-size: 14px;">Preço unitário: <span
+                                                class="preco-unitario">R$47,00</span></p>
+                                        <!-- Preço unitário -->
+                                    </div>
+                                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                        <a href="#" class="text-danger remover-item"><i
+                                                class="fas fa-trash fa-lg"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Produto 3 -->
-                    <div class="card rounded-3 mb-4 produto-item" style="min-height: 100px;">
-                        <div class="card-body p-3">
-                            <div class="row d-flex justify-content-between align-items-center">
-                                <div class="col-md-2 col-lg-2 col-xl-2">
-                                    <img src="img/produtos/p3-lippydog-bifinho-min.png" class="img-fluid rounded-3"
-                                        alt="Bifinho para Cães Lippy Dog" style="max-width: 80px;">
+                        <!-- Produto 2 -->
+                        <div class="card rounded-3 mb-4 produto-item" style="min-height: 100px;">
+                            <div class="card-body p-3">
+                                <div class="row d-flex justify-content-between align-items-center">
+                                    <div class="col-md-2 col-lg-2 col-xl-2">
+                                        <img src="img/produtos/p1-whiskas-min.png" class="img-fluid rounded-3"
+                                            alt="Petisco para Gatos Whiskas" style="max-width: 80px;">
+                                    </div>
+                                    <div class="col-md-3 col-lg-3 col-xl-3">
+                                        <p class="lead fw-normal mb-1" style="font-size: 14px;">Petisco para Gatos
+                                            Whiskas
+                                        </p>
+                                        <p><span class="text-muted" style="font-size: 12px;">Peso: </span>85g</p>
+                                    </div>
+                                    <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
+                                        <button class="btn btn-link px-2">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input id="form2" min="0" name="quantity" value="1" type="number"
+                                            class="form-control form-control-sm" style="max-width: 50px;" />
+                                        <button class="btn btn-link px-2">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                        <h6 class="mb-0 preco-total-item" data-preco="18.00"
+                                            style="font-size: 16px; font-weight: bold;">R$18,00</h6>
+                                        <!-- Preço total -->
+                                        <p class="text-muted mb-0" style="font-size: 14px;">Preço unitário: <span
+                                                class="preco-unitario">R$18,00</span></p>
+                                        <!-- Preço unitário -->
+                                    </div>
+                                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                        <a href="#" class="text-danger remover-item"><i
+                                                class="fas fa-trash fa-lg"></i></a>
+                                    </div>
                                 </div>
-                                <div class="col-md-3 col-lg-3 col-xl-3">
-                                    <p class="lead fw-normal mb-1" style="font-size: 14px;">Bifinho para Cães Lippy Dog
-                                    </p>
-                                    <p><span class="text-muted" style="font-size: 12px;">Peso: </span>500g</p>
-                                </div>
-                                <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
-                                    <button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <input id="form3" min="0" name="quantity" value="1" type="number"
-                                        class="form-control form-control-sm" style="max-width: 50px;" />
-                                    <button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </div>
-                                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                    <h6 class="mb-0 preco-total-item" data-preco="27.00"
-                                        style="font-size: 16px; font-weight: bold;">R$27,00</h6> <!-- Preço total -->
-                                    <p class="text-muted mb-0" style="font-size: 14px;">Preço unitário: <span
-                                            class="preco-unitario">R$27,00</span></p> <!-- Preço unitário -->
-                                </div>
-                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                    <a href="#" class="text-danger remover-item"><i class="fas fa-trash fa-lg"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Produto 3 -->
+                        <div class="card rounded-3 mb-4 produto-item" style="min-height: 100px;">
+                            <div class="card-body p-3">
+                                <div class="row d-flex justify-content-between align-items-center">
+                                    <div class="col-md-2 col-lg-2 col-xl-2">
+                                        <img src="img/produtos/p3-lippydog-bifinho-min.png" class="img-fluid rounded-3"
+                                            alt="Bifinho para Cães Lippy Dog" style="max-width: 80px;">
+                                    </div>
+                                    <div class="col-md-3 col-lg-3 col-xl-3">
+                                        <p class="lead fw-normal mb-1" style="font-size: 14px;">Bifinho para Cães Lippy
+                                            Dog
+                                        </p>
+                                        <p><span class="text-muted" style="font-size: 12px;">Peso: </span>500g</p>
+                                    </div>
+                                    <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
+                                        <button class="btn btn-link px-2">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input id="form3" min="0" name="quantity" value="1" type="number"
+                                            class="form-control form-control-sm" style="max-width: 50px;" />
+                                        <button class="btn btn-link px-2">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                        <h6 class="mb-0 preco-total-item" data-preco="27.00"
+                                            style="font-size: 16px; font-weight: bold;">R$27,00</h6>
+                                        <!-- Preço total -->
+                                        <p class="text-muted mb-0" style="font-size: 14px;">Preço unitário: <span
+                                                class="preco-unitario">R$27,00</span></p>
+                                        <!-- Preço unitário -->
+                                    </div>
+                                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                        <a href="#" class="text-danger remover-item"><i
+                                                class="fas fa-trash fa-lg"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Direita / Resumo do Carrinho -->
+                <div class="col-md-4">
+                    <div class="border rounded p-4">
+                        <h5 class="fw-bold mb-3">Resumo</h5>
+                        <div class="d-flex justify-content-between">
+                            <span>Subtotal</span>
+                            <span class="resumo-subtotal">R$92,00</span>
+                        </div>
+                        <div class="d-flex justify-content-between text-danger">
+                            <span>Cupom</span>
+                            <span class="resumo-cupom">R$0,00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Taxa de Entrega</span>
+                            <span class="resumo-entrega">R$15,00</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between fw-bold">
+                            <span>Total</span>
+                            <span class="resumo-total">R$107,00</span>
+                        </div>
+                        <!-- Área de feedback -->
+                        <div id="feedback-message" class="alert d-none" role="alert"></div>
+                        <!-- Campo para aplicar cupom -->
+                        <div class="input-group my-3 position-relative">
+                            <span class="input-group-text"><i class="fas fa-tag"></i></span>
+                            <input type="text" id="cupom-input" class="form-control focus-custom"
+                                placeholder="Digite seu cupom">
+                            <button class="btn btn-primary" id="aplicar-cupom">Aplicar</button>
+
+                            <!-- Lista de cupons disponíveis, inicialmente oculta -->
+                            <div id="lista-cupons" class="form-text text-muted position-absolute"
+                                style="display: none;">
+                                Cupons disponíveis: <strong>PUCRS</strong> (15% de desconto),
+                                <strong>AMIGOPET10</strong>
+                                (R$10 de desconto), <strong>FRETEGRATIS</strong> (Frete grátis).
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn btn-primary w-100 finalizar-compra" data-bs-toggle="modal"
+                            data-bs-target="#finalizacaoModal">
+                            Finalizar <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </div>
             </div>
-
-
-
-            <!-- Direita / Resumo do Carrinho -->
-            <div class="col-md-4">
-                <div class="border rounded p-4">
-                    <h5 class="fw-bold mb-3">Resumo</h5>
-                    <div class="d-flex justify-content-between">
-                        <span>Subtotal</span>
-                        <span class="resumo-subtotal">R$92</span>
-                    </div>
-                    <div class="d-flex justify-content-between text-danger">
-                        <span>Cupom</span>
-                        <span class="resumo-cupom">R$0,00</span>
-                    </div>
-                    <div class="d-flex justify-content-between mb-3">
-                        <span>Taxa de Entrega</span>
-                        <span class="resumo-entrega">R$15,00</span>
-                    </div>
-                    <hr>
-                    <div class="d-flex justify-content-between fw-bold">
-                        <span>Total</span>
-                        <span class="resumo-total">R$97,80</span>
-                    </div>
-                    <!-- Área de feedback -->
-                    <div id="feedback-message" class="alert d-none" role="alert"></div>
-                    <!-- Campo para aplicar cupom -->
-                    <div class="input-group my-3 position-relative">
-                        <span class="input-group-text"><i class="fas fa-tag"></i></span>
-                        <input type="text" id="cupom-input" class="form-control focus-custom"
-                            placeholder="Digite seu cupom">
-                        <button class="btn btn-primary" id="aplicar-cupom">Aplicar</button>
-
-                        <!-- Lista de cupons disponíveis, inicialmente oculta -->
-                        <div id="lista-cupons" class="form-text text-muted position-absolute" style="display: none;">
-                            Cupons disponíveis: <strong>PUCRS</strong> (15% de desconto), <strong>AMIGOPET10</strong>
-                            (R$10 de desconto), <strong>FRETEGRATIS</strong> (Frete grátis).
+            <!-- Modal de Finalização -->
+            <div class="modal fade" id="finalizacaoModal" tabindex="-1" aria-labelledby="finalizacaoModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="finalizacaoModalLabel">Simulação de Compra</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Sua compra foi simulada com sucesso! Isso é apenas uma demonstração. Nenhuma compra real foi
+                            feita.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                         </div>
                     </div>
-
-                    <a href="#" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#finalizacaoModal">
-                        Finalizar <i class="fas fa-arrow-right"></i>
-                    </a>
-
                 </div>
             </div>
         </div>
-        <!-- Modal de Finalização -->
-        <div class="modal fade" id="finalizacaoModal" tabindex="-1" aria-labelledby="finalizacaoModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="finalizacaoModalLabel">Simulação de Compra</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Sua compra foi simulada com sucesso! Isso é apenas uma demonstração. Nenhuma compra real foi
-                        feita.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    </div>
-                </div>
+
+        <!-- Mensagem de Carrinho Vazio -->
+        <div id="carrinho-vazio" class="d-none">
+            <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 60vh;">
+                <h4 class="text-muted">Seu carrinho está vazio.</h4>
+                <a href="produtos.html" class="btn btn-primary mt-3">Ver Produtos</a>
             </div>
         </div>
-
     </main>
 
     <div id="footer"></div>
+
+    <!-- Scripts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
