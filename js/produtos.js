@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Variável global para manter o estado de como ordenar os produtos
+    let ordemAtual = 'popular';
 
     // Gerar estrelas de avaliação
     function gerarEstrelas(nota) {
@@ -32,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Gerar produtos dinamicamente
             produtos.forEach(produto => {
                 const productHTML = `
-                    <div class="col-md-4 col-lg-3 mb-4" data-idade="${produto.idade}" data-tamanho="${produto.tamanho}" data-peso="${produto.peso}" data-preco="${produto.preco}">
+                    <div class="col-md-4 col-lg-3 mb-4" data-idade="${produto.idade}" data-tamanho="${produto.tamanho}" data-peso="${produto.peso}" data-preco="${produto.preco}" data-avaliacao="${produto.avaliacao}">
                         <div class="card product-card h-100">
                             <a href="#">
                                 <div class="product-image-container">
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Erro ao carregar produtos:', error));
 
-    // Função para aplicar os filtros
+    // Função para aplicar os filtros e ordenação
     function aplicarFiltros() {
         // Obter os valores dos filtros selecionados
         const idadeSelecionada = [];
@@ -87,7 +89,23 @@ document.addEventListener('DOMContentLoaded', function () {
         if (document.getElementById('peso10maiskg').checked) pesoSelecionado.push('10maiskg');
 
         // Selecionar todos os produtos
-        const produtos = document.querySelectorAll('.col-md-4.col-lg-3.mb-4');
+        const produtos = Array.from(document.querySelectorAll('.col-md-4.col-lg-3.mb-4'));
+
+        // Ordenar os produtos com base na ordem atual
+        produtos.sort((a, b) => {
+            const precoA = parseFloat(a.getAttribute('data-preco'));
+            const precoB = parseFloat(b.getAttribute('data-preco'));
+            const avaliacaoA = parseFloat(a.getAttribute('data-avaliacao'));
+            const avaliacaoB = parseFloat(b.getAttribute('data-avaliacao'));
+
+            if (ordemAtual === 'menor-preco') {
+                return precoA - precoB;
+            } else if (ordemAtual === 'maior-preco') {
+                return precoB - precoA;
+            } else if (ordemAtual === 'popular') {
+                return avaliacaoB - avaliacaoA;
+            }
+        });
 
         // Iterar sobre os produtos e exibir ou ocultar conforme os filtros
         produtos.forEach(function (produto) {
@@ -120,7 +138,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 produto.style.display = 'none';
             }
         });
+
+        // Limpar o container de produtos e reapendá-los ordenados
+        const container = document.querySelector('.row.justify-content-start');
+        container.innerHTML = '';
+        produtos.forEach(produto => container.appendChild(produto));
     }
+
+    // Função para lidar com a seleção de "Filtrar por"
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            ordemAtual = this.getAttribute('data-sort');
+            document.getElementById('dropdownMenuButton1').textContent = `Filtrar por: ${this.textContent}`;
+            aplicarFiltros();
+        });
+    });
 
     // Adicionar evento para aplicar filtros quando os checkboxes forem modificados
     document.querySelectorAll('input[type="checkbox"], #priceRange').forEach(function (element) {
