@@ -38,7 +38,7 @@
     <script src="js/import-components.js" defer></script>
 
     <!-- Script para Produtos -->
-    <script src="js/produtos.js"></script>
+    <script src="js/produtos.js" defer></script>
 </head>
 
 <body>
@@ -123,10 +123,9 @@
                         <label class="form-check-label" for="peso10maiskg">10,1kg+</label>
                     </div>
                 </div>
-
-                <button class="btn btn-primary w-100 mt-4">Aplicar Filtro</button>
             </aside>
 
+            <!-- Área de Produtos -->
             <div class="col-md-9">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h4 class="title-montserrat">Ração</h4>
@@ -143,94 +142,11 @@
                             <li><a class="dropdown-item" href="#">Maior Preço</a></li>
                         </ul>
                     </div>
-
                 </div>
 
                 <!-- Lista de Produtos -->
                 <div class="row justify-content-start">
-                    <!-- Produto 1: DalDog Adultos Essencial -->
-                    <div class="col-md-4 col-lg-3 mb-4" data-idade="adultos" data-tamanho="media-grande"
-                        data-peso="15kg">
-                        <div class="card product-card h-100">
-                            <a href="https://www.dalpet.com.br/produto/daldog-adulto-essencial/pt"
-                                title="DalDog Adultos Essencial">
-                                <div class="product-image-container">
-                                    <img src="https://www.dalpet.com.br/uploads/imagens/daldog-adulto-essencial-racas-medias-e-grandes-premium-especial-30-pt-259.png"
-                                        class="product-img" alt="DalDog Adultos Essencial">
-                                </div>
-                            </a>
-                            <div class="card-body text-center">
-                                <a href="#" class="product-link">
-                                    <h6 class="card-title">DalDog Adultos Essencial</h6>
-                                </a>
-                                <p class="text-muted">Raças Médias e Grandes</p>
-                                <h6 class="price">R$50,00</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produto 2: DalDog Adultos Frango & Arroz -->
-                    <div class="col-md-4 col-lg-3 mb-4" data-idade="adultos" data-tamanho="media-grande"
-                        data-peso="15kg">
-                        <div class="card product-card h-100">
-                            <a href="https://www.dalpet.com.br/produto/daldog-adulto-frango-arroz/pt"
-                                title="DalDog D+ Adultos Frango & Arroz">
-                                <div class="product-image-container">
-                                    <img src="https://www.dalpet.com.br/uploads/imagens/daldog-adulto-frango-arroz-premium-especial-racas-medias-e-grandes-25-pt-895.png"
-                                        class="product-img" alt="DalDog D+ Adultos Frango & Arroz">
-                                </div>
-                            </a>
-                            <div class="card-body text-center">
-                                <a href="#" class="product-link">
-                                    <h6 class="card-title">DalDog D+ Adultos Frango & Arroz</h6>
-                                </a>
-                                <p class="text-muted">Raças Médias e Grandes</p>
-                                <h6 class="price">R$55,00</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produto 3: DalDog Filhotes Raças Pequenas -->
-                    <div class="col-md-4 col-lg-3 mb-4" data-idade="filhotes" data-tamanho="pequena" data-peso="10,1kg">
-                        <div class="card product-card h-100">
-                            <a href="https://www.dalpet.com.br/produto/daldog-d-filhotes-racas-pequenas/pt"
-                                title="DalDog D+ Filhotes Raças Pequenas">
-                                <div class="product-image-container">
-                                    <img src="https://www.dalpet.com.br/uploads/imagens/daldog-d-filhotes-racas-pequenas-23-pt-122.png"
-                                        class="product-img" alt="DalDog D+ Filhotes Raças Pequenas">
-                                </div>
-                            </a>
-                            <div class="card-body text-center">
-                                <a href="#" class="product-link">
-                                    <h6 class="card-title">DalDog D+ Filhotes Raças Pequenas</h6>
-                                </a>
-                                <p class="text-muted">Raças Pequenas</p>
-                                <h6 class="price">R$48,00</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produto 4: DalDog Sênior Raças Médias e Grandes -->
-                    <div class="col-md-4 col-lg-3 mb-4" data-idade="senior" data-tamanho="media-grande"
-                        data-peso="15kg">
-                        <div class="card product-card h-100">
-                            <a href="https://www.dalpet.com.br/produto/daldog-d-senior-racas-medias-e-grandes/pt"
-                                title="DalDog D+ Senior Raças Médias e Grandes">
-                                <div class="product-image-container">
-                                    <img src="https://www.dalpet.com.br/uploads/imagens/daldog-d-senior-racas-medias-e-grandes-a-partir-de-7-anos-27-pt-516.png"
-                                        class="product-img" alt="DalDog D+ Senior Raças Médias e Grandes">
-                                </div>
-                            </a>
-                            <div class="card-body text-center">
-                                <a href="#" class="product-link">
-                                    <h6 class="card-title">DalDog D+ Senior Raças Médias e Grandes</h6>
-                                </a>
-                                <p class="text-muted">Raças Médias e Grandes</p>
-                                <h6 class="price">R$60,00</h6>
-                            </div>
-                        </div>
-                    </div>
-
+                    <!-- Produtos serão carregados aqui pelo JS -->
                 </div>
 
                 <!-- Paginação -->

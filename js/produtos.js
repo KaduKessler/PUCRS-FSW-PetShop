@@ -1,11 +1,74 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Gerar estrelas de avaliação
+    function gerarEstrelas(nota) {
+        let estrelas = '';
+        for (let i = 1; i <= 5; i++) {
+            if (i <= nota) {
+                estrelas += '<i class="fas fa-star"></i>';
+            } else if (i - nota < 1) {
+                estrelas += '<i class="fas fa-star-half-alt"></i>';
+            } else {
+                estrelas += '<i class="far fa-star"></i>';
+            }
+        }
+        return estrelas;
+    }
+
+    // Carregar produtos do arquivo JSON
+    fetch('data/produtos.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao carregar o arquivo JSON: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(produtos => {
+            const container = document.querySelector('.row.justify-content-start');
+
+            // Limpar o container de produtos
+            container.innerHTML = '';
+
+            // Gerar produtos dinamicamente
+            produtos.forEach(produto => {
+                const productHTML = `
+                    <div class="col-md-4 col-lg-3 mb-4" data-idade="${produto.idade}" data-tamanho="${produto.tamanho}" data-peso="${produto.peso}" data-preco="${produto.preco}">
+                        <div class="card product-card h-100">
+                            <a href="#">
+                                <div class="product-image-container">
+                                    <img src="${produto.imagem}" class="product-img" alt="${produto.nome}">
+                                </div>
+                            </a>
+                            <div class="card-body text-center">
+                                <a href="#" class="product-link">
+                                    <h6 class="card-title">${produto.nome}</h6>
+                                </a>
+                                <p class="text-muted">${produto.descricao}</p>
+                                <div class="rating">
+                                    ${gerarEstrelas(produto.avaliacao)}
+                                    <span>${produto.avaliacao}/5</span>
+                                </div>
+                                <h6 class="price">R$${produto.preco}</h6>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                container.insertAdjacentHTML('beforeend', productHTML);
+            });
+
+            // Chama a função aplicarFiltros após carregar os produtos
+            aplicarFiltros();
+        })
+        .catch(error => console.error('Erro ao carregar produtos:', error));
+
     // Função para aplicar os filtros
     function aplicarFiltros() {
         // Obter os valores dos filtros selecionados
         const idadeSelecionada = [];
         const tamanhoSelecionado = [];
         const pesoSelecionado = [];
+        const precoMax = parseFloat(document.getElementById('priceRange').value);
 
         // Filtros de Idade
         if (document.getElementById('filhotes').checked) idadeSelecionada.push('filhotes');
@@ -31,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const idadeProduto = produto.getAttribute('data-idade');
             const tamanhoProduto = produto.getAttribute('data-tamanho');
             const pesoProduto = parseFloat(produto.getAttribute('data-peso'));
+            const precoProduto = parseFloat(produto.getAttribute('data-preco'));
 
             // Lógica de exibição dos produtos (ajustando para media-grande)
             const idadeMatch = idadeSelecionada.length === 0 || idadeSelecionada.includes(idadeProduto);
@@ -46,8 +110,11 @@ document.addEventListener('DOMContentLoaded', function () {
             if (pesoSelecionado.includes('10kg') && pesoProduto > 5 && pesoProduto <= 10) pesoMatch = true;
             if (pesoSelecionado.includes('10maiskg') && pesoProduto > 10) pesoMatch = true;
 
+            // Lógica de Preço
+            const precoMatch = precoProduto <= precoMax;
+
             // Mostrar ou ocultar o produto com base nos filtros aplicados
-            if (idadeMatch && tamanhoMatch && pesoMatch) {
+            if (idadeMatch && tamanhoMatch && pesoMatch && precoMatch) {
                 produto.style.display = 'block';
             } else {
                 produto.style.display = 'none';
@@ -55,11 +122,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Adicionar evento ao botão de aplicar filtros
-    document.querySelector('.btn.btn-primary.w-100').addEventListener('click', aplicarFiltros);
-
     // Adicionar evento para aplicar filtros quando os checkboxes forem modificados
-    document.querySelectorAll('input[type="checkbox"]').forEach(function (checkbox) {
-        checkbox.addEventListener('change', aplicarFiltros);
+    document.querySelectorAll('input[type="checkbox"], #priceRange').forEach(function (element) {
+        element.addEventListener('change', aplicarFiltros);
     });
 });

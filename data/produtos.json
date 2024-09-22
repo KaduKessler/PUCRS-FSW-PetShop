@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "nome": "DalDog Adultos Essencial",
+    "imagem": "https://www.dalpet.com.br/uploads/imagens/daldog-adulto-essencial-racas-medias-e-grandes-premium-especial-30-pt-259.png",
+    "descricao": "Raças Médias e Grandes",
+    "preco": 50,
+    "avaliacao": 4,
+    "idade": "adultos",
+    "tamanho": "media-grande",
+    "peso": 15
+  },
+  {
+    "id": 2,
+    "nome": "DalDog D+ Adultos Frango & Arroz",
+    "imagem": "https://www.dalpet.com.br/uploads/imagens/daldog-adulto-frango-arroz-premium-especial-racas-medias-e-grandes-25-pt-895.png",
+    "descricao": "Raças Médias e Grandes",
+    "preco": 55,
+    "avaliacao": 4.2,
+    "idade": "adultos",
+    "tamanho": "media-grande",
+    "peso": 15
+  },
+  {
+    "id": 3,
+    "nome": "DalDog D+ Filhotes Raças Pequenas",
+    "imagem": "https://www.dalpet.com.br/uploads/imagens/daldog-d-filhotes-racas-pequenas-23-pt-122.png",
+    "descricao": "Raças Pequenas",
+    "preco": 48,
+    "avaliacao": 4.8,
+    "idade": "filhotes",
+    "tamanho": "pequena",
+    "peso": 10.1
+  },
+  {
+    "id": 4,
+    "nome": "DalDog D+ Senior Raças Médias e Grandes",
+    "imagem": "https://www.dalpet.com.br/uploads/imagens/daldog-d-senior-racas-medias-e-grandes-a-partir-de-7-anos-27-pt-516.png",
+    "descricao": "Raças Médias e Grandes",
+    "preco": 60,
+    "avaliacao": 4.0,
+    "idade": "senior",
+    "tamanho": "media-grande",
+    "peso": 15
+  }
+]
