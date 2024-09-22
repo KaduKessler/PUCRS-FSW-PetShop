@@ -636,6 +636,54 @@ footer a.footer-link:hover {
   cursor: pointer;
 }
 
+/* Dropdown Personalizado */
+.custom-dropdown-filter {
+  background-color: white;
+  color: #63a6af;
+  border: 1px solid #63a6af;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.custom-dropdown-filter:hover {
+  background-color: #63a6af;
+  color: white;
+  border-color: #63a6af;
+}
+
+.custom-dropdown-filter:focus,
+.custom-dropdown-filter:active,
+.custom-dropdown-filter.show {
+  background-color: #63a6af;
+  color: white;
+  border-color: #63a6af;
+  outline: none;
+}
+
+.custom-dropdown-menu {
+  background-color: white;
+  border-color: #63a6af;
+  color: #63a6af;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-dropdown-item {
+  color: #63a6af;
+  padding: 8px 15px;
+  background-color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-dropdown-item:hover,
+.custom-dropdown-item:focus {
+  background-color: #4b8b94;
+  color: white;
+}
+
 /* ==============================
    Upload de Foto
    ============================== */
