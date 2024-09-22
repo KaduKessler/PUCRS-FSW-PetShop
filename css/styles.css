@@ -621,7 +621,6 @@ footer a.footer-link:hover {
 }
 
 .custom-checkbox input[type="checkbox"]:checked::before {
-  content: "✔";
   color: white;
   font-weight: bold;
   font-size: 16px;
