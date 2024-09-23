@@ -568,10 +568,18 @@ footer a.footer-link:hover {
 }
 
 .social-btn {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
   height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.social-btn:hover {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: white;
 }
 
 .social-btn svg {
