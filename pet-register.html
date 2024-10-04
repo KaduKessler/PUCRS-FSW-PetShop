@@ -41,7 +41,6 @@
 </head>
 
 <body>
-
     <!-- Header -->
     <div id="header"></div>
 
@@ -52,11 +51,11 @@
             <!-- Upload de imagem -->
             <div class="text-center my-3">
                 <label for="imageUpload" class="position-relative">
-                    <i id="cameraIcon"
-                        class="fa-solid fa-camera fa-2x amigo-bg-primary text-white p-3 rounded-circle"></i>
-                    <img id="imagePreview" src="#" alt="Imagem do Pet" class="rounded-circle"
-                        style="width: 100px; height: 100px; object-fit: cover; display:none;">
-                    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                    <div class="camera-container amigo-bg-primary rounded-circle">
+                        <i id="cameraIcon" class="fa-solid fa-camera text-white"></i>
+                    </div>
+                    <img id="imagePreview" src="#" alt="Imagem do Pet" class="rounded-circle image-preview">
+                    <input type="file" id="imageUpload" accept="image/*" class="input-img">
                 </label>
             </div>
         </div>
@@ -69,7 +68,8 @@
                     <!-- Nome -->
                     <div class="mb-3">
                         <label for="nomePet" class="form-label">Nome do Pet</label>
-                        <input type="text" class="form-control" id="nomePet" name="nomePet" required>
+                        <input type="text" class="form-control" id="nomePet" name="nomePet"
+                            placeholder="Digite o nome do seu pet" required>
                     </div>
 
                     <!-- Sexo -->
@@ -117,7 +117,8 @@
                     <!-- Peso -->
                     <div class="mb-3">
                         <label for="pesoPet" class="form-label">Peso (em kg)</label>
-                        <input type="number" class="form-control" id="pesoPet" name="pesoPet" min="1" required>
+                        <input type="number" class="form-control registro-pet-input" id="pesoPet" name="pesoPet" min="1"
+                            placeholder="Digite o peso do seu pet" required>
                     </div>
 
                     <!-- Tipo de Pet -->
@@ -143,6 +144,7 @@
 
                     <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
                 </div>
+
             </div>
         </form>
     </section>
@@ -167,7 +169,6 @@
 
     <!-- Footer -->
     <div id="footer"></div>
-
 </body>
 
 </html>

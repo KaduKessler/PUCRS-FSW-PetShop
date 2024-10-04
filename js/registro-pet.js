@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("imageUpload").addEventListener("change", function () {
         const file = this.files[0];
-        const icon = document.getElementById("cameraIcon");
+        const iconContainer = document.querySelector(".camera-container");
         const imgPreview = document.getElementById("imagePreview");
 
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
                 imgPreview.src = e.target.result;
-                imgPreview.style.display = "block";
-                icon.style.display = "none"; // Oculta o ícone
+                imgPreview.classList.add("active");
+                iconContainer.style.display = "none";
             };
             reader.readAsDataURL(file);
         }
