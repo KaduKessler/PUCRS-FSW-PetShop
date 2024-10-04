@@ -149,9 +149,13 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.dropdown-item').forEach(item => {
         item.addEventListener('click', function (e) {
             e.preventDefault();
-            ordemAtual = this.getAttribute('data-sort');
-            document.getElementById('dropdownMenuButton1').textContent = `Filtrar por: ${this.textContent}`;
-            aplicarFiltros();
+
+            // Verifique se o item contém o atributo 'data-sort'
+            if (this.hasAttribute('data-sort')) {
+                ordemAtual = this.getAttribute('data-sort');
+                document.getElementById('dropdownMenuButton1').textContent = `Filtrar por: ${this.textContent}`;
+                aplicarFiltros();
+            }
         });
     });
 
