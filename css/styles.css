@@ -912,8 +912,21 @@ footer a.footer-link:hover {
 }
 
 .produto-item img {
-  max-width: 100%;
-  height: auto;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.product-title {
+  font-size: 14px;
+}
+
+.produto-weight {
+  font-size: 12px;
+  color: #6c757d;
 }
 
 .produto-item .row {
@@ -985,6 +998,7 @@ footer a.footer-link:hover {
   border: 1px solid #ddd;
   border-radius: 5px;
   width: 50px;
+  max-width: 50px;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -1014,9 +1028,10 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .preco-unitario {
-  font-size: 14px;
+  font-size: 14px; /* Deixe o tamanho do texto um pouco maior */
   font-family: "Roboto", sans-serif;
-  color: #888;
+  color: #888; /* Use uma cor mais neutra e sutil */
+  margin-bottom: 0;
 }
 
 #lista-cupons {
@@ -1030,6 +1045,7 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 100%;
   z-index: 1;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: none; /* Mantém oculto por padrão */
 }
 
 #aplicar-cupom {
@@ -1081,4 +1097,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 #carrinho-vazio h4 {
   font-size: 1.5rem;
+}
+
+.mensagem-carrinho-vazio {
+  min-height: 60vh;
 }
