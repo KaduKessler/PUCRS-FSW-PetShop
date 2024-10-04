@@ -82,3 +82,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const loginButton = document.getElementById("simulate-login");
     loginButton.addEventListener("click", simularLogin);
 });
+
+// Atualiza o contador de caracteres
+function atualizarContador() {
+    const mensagemInput = document.getElementById('mensagem');
+    const contador = document.getElementById('contador');
+    const limite = 500;
+    const quantidadeCaracteres = mensagemInput.value.length;
+
+    // Atualiza o texto do contador
+    contador.textContent = `${quantidadeCaracteres}/${limite}`;
+
+    // Limita a quantidade de caracteres
+    if (quantidadeCaracteres >= limite) {
+        mensagemInput.value = mensagemInput.value.substring(0, limite); // Limita a entrada
+        // Atualiza novamente o contador após truncar
+        contador.textContent = `${limite}/${limite}`;
+    }
+}
+
+// Inicializa o contador
+document.addEventListener('DOMContentLoaded', function () {
+    atualizarContador(); // Para garantir que o contador comece em 0
+});

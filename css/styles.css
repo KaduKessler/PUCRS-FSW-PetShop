@@ -1137,15 +1137,9 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* Estilo do iframe do mapa */
 .mapa-iframe {
-  height: 400px;
+  height: 420px;
   width: 100%;
   margin-bottom: 20px;
-}
-
-/* Estilização do formulário de contato */
-.form-contato .form-control:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.2rem rgba(100, 149, 237, 0.25);
 }
 
 .form-contato .form-label {
@@ -1185,4 +1179,25 @@ input[type="number"]::-webkit-outer-spin-button {
 .btn-danger:hover {
   background-color: #c82333; /* Vermelho mais escuro para hover */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.textarea-field {
+  height: 100px; /* Altura maior para acomodar mais texto */
+  padding: 15px; /* Mesma padronização de padding */
+  font-size: 15px; /* Tamanho de fonte consistente */
+  border: 1px solid var(--primary-color); /* Borda padrão */
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição suave */
+  resize: none; /* Evita que o usuário redimensione o textarea */
+}
+
+.textarea-field:focus {
+  outline: none; /* Remove contorno padrão */
+  box-shadow: 0 0 0 0.25rem #63a6af80; /* Sombra ao focar */
+  border-color: #63a6af; /* Cor da borda ao focar */
+}
+
+.contador-caracteres {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 5px; /* Um pequeno espaço entre o textarea e o contador */
 }
