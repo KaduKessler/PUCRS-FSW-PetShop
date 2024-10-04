@@ -1048,6 +1048,16 @@ input[type="number"]::-webkit-outer-spin-button {
   display: none; /* Mantém oculto por padrão */
 }
 
+.cupom-clickable {
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+
+.frete-gratis {
+  text-decoration: line-through;
+  color: #888;
+}
+
 #aplicar-cupom {
   border-radius: 0 15px 15px 0;
 }

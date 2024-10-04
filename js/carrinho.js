@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const cupomInput = document.getElementById('cupom-input');
     const listaCupons = document.getElementById('lista-cupons');
+    const cupomClickables = document.querySelectorAll('.cupom-clickable');
 
     // Referência à div de carrinho vazio
     const carrinhoVazioDiv = document.getElementById('carrinho-vazio');
@@ -16,6 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(function () {
             listaCupons.style.display = 'none';
         }, 200);
+    });
+
+    cupomClickables.forEach(cupom => {
+        cupom.addEventListener('click', function () {
+            cupomInput.value = this.innerText.trim(); // Insere o texto do cupom no campo de input
+            listaCupons.style.display = 'none'; // Oculta a lista após a seleção
+        });
     });
 
     /**
@@ -133,22 +141,22 @@ document.addEventListener("DOMContentLoaded", function () {
      * @param {boolean} [userInitiated=false] - Indica se a função foi chamada pelo usuário (para exibir mensagens de feedback).
      */
     function aplicarCupom(userInitiated = false) {
-        const cupomInputValue = document.querySelector('#cupom-input').value.trim().toUpperCase();  // Captura o cupom e transforma em maiúsculas
-
+        const cupomInputValue = document.querySelector('#cupom-input').value.trim().toUpperCase();
         const subtotal = parseFloat(document.querySelector('.resumo-subtotal').innerText.replace('R$', '').replace(',', '.')) || 0;
         let desconto = 0;
-        let taxaEntrega = 15;  // Valor padrão da taxa de entrega
+        let taxaEntrega = 15; // Valor padrão da taxa de entrega
+        const taxaEntregaElement = document.querySelector('.resumo-entrega');
 
         // Verifica se o campo de cupom está vazio
         if (!cupomInputValue) {
             if (userInitiated) {
                 exibirFeedback('Por favor, insira um cupom.', 'danger');
             }
-            // Se não há cupom, zera o desconto e restaura a taxa de entrega padrão
-            document.querySelector('.resumo-cupom').innerText = 'R$0,00';
-            document.querySelector('.resumo-entrega').innerText = `R$15,00`;
-            atualizarTotal(desconto, taxaEntrega);
-            return;  // Sai da função
+            document.querySelector('.resumo-cupom').innerText = 'R$0,00'; // Zera o campo de desconto
+            taxaEntregaElement.innerText = `R$15,00`; // Restaura o valor da taxa de entrega padrão
+            taxaEntregaElement.classList.remove('frete-gratis'); // Remove o estilo riscado
+            atualizarTotal(desconto, taxaEntrega); // Atualiza o total
+            return;
         }
 
         // Verifica se o cupom existe
@@ -159,39 +167,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Desconto percentual
                 desconto = subtotal * (cupom.valor / 100);
                 document.querySelector('.resumo-cupom').innerText = `-R$${desconto.toFixed(2).replace('.', ',')}`;
-                document.querySelector('.resumo-entrega').innerText = `R$15,00`;
-                if (userInitiated) {
-                    exibirFeedback('Cupom aplicado com sucesso!', 'success');
-                }
+                taxaEntregaElement.innerText = `R$15,00`; // Mantém o valor da taxa de entrega padrão
+                taxaEntregaElement.classList.remove('frete-gratis');
             } else if (cupom.tipo === 'valor') {
                 // Desconto por valor fixo
                 desconto = cupom.valor;
                 document.querySelector('.resumo-cupom').innerText = `-R$${desconto.toFixed(2).replace('.', ',')}`;
-                document.querySelector('.resumo-entrega').innerText = `R$15,00`;
-                if (userInitiated) {
-                    exibirFeedback('Cupom aplicado com sucesso!', 'success');
-                }
+                taxaEntregaElement.innerText = `R$15,00`; // Mantém o valor da taxa de entrega padrão
+                taxaEntregaElement.classList.remove('frete-gratis');
             } else if (cupom.tipo === 'frete') {
-                // Frete grátis: Remove o valor do frete
+                // Frete grátis: Remove o valor do frete e aplica o estilo
                 taxaEntrega = 0;
-                document.querySelector('.resumo-entrega').innerText = `R$0,00`;
-                document.querySelector('.resumo-cupom').innerText = `R$0,00`;  // Zera o campo cupom
-                if (userInitiated) {
-                    exibirFeedback('Frete grátis aplicado!', 'success');
-                }
+                taxaEntregaElement.innerText = `R$0,00`;
+                taxaEntregaElement.classList.add('frete-gratis');
+                document.querySelector('.resumo-cupom').innerText = `R$0,00`; // Zera o campo cupom
+            }
+
+            if (userInitiated) {
+                exibirFeedback('Cupom aplicado com sucesso!', 'success');
             }
         } else {
             // Se o cupom for inválido
             document.querySelector('.resumo-cupom').innerText = 'R$0,00';
-            document.querySelector('.resumo-entrega').innerText = `R$15,00`;  // Restaura a taxa de entrega padrão
-            taxaEntrega = 15;
+            taxaEntregaElement.innerText = `R$15,00`; // Restaura a taxa de entrega padrão
+            taxaEntregaElement.classList.remove('frete-gratis'); // Remove o estilo riscado
 
             if (userInitiated) {
                 exibirFeedback('Cupom inválido ou não reconhecido.', 'danger');
             }
         }
 
-        atualizarTotal(desconto, taxaEntrega);  // Recalcula o total com o desconto e a taxa de entrega
+        atualizarTotal(desconto, taxaEntrega); // Recalcula o total com o desconto e a taxa de entrega
     }
 
     /**
