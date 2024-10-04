@@ -467,6 +467,24 @@ footer a.footer-link:hover {
   transform: scale(0.98);
 }
 
+.btn-secondary {
+  border-radius: 15px;
+  border: none;
+  background-color: #6c757d; /* Cor de fundo padrão para o botão "Simular Login" */
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268; /* Cor de destaque ao passar o mouse */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 /* Divider */
 .custom-divider {
   width: 1140px;
@@ -1111,4 +1129,60 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .mensagem-carrinho-vazio {
   min-height: 60vh;
+}
+
+/* ==============================
+   Contato
+   ============================== */
+
+/* Estilo do iframe do mapa */
+.mapa-iframe {
+  height: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Estilização do formulário de contato */
+.form-contato .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(100, 149, 237, 0.25);
+}
+
+.form-contato .form-label {
+  font-weight: bold;
+}
+
+/* Customização dos botões para ocuparem 50% cada */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button-group button {
+  width: 50%;
+}
+
+/* Ajustes gerais para alinhamento */
+.row.justify-content-center {
+  align-items: center;
+}
+
+/* Estilo para o botão "Simular Login" em modo "Logout" */
+.btn-danger {
+  border-radius: 15px;
+  border: none;
+  background-color: #dc3545; /* Vermelho padrão para "Perigo" */
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Vermelho mais escuro para hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
