@@ -780,6 +780,23 @@ footer a.footer-link:hover {
   color: white;
 }
 
+/* Select em Perfil Pet */
+.select-field {
+  height: 50px;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Estilo ao estar em foco */
+.select-field:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(99, 166, 175, 0.5); /* Adicionando sombra leve */
+  border-color: var(--primary-color);
+}
+
 /* ==============================
    Upload de Foto
    ============================== */

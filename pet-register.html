@@ -68,83 +68,85 @@
                     <!-- Nome -->
                     <div class="mb-3">
                         <label for="nomePet" class="form-label">Nome do Pet</label>
-                        <input type="text" class="form-control" id="nomePet" name="nomePet"
+                        <input type="text" class="form-control input-field" id="nomePet" name="nomePet"
                             placeholder="Digite o nome do seu pet" required>
                     </div>
 
-                    <!-- Sexo -->
-                    <div class="mb-3">
-                        <label class="form-label">Sexo</label><br>
-                        <div class="form-check form-check-inline custom-radio">
-                            <input class="form-check-input" type="radio" name="sexoPet" id="sexoFemea" value="Fêmea"
+                    <!-- Sexo e Castrado -->
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="form-label">Sexo</label><br>
+                            <div class="form-check form-check-inline custom-radio">
+                                <input class="form-check-input" type="radio" name="sexoPet" id="sexoFemea" value="Fêmea"
+                                    required checked>
+                                <label class="form-check-label" for="sexoFemea">Fêmea</label>
+                            </div>
+                            <div class="form-check form-check-inline custom-radio">
+                                <input class="form-check-input" type="radio" name="sexoPet" id="sexoMacho"
+                                    value="Macho">
+                                <label class="form-check-label" for="sexoMacho">Macho</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label class="form-label">Castrado</label><br>
+                            <div class="form-check form-check-inline custom-radio">
+                                <input class="form-check-input" type="radio" name="castradoPet" id="castradoSim"
+                                    value="Sim" required checked>
+                                <label class="form-check-label" for="castradoSim">Sim</label>
+                            </div>
+                            <div class="form-check form-check-inline custom-radio">
+                                <input class="form-check-input" type="radio" name="castradoPet" id="castradoNao"
+                                    value="Não">
+                                <label class="form-check-label" for="castradoNao">Não</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nascimento e Peso -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="nascimentoPet" class="form-label">Nascimento</label>
+                            <input type="date" class="form-control input-field" id="nascimentoPet" name="nascimentoPet">
+                            <div class="form-check mt-2 custom-checkbox">
+                                <input class="form-check-input" type="checkbox" id="nascimentoDesconhecido"
+                                    name="nascimentoDesconhecido">
+                                <label class="form-check-label" for="nascimentoDesconhecido">
+                                    Não sei
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="pesoPet" class="form-label">Peso (em kg)</label>
+                            <input type="number" class="form-control input-field" id="pesoPet" name="pesoPet" min="1"
+                                placeholder="Digite o peso do seu pet" required>
+                        </div>
+                    </div>
+
+                    <!-- Tipo de Pet e Temperamento -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="tipoPet" class="form-label">Tipo de Pet</label>
+                            <select class="form-select select-field" id="tipoPet" name="tipoPet" required>
+                                <option selected disabled>Escolha uma opção</option>
+                                <option value="cachorro">Cachorro</option>
+                                <option value="gato">Gato</option>
+                                <option value="outro">Outro</option>
+                            </select>
+
+                        </div>
+                        <div class="col-md-6">
+                            <label for="temperamentoPet" class="form-label">Temperamento</label>
+                            <select class="form-select select-field" id="temperamentoPet" name="temperamentoPet"
                                 required>
-                            <label class="form-check-label" for="sexoFemea">Fêmea</label>
-                        </div>
-                        <div class="form-check form-check-inline custom-radio">
-                            <input class="form-check-input" type="radio" name="sexoPet" id="sexoMacho" value="Macho">
-                            <label class="form-check-label" for="sexoMacho">Macho</label>
-                        </div>
-                    </div>
-
-                    <!-- Castrado -->
-                    <div class="mb-3">
-                        <label class="form-label">Castrado</label><br>
-                        <div class="form-check form-check-inline custom-radio">
-                            <input class="form-check-input" type="radio" name="castradoPet" id="castradoSim" value="Sim"
-                                required>
-                            <label class="form-check-label" for="castradoSim">Sim</label>
-                        </div>
-                        <div class="form-check form-check-inline custom-radio">
-                            <input class="form-check-input" type="radio" name="castradoPet" id="castradoNao"
-                                value="Não">
-                            <label class="form-check-label" for="castradoNao">Não</label>
+                                <option selected disabled>Temperamento do Pet</option>
+                                <option value="manso">Manso</option>
+                                <option value="bravo">Bravo</option>
+                            </select>
                         </div>
                     </div>
 
-                    <!-- Nascimento -->
-                    <div class="mb-3">
-                        <label for="nascimentoPet" class="form-label">Nascimento</label>
-                        <input type="date" class="form-control" id="nascimentoPet" name="nascimentoPet">
-                        <div class="form-check mt-2 custom-checkbox">
-                            <input class="form-check-input" type="checkbox" id="nascimentoDesconhecido"
-                                name="nascimentoDesconhecido">
-                            <label class="form-check-label" for="nascimentoDesconhecido">
-                                Não sei
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Peso -->
-                    <div class="mb-3">
-                        <label for="pesoPet" class="form-label">Peso (em kg)</label>
-                        <input type="number" class="form-control registro-pet-input" id="pesoPet" name="pesoPet" min="1"
-                            placeholder="Digite o peso do seu pet" required>
-                    </div>
-
-                    <!-- Tipo de Pet -->
-                    <div class="mb-3">
-                        <label for="tipoPet" class="form-label">Tipo de Pet</label>
-                        <select class="form-select" id="tipoPet" name="tipoPet" required>
-                            <option selected disabled>Escolha uma opção</option>
-                            <option value="cachorro">Cachorro</option>
-                            <option value="gato">Gato</option>
-                            <option value="outro">Outro</option>
-                        </select>
-                    </div>
-
-                    <!-- Temperamento -->
-                    <div class="mb-3">
-                        <label for="temperamentoPet" class="form-label">Temperamento</label>
-                        <select class="form-select" id="temperamentoPet" name="temperamentoPet" required>
-                            <option selected disabled>Temperamento do Pet</option>
-                            <option value="manso">Manso</option>
-                            <option value="bravo">Bravo</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+                    <button type="submit" class="btn btn-primary w-100">Cadastrar Pet</button>
                 </div>
-
             </div>
         </form>
     </section>
