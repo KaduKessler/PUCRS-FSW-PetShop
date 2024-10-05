@@ -59,13 +59,14 @@
             <aside class="col-md-3 mb-5">
                 <h5 class="mb-3 title-montserrat">Filtros</h5>
 
-                <!-- Filtro por Preço -->
+                <!-- Filtro por Preço Máximo -->
                 <div class="card p-3 mb-3">
-                    <h6 class="title-montserrat">Preço</h6>
-                    <input type="range" class="form-range custom-range" min="5" max="200" step="5" id="priceRange"
+                    <h6 class="title-montserrat">Preço Máximo</h6>
+                    <input type="range" class="form-range custom-range" min="0" max="200" step="5" id="priceRange"
                         title="Selecione a faixa de preço">
                     <div class="d-flex justify-content-between">
-                        <span>R$5</span>
+                        <span>R$0</span>
+                        <span id="precoAtual">R$95</span> <!-- Exibe o valor atual do slider -->
                         <span>R$200</span>
                     </div>
                 </div>
@@ -155,31 +156,6 @@
                     <!-- Produtos serão carregados aqui pelo JS -->
                 </div>
 
-                <!-- Paginação -->
-                <nav aria-label="Navegação">
-                    <ul class="pagination custom-pagination justify-content-center">
-                        <!-- Botão de voltar -->
-                        <li class="page-item">
-                            <a class="custom-page-link" href="#" aria-label="Anterior">
-                                <i class="fas fa-arrow-left"></i> Voltar
-                            </a>
-                        </li>
-
-                        <!-- Números das páginas -->
-                        <li class="page-item active"><a class="custom-page-number" href="#">1</a></li>
-                        <li class="page-item"><a class="custom-page-number" href="#">2</a></li>
-                        <li class="page-item"><a class="custom-page-number" href="#">3</a></li>
-                        <li class="page-item"><a class="custom-page-number" href="#">...</a></li>
-                        <li class="page-item"><a class="custom-page-number" href="#">10</a></li>
-
-                        <!-- Botão de avançar -->
-                        <li class="page-item">
-                            <a class="custom-page-link" href="#" aria-label="Próximo">
-                                Avançar <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
         </div>
     </main>

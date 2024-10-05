@@ -700,6 +700,16 @@ footer a.footer-link:hover {
   background: var(--accent-color);
 }
 
+#priceRange {
+  margin-bottom: 15px;
+}
+
+#precoAtual {
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-left: 10px; /* Adiciona espaço entre o valor e o slider */
+}
+
 /* Checkbox Personalizado */
 .custom-checkbox input[type="checkbox"] {
   appearance: none;

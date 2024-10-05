@@ -145,6 +145,18 @@ document.addEventListener('DOMContentLoaded', function () {
         produtos.forEach(produto => container.appendChild(produto));
     }
 
+    // Atualizar o valor do slider em tempo real
+    const priceRange = document.getElementById('priceRange');
+    const precoAtual = document.getElementById('precoAtual');
+
+    // Definir valor inicial do preço atual
+    precoAtual.textContent = `R$${priceRange.value}`;
+
+    // Atualizar o valor conforme o usuário move o slider
+    priceRange.addEventListener('input', function () {
+        precoAtual.textContent = `R$${this.value}`;
+    });
+
     // Função para lidar com a seleção de "Filtrar por"
     document.querySelectorAll('.dropdown-item').forEach(item => {
         item.addEventListener('click', function (e) {
