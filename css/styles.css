@@ -335,23 +335,6 @@ footer a.footer-link:hover {
    Produtos
    ============================== */
 
-.product-image-container {
-  height: 250px;
-  background-color: var(--light-gray);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  border-radius: 15px 15px 0 0;
-}
-
-.product-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 .badge-container {
   position: absolute;
   top: 10px;
@@ -398,20 +381,44 @@ footer a.footer-link:hover {
   color: var(--accent-color);
 }
 
-.rating {
-  font-size: 0.9rem;
-  color: #f1c40f;
-  margin-bottom: 0.5rem;
-}
-
+/* Cards */
 .card-body {
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
+/* Título do produto */
 .card-body h6 {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   margin-bottom: 5px;
+  flex-grow: 0;
+}
+
+.card-body h6.card-title {
+  min-height: 50px; /* Reduzindo a altura mínima */
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-body p.text-muted {
+  min-height: 30px;
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .card-body h6.price {
@@ -419,6 +426,53 @@ footer a.footer-link:hover {
   font-size: 1rem;
   color: var(--primary-color);
   margin-top: 0.5rem;
+  flex-grow: 0;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0.5rem 0;
+  flex-grow: 1;
+}
+
+.card.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.product-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.rating {
+  font-size: 0.9rem;
+  color: #f1c40f;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+}
+
+/* Estiliza o container da imagem para se ajustar ao layout */
+.product-image-container {
+  height: 200px;
+  background-color: var(--light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 15px 15px 0 0;
+}
+
+/* Garante que a imagem do produto se ajuste adequadamente */
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .price {

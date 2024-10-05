@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return estrelas;
     }
 
-    // Função para limitar o número de caracteres no título e na descrição
+    // Função para limitar o número de caracteres no título
     function limitarTexto(texto, limite) {
         return texto.length > limite ? texto.substring(0, limite) + '...' : texto;
     }
@@ -38,9 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Gerar produtos dinamicamente
             produtos.forEach(produto => {
-                // Limitar o texto no título e na descrição
+                // Limitar o texto no título
                 const tituloLimitado = limitarTexto(produto.nome, 45); // Limita o título a 45 caracteres
-                const descricaoLimitada = limitarTexto(produto.descricao, 60); // Limita a descrição a 60 caracteres
 
                 const productHTML = `
                 <div class="col-md-4 col-lg-3 mb-4" data-idade="${produto.idade}" data-tamanho="${produto.tamanho}" data-peso="${produto.peso}" data-preco="${produto.preco}" data-avaliacao="${produto.avaliacao}">
@@ -54,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
                             <a href="#" class="product-link">
                                 <h6 class="card-title">${tituloLimitado}</h6>
                             </a>
-                            <p class="text-muted">${descricaoLimitada}</p>
                             <div class="rating">
                                 ${gerarEstrelas(produto.avaliacao)}
                                 <span>${produto.avaliacao}/5</span>
@@ -72,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
             aplicarFiltros();
         })
         .catch(error => console.error('Erro ao carregar produtos:', error));
-
 
     // Função para aplicar os filtros e ordenação
     function aplicarFiltros() {
