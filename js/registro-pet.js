@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const iconContainer = document.querySelector(".camera-container");
     const imgPreview = document.getElementById("imagePreview");
 
+    // Pré-visualização da imagem do pet
     imageUpload.addEventListener("change", function () {
         const file = this.files[0];
 
@@ -15,6 +16,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 iconContainer.style.display = "none";
             };
             reader.readAsDataURL(file);
+        }
+    });
+
+    // Função para sincronizar o checkbox 'Não sei' com o campo de data
+    const nascimentoPet = document.getElementById('nascimentoPet');
+    const nascimentoDesconhecido = document.getElementById('nascimentoDesconhecido');
+
+    // Desmarca o 'Não sei' ao selecionar uma data
+    nascimentoPet.addEventListener('input', function () {
+        if (nascimentoPet.value) {
+            nascimentoDesconhecido.checked = false;
+        }
+    });
+
+    // Limpa a data ao marcar 'Não sei'
+    nascimentoDesconhecido.addEventListener('change', function () {
+        if (nascimentoDesconhecido.checked) {
+            nascimentoPet.value = '';
         }
     });
 });
