@@ -742,6 +742,22 @@ footer a.footer-link:hover {
   cursor: pointer;
 }
 
+.custom-radio .form-check-input {
+  transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.custom-radio .form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.custom-radio .form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(99, 166, 175, 0.5);
+  border-color: var(--primary-color);
+}
+
 /* Dropdown Personalizado */
 .custom-dropdown-filter {
   background-color: white;
@@ -1227,4 +1243,11 @@ input[type="number"]::-webkit-outer-spin-button {
   font-size: 12px;
   color: #6c757d;
   margin-top: 5px; /* Um pequeno espaço entre o textarea e o contador */
+}
+
+/* ==============================
+   Agendamento Banho & Tosa
+   ============================== */
+#enderecoTeleBuscaContainer {
+  display: none;
 }

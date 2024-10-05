@@ -61,8 +61,8 @@
 
                     <!-- Seleção de Pet -->
                     <div class="mb-3">
-                        <label for="petSelect" class="form-label">Seleção de Pet</label>
-                        <select class="form-select" id="petSelect" name="petSelect" required>
+                        <label for="petSelect" class="form-label">Seleção de Pet*</label>
+                        <select class="form-select select-field" id="petSelect" name="petSelect" required>
                             <option selected disabled>Selecione seu pet cadastrado</option>
                             <option value="Annie">Annie - Cachorro</option>
                             <option value="Zoe">Zoe - Gato</option>
@@ -73,30 +73,32 @@
                     <!-- Observações -->
                     <div class="mb-3">
                         <label for="observacoes" class="form-label">Observações</label>
-                        <textarea class="form-control" id="observacoes" name="observacoes" rows="4" maxlength="500"
-                            style="resize: none;"
+                        <textarea class="form-control textarea-field" id="observacoes" name="observacoes" rows="4"
+                            maxlength="500"
                             placeholder="Informe aqui qualquer detalhe adicional que considere importante sobre o seu pet ou o serviço desejado (ex: alergias, cuidados especiais)"></textarea>
                     </div>
 
                     <!-- Tele-busca -->
                     <div class="mb-3">
-                        <label class="form-label">Deseja utilizar o serviço de tele-busca?</label><br>
+                        <label class="form-label">Deseja utilizar o serviço de tele-busca?*</label><br>
                         <div class="form-check custom-radio form-check-inline">
                             <input class="form-check-input" type="radio" name="teleBusca" id="teleSim" value="Sim"
                                 required>
                             <label class="form-check-label" for="teleSim">Sim</label>
                         </div>
                         <div class="form-check custom-radio form-check-inline">
-                            <input class="form-check-input" type="radio" name="teleBusca" id="teleNao" value="Não">
+                            <input class="form-check-input" type="radio" name="teleBusca" id="teleNao" value="Não"
+                                checked>
                             <label class="form-check-label" for="teleNao">Não</label>
                         </div>
                     </div>
 
                     <!-- Endereço para Tele-busca -->
-                    <div class="mb-3" id="enderecoTeleBuscaContainer" style="display:none;">
-                        <label for="enderecoTeleBusca" class="form-label">Endereço para tele-busca (caso tenha escolhido
-                            "Sim")</label>
-                        <select class="form-select" id="enderecoTeleBusca" name="enderecoTeleBusca">
+                    <div class="mb-3" id="enderecoTeleBuscaContainer">
+                        <label for="enderecoTeleBusca" class="form-label">Endereço para tele-busca (caso tenha
+                            escolhido
+                            "Sim")*</label>
+                        <select class="form-select select-field" id="enderecoTeleBusca" name="enderecoTeleBusca">
                             <option selected disabled>Selecione o endereço cadastrado</option>
                             <option value="Rua das Flores, 123">Rua das Flores, 123</option>
                             <option value="Avenida Central, 456">Avenida Central, 456</option>
@@ -105,9 +107,9 @@
 
                     <!-- Data do Agendamento -->
                     <div class="mb-3">
-                        <label for="dataAgendamento" class="form-label">Data do Agendamento</label>
-                        <input type="datetime-local" class="form-control" id="dataAgendamento" name="dataAgendamento"
-                            required>
+                        <label for="dataAgendamento" class="form-label">Data do Agendamento*</label>
+                        <input type="datetime-local" class="form-control input-field" id="dataAgendamento"
+                            name="dataAgendamento" required>
                     </div>
 
                     <button type="button" class="btn btn-primary w-100" id="btnAgendar">Agendar</button>
