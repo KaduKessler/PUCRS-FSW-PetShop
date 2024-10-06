@@ -66,75 +66,30 @@
                         title="Selecione a faixa de preço">
                     <div class="d-flex justify-content-between">
                         <span>R$0</span>
-                        <span id="precoAtual">R$95</span> <!-- Exibe o valor atual do slider -->
+                        <span id="precoAtual">R$100</span>
                         <span>R$200</span>
                     </div>
                 </div>
 
-                <!-- Filtro por Idade -->
-                <div class="card p-3 mb-3">
-                    <h6 class="title-montserrat">Idade</h6>
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="filhotes">
-                        <label class="form-check-label" for="filhotes">Filhotes</label>
-                    </div>
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="adultos">
-                        <label class="form-check-label" for="adultos">Adultos</label>
-                    </div>
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="idosos">
-                        <label class="form-check-label" for="idosos">Idosos</label>
-                    </div>
+                <!-- Filtro por Tamanho -->
+                <div class="card p-3 mb-3" id="filtroTamanho">
+                    <h6 class="title-montserrat">Tamanho</h6>
+                    <!-- Os checkboxes de tamanho serão gerados aqui -->
                 </div>
 
-                <!-- Filtro por Tamanho da Raça -->
-                <div class="card p-3 mb-3">
-                    <h6 class="title-montserrat">Tamanho da Raça</h6>
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="pequena">
-                        <label class="form-check-label" for="pequena">Pequena</label>
-                    </div>
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="media">
-                        <label class="form-check-label" for="media">Média</label>
-                    </div>
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="grande">
-                        <label class="form-check-label" for="grande">Grande</label>
-                    </div>
+                <!-- Filtro por Idade -->
+                <div class="card p-3 mb-3" id="filtroIdade">
+                    <h6 class="title-montserrat">Idade</h6>
+                    <!-- Os checkboxes de idade serão gerados aqui -->
                 </div>
 
                 <!-- Filtro por Peso -->
-                <div class="card p-3 mb-3">
+                <div class="card p-3 mb-3" id="filtroPeso">
                     <h6 class="title-montserrat">Peso</h6>
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="peso1kg">
-                        <label class="form-check-label" for="peso1kg">1kg</label>
-                    </div>
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="peso2kg">
-                        <label class="form-check-label" for="peso2kg">2kg</label>
-                    </div>
-                    <!-- Repita para os demais pesos -->
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="peso3kg">
-                        <label class="form-check-label" for="peso3kg">3kg</label>
-                    </div>
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="peso5kg">
-                        <label class="form-check-label" for="peso5kg">5kg</label>
-                    </div>
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="peso10kg">
-                        <label class="form-check-label" for="peso10kg">10kg</label>
-                    </div>
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="peso15kg">
-                        <label class="form-check-label" for="peso15kg">15kg</label>
-                    </div>
+                    <!-- Os checkboxes de peso serão gerados aqui -->
                 </div>
             </aside>
+
 
             <!-- Área de Produtos -->
             <div class="col-md-9">

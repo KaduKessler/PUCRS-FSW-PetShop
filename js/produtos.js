@@ -2,11 +2,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Obter categoria da página atual
     const categoriaAtual = document.body.getAttribute('data-categoria');
 
-    // Variável global para manter o estado de como ordenar os produtos
+    // Variáveis globais
     let ordemAtual = 'popular';
-
-    // Variável global para manter todos os produtos da categoria atual
     let todosProdutos = [];
+    let atributosUnicos = {};
 
     // Gerar estrelas de avaliação
     function gerarEstrelas(nota) {
@@ -41,6 +40,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Filtrar produtos da categoria atual
             produtos = produtos.filter(produto => produto.categoria === categoriaAtual);
+
+            // Extrair valores únicos dos atributos
+            atributosUnicos = extrairAtributosUnicos(produtos);
+
+            // Gerar filtros dinamicamente
+            gerarFiltrosDinamicos(atributosUnicos);
 
             // Limpar o container de produtos
             container.innerHTML = '';
@@ -101,6 +106,129 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Erro ao carregar produtos:', error));
 
+    // Função para extrair atributos únicos
+    function extrairAtributosUnicos(produtos) {
+        const atributos = {};
+
+        produtos.forEach(produto => {
+            for (let chave in produto) {
+                if (['tipo', 'tamanho', 'idade', 'peso'].includes(chave)) {
+                    if (!atributos[chave]) {
+                        atributos[chave] = new Set();
+                    }
+                    atributos[chave].add(produto[chave]);
+                }
+            }
+        });
+
+        // Converter os Sets para Arrays e ordenar
+        for (let chave in atributos) {
+            if (chave === 'peso') {
+                // Para o atributo 'peso', ordenar numericamente
+                atributos[chave] = Array.from(atributos[chave]).sort((a, b) => {
+                    const valorA = parseFloat(a);
+                    const valorB = parseFloat(b);
+                    return valorA - valorB;
+                });
+            } else {
+                // Para os demais atributos, ordenar alfabeticamente
+                atributos[chave] = Array.from(atributos[chave]).sort();
+            }
+        }
+
+        return atributos;
+    }
+
+    // Função para gerar filtros dinamicamente
+    function gerarFiltrosDinamicos(atributos) {
+        // Gerar filtros de Tipo
+        if (atributos.tipo && atributos.tipo.length > 0) {
+            const filtroTipo = document.getElementById('filtroTipo');
+            atributos.tipo.forEach(valor => {
+                const idCheckbox = `tipo-${valor}`;
+                const checkboxHTML = `
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="${idCheckbox}" data-atributo="tipo" value="${valor}">
+                        <label class="form-check-label" for="${idCheckbox}">${capitalizarPrimeiraLetra(valor)}</label>
+                    </div>
+                `;
+                filtroTipo.insertAdjacentHTML('beforeend', checkboxHTML);
+            });
+        } else {
+            // Se não houver filtro de tipo,  ocultamos a seção
+            const filtroTipo = document.getElementById('filtroTipo');
+            if (filtroTipo) filtroTipo.style.display = 'none';
+        }
+
+        // Gerar filtros de Tamanho
+        if (atributos.tamanho && atributos.tamanho.length > 0) {
+            const filtroTamanho = document.getElementById('filtroTamanho');
+            atributos.tamanho.forEach(valor => {
+                const idCheckbox = `tamanho-${valor}`;
+                const checkboxHTML = `
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="${idCheckbox}" data-atributo="tamanho" value="${valor}">
+                        <label class="form-check-label" for="${idCheckbox}">${capitalizarPrimeiraLetra(valor)}</label>
+                    </div>
+                `;
+                filtroTamanho.insertAdjacentHTML('beforeend', checkboxHTML);
+            });
+        } else {
+            // Se não tiver filtro de tamanho, ocultamos a seção
+            const filtroTamanho = document.getElementById('filtroTamanho');
+            if (filtroTamanho) filtroTamanho.style.display = 'none';
+        }
+
+        // Gerar filtros de idade
+        if (atributos.idade && atributos.idade.length > 0) {
+            const filtroIdade = document.getElementById('filtroIdade');
+            atributos.idade.forEach(valor => {
+                const idCheckbox = `idade-${valor}`;
+                const checkboxHTML = `
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="${idCheckbox}" data-atributo="idade" value="${valor}">
+                        <label class="form-check-label" for="${idCheckbox}">${capitalizarPrimeiraLetra(valor)}</label>
+                    </div>
+                `;
+                filtroIdade.insertAdjacentHTML('beforeend', checkboxHTML);
+            });
+        } else {
+            // Se não tiver filtro de idade, ocultamos a seção
+            const filtroIdade = document.getElementById('filtroIdade');
+            if (filtroIdade) filtroIdade.style.display = 'none';
+        }
+
+        // Gerar filtros de Peso
+        if (atributos.peso && atributos.peso.length > 0) {
+            const filtroPeso = document.getElementById('filtroPeso');
+            atributos.peso.forEach(valor => {
+                const idCheckbox = `peso-${valor}`;
+                const checkboxHTML = `
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="${idCheckbox}" data-atributo="peso" value="${valor}">
+                        <label class="form-check-label" for="${idCheckbox}">${valor}</label>
+                    </div>
+                `;
+                filtroPeso.insertAdjacentHTML('beforeend', checkboxHTML);
+            });
+        } else {
+            // Se não houver filtro de peso, remova a seção
+            const filtroPeso = document.getElementById('filtroPeso');
+            if (filtroPeso) filtroPeso.style.display = 'none';
+        }
+
+        // Adicionar eventos aos checkboxes gerados
+        const checkboxes = document.querySelectorAll('input[type="checkbox"][data-atributo]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', aplicarFiltros);
+        });
+    }
+
+    // Função para capitalizar a primeira letra (no JSON os valores estão em minúsculo)
+    function capitalizarPrimeiraLetra(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     // Função para aplicar os filtros e ordenação
     function aplicarFiltros() {
         const priceRange = document.getElementById('priceRange');
@@ -111,133 +239,41 @@ document.addEventListener('DOMContentLoaded', function () {
         // Usar 'todosProdutos' como base para os filtros
         let produtos = todosProdutos.slice(); // Fazer uma cópia para não modificar o array original
 
-        // Aplicar filtros específicos da categoria
-        if (categoriaAtual === 'ração') {
-            // Filtros de Idade
-            const idadeSelecionada = [];
-            if (document.getElementById('filhotes').checked) idadeSelecionada.push('filhotes');
-            if (document.getElementById('adultos').checked) idadeSelecionada.push('adultos');
-            if (document.getElementById('idosos').checked) idadeSelecionada.push('senior');
+        // Obter filtros selecionados
+        const checkboxes = document.querySelectorAll('input[type="checkbox"][data-atributo]');
+        const filtrosSelecionados = {};
 
-            // Filtros de Tamanho
-            const tamanhoSelecionado = [];
-            if (document.getElementById('pequena').checked) tamanhoSelecionado.push('pequena');
-            if (document.getElementById('media').checked) tamanhoSelecionado.push('media');
-            if (document.getElementById('grande').checked) tamanhoSelecionado.push('grande');
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                const atributo = checkbox.getAttribute('data-atributo');
+                const valor = checkbox.value;
 
-            // Filtros de Peso
-            const pesoSelecionado = [];
-            if (document.getElementById('peso1kg').checked) pesoSelecionado.push('1kg');
-            if (document.getElementById('peso2kg').checked) pesoSelecionado.push('2kg');
-            if (document.getElementById('peso3kg').checked) pesoSelecionado.push('3kg');
-            if (document.getElementById('peso5kg').checked) pesoSelecionado.push('5kg');
-            if (document.getElementById('peso10kg').checked) pesoSelecionado.push('10kg');
-            if (document.getElementById('peso15kg').checked) pesoSelecionado.push('15kg');
+                if (!filtrosSelecionados[atributo]) {
+                    filtrosSelecionados[atributo] = new Set();
+                }
+                filtrosSelecionados[atributo].add(valor);
+            }
+        });
 
+        // Aplicar filtros aos produtos
+        produtos = produtos.filter(produto => {
+            let atendeFiltros = true;
 
-            // Aplicar filtros aos produtos
-            produtos = produtos.filter(produto => {
-                const idadeProduto = produto.getAttribute('data-idade');
-                const tamanhoProduto = produto.getAttribute('data-tamanho');
-                const pesoProduto = produto.getAttribute('data-peso');
-                const precoProduto = parseFloat(produto.getAttribute('data-preco'));
+            for (let atributo in filtrosSelecionados) {
+                const valorProduto = produto.getAttribute(`data-${atributo}`);
+                const valoresFiltro = filtrosSelecionados[atributo];
 
-                const idadeMatch = idadeSelecionada.length === 0 || idadeSelecionada.includes(idadeProduto);
-                const tamanhoMatch = tamanhoSelecionado.length === 0 || tamanhoSelecionado.includes(tamanhoProduto);
-                const pesoMatch = pesoSelecionado.length === 0 || pesoSelecionado.includes(pesoProduto);
-                const precoMatch = !aplicarFiltroPreco || precoProduto <= precoMax;
+                if (valoresFiltro.size > 0 && !valoresFiltro.has(valorProduto)) {
+                    atendeFiltros = false;
+                    break;
+                }
+            }
 
-                return idadeMatch && tamanhoMatch && pesoMatch && precoMatch;
-            });
-        } else if (categoriaAtual === 'brinquedos') {
-            // Filtros de Tipo
-            const tiposSelecionados = [];
-            if (document.getElementById('tipoBola').checked) tiposSelecionados.push('bola');
-            if (document.getElementById('tipoCorda').checked) tiposSelecionados.push('corda');
-            if (document.getElementById('tipoPelucia').checked) tiposSelecionados.push('pelúcia');
-            if (document.getElementById('tipoMordedor').checked) tiposSelecionados.push('mordedor');
-            if (document.getElementById('tipoInterativo').checked) tiposSelecionados.push('interativo');
+            const precoProduto = parseFloat(produto.getAttribute('data-preco'));
+            const precoMatch = !aplicarFiltroPreco || precoProduto <= precoMax;
 
-            // Filtros de Tamanho
-            const tamanhosSelecionados = [];
-            if (document.getElementById('tamanhoPequeno').checked) tamanhosSelecionados.push('pequeno');
-            if (document.getElementById('tamanhoMedio').checked) tamanhosSelecionados.push('medio');
-            if (document.getElementById('tamanhoGrande').checked) tamanhosSelecionados.push('grande');
-
-            // Aplicar filtros aos produtos
-            produtos = produtos.filter(produto => {
-                const tipoProduto = produto.getAttribute('data-tipo');
-                const tamanhoProduto = produto.getAttribute('data-tamanho');
-                const precoProduto = parseFloat(produto.getAttribute('data-preco'));
-
-                const tipoMatch = tiposSelecionados.length === 0 || tiposSelecionados.includes(tipoProduto);
-                const tamanhoMatch = tamanhosSelecionados.length === 0 || tamanhosSelecionados.includes(tamanhoProduto);
-                const precoMatch = !aplicarFiltroPreco || precoProduto <= precoMax;
-
-                return tipoMatch && tamanhoMatch && precoMatch;
-            });
-        } else if (categoriaAtual === 'higiene') {
-            // Filtros de Tipo
-            const tiposSelecionados = [];
-            if (document.getElementById('tipoShampoo').checked) tiposSelecionados.push('shampoo');
-            if (document.getElementById('tipoCondicionador').checked) tiposSelecionados.push('condicionador');
-            if (document.getElementById('tipoPerfume').checked) tiposSelecionados.push('perfume');
-            if (document.getElementById('tipoLenço').checked) tiposSelecionados.push('lenço');
-            if (document.getElementById('tipoSabonete').checked) tiposSelecionados.push('sabonete');
-
-            // Filtros de Tamanho
-            const tamanhosSelecionados = [];
-            if (document.getElementById('tamanho50ml').checked) tamanhosSelecionados.push('50ml');
-            if (document.getElementById('tamanho80g').checked) tamanhosSelecionados.push('80g');
-            if (document.getElementById('tamanho90g').checked) tamanhosSelecionados.push('90g');
-            if (document.getElementById('tamanho100ml').checked) tamanhosSelecionados.push('100ml');
-            if (document.getElementById('tamanho300ml').checked) tamanhosSelecionados.push('300ml');
-            if (document.getElementById('tamanho500ml').checked) tamanhosSelecionados.push('500ml');
-            if (document.getElementById('tamanho75unidades').checked) tamanhosSelecionados.push('75 unidades');
-            if (document.getElementById('tamanho100unidades').checked) tamanhosSelecionados.push('100 unidades');
-
-            // Aplicar filtros aos produtos
-            produtos = produtos.filter(produto => {
-                const tipoProduto = produto.getAttribute('data-tipo');
-                const tamanhoProduto = produto.getAttribute('data-tamanho');
-                const precoProduto = parseFloat(produto.getAttribute('data-preco'));
-
-                const tipoMatch = tiposSelecionados.length === 0 || tiposSelecionados.includes(tipoProduto);
-                const tamanhoMatch = tamanhosSelecionados.length === 0 || tamanhosSelecionados.includes(tamanhoProduto);
-                const precoMatch = !aplicarFiltroPreco || precoProduto <= precoMax;
-
-                return tipoMatch && tamanhoMatch && precoMatch;
-            });
-        } else if (categoriaAtual === 'acessórios') {
-            // Filtros de Tipo
-            const tiposSelecionados = [];
-            if (document.getElementById('tipoCama').checked) tiposSelecionados.push('cama');
-            if (document.getElementById('tipoColeira').checked) tiposSelecionados.push('coleira');
-            if (document.getElementById('tipoGuia').checked) tiposSelecionados.push('guia');
-            if (document.getElementById('tipoComedouro').checked) tiposSelecionados.push('comedouro');
-            if (document.getElementById('tipoBebedouro').checked) tiposSelecionados.push('bebedouro');
-
-            // Filtros de Tamanho
-            const tamanhosSelecionados = [];
-            if (document.getElementById('tamanhoPequeno').checked) tamanhosSelecionados.push('pequeno');
-            if (document.getElementById('tamanhoMedio').checked) tamanhosSelecionados.push('medio');
-            if (document.getElementById('tamanhoGrande').checked) tamanhosSelecionados.push('grande');
-            if (document.getElementById('tamanho500ml').checked) tamanhosSelecionados.push('500ml');
-            if (document.getElementById('tamanho2L').checked) tamanhosSelecionados.push('2L');
-
-            // Aplicar filtros aos produtos
-            produtos = produtos.filter(produto => {
-                const tipoProduto = produto.getAttribute('data-tipo');
-                const tamanhoProduto = produto.getAttribute('data-tamanho');
-                const precoProduto = parseFloat(produto.getAttribute('data-preco'));
-
-                const tipoMatch = tiposSelecionados.length === 0 || tiposSelecionados.includes(tipoProduto);
-                const tamanhoMatch = tamanhosSelecionados.length === 0 || tamanhosSelecionados.includes(tamanhoProduto);
-                const precoMatch = !aplicarFiltroPreco || precoProduto <= precoMax;
-
-                return tipoMatch && tamanhoMatch && precoMatch;
-            });
-        }
+            return atendeFiltros && precoMatch;
+        });
 
         // Ordenar os produtos com base na ordem atual
         produtos.sort((a, b) => {
@@ -274,6 +310,9 @@ document.addEventListener('DOMContentLoaded', function () {
         precoAtual.textContent = `R$${this.value}`;
     });
 
+    // Aplicar fltros quando o slider for solto
+    priceRange.addEventListener('change', aplicarFiltros);
+
     // Função para lidar com a seleção de "Filtrar por"
     document.querySelectorAll('.dropdown-item').forEach(item => {
         item.addEventListener('click', function (e) {
@@ -286,10 +325,5 @@ document.addEventListener('DOMContentLoaded', function () {
                 aplicarFiltros();
             }
         });
-    });
-
-    // Adicionar evento para aplicar filtros quando os checkboxes forem modificados
-    document.querySelectorAll('input[type="checkbox"], #priceRange').forEach(function (element) {
-        element.addEventListener('change', aplicarFiltros);
     });
 });
