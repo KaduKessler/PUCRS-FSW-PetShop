@@ -10,7 +10,7 @@
     <meta name="keywords" content="petshop, animais, produtos para pets, serviços para pets" />
 
     <!-- Título da Página -->
-    <title>AmigoPet - Produtos</title>
+    <title>AmigoPet - Acessórios</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/logo-icone.png" />
@@ -41,7 +41,7 @@
     <script src="js/produtos.js" defer></script>
 </head>
 
-<body>
+<body data-categoria="acessórios">
     <!-- Header -->
     <div id="header"></div>
 
@@ -49,7 +49,7 @@
     <nav aria-label="breadcrumb" class="mt-3">
         <ol class="breadcrumb container">
             <li class="breadcrumb-item"><a href="#">Produtos</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Ração</li>
+            <li class="breadcrumb-item active" aria-current="page">Acessórios</li>
         </ol>
     </nav>
 
@@ -71,58 +71,55 @@
                     </div>
                 </div>
 
-                <!-- Filtro por Idade -->
+                <!-- Filtro por Tipo -->
                 <div class="card p-3 mb-3">
-                    <h6 class="title-montserrat">Idade</h6>
+                    <h6 class="title-montserrat">Tipo</h6>
                     <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="filhotes">
-                        <label class="form-check-label" for="filhotes">Filhotes</label>
+                        <input class="form-check-input" type="checkbox" id="tipoCama">
+                        <label class="form-check-label" for="tipoCama">Cama</label>
                     </div>
                     <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="adultos">
-                        <label class="form-check-label" for="adultos">Adultos</label>
+                        <input class="form-check-input" type="checkbox" id="tipoColeira">
+                        <label class="form-check-label" for="tipoColeira">Coleira</label>
                     </div>
                     <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="idosos">
-                        <label class="form-check-label" for="idosos">Idosos</label>
+                        <input class="form-check-input" type="checkbox" id="tipoGuia">
+                        <label class="form-check-label" for="tipoGuia">Guia</label>
+                    </div>
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="tipoComedouro">
+                        <label class="form-check-label" for="tipoComedouro">Comedouro</label>
+                    </div>
+                    <div class="form-check custom-checkbox">
+                        <input class="form-check-input" type="checkbox" id="tipoBebedouro">
+                        <label class="form-check-label" for="tipoBebedouro">Bebedouro</label>
                     </div>
                 </div>
 
-                <!-- Filtro por Tamanho da Raça -->
+                <!-- Filtro por Tamanho -->
                 <div class="card p-3 mb-3">
-                    <h6 class="title-montserrat">Tamanho da Raça</h6>
+                    <h6 class="title-montserrat">Tamanho</h6>
+                    <!-- Tamanhos disponíveis no JSON: pequeno, medio, grande, 500ml, 2L -->
                     <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="pequena">
-                        <label class="form-check-label" for="pequena">Pequena</label>
+                        <input class="form-check-input" type="checkbox" id="tamanhoPequeno">
+                        <label class="form-check-label" for="tamanhoPequeno">Pequeno</label>
                     </div>
                     <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="media">
-                        <label class="form-check-label" for="media">Média</label>
+                        <input class="form-check-input" type="checkbox" id="tamanhoMedio">
+                        <label class="form-check-label" for="tamanhoMedio">Médio</label>
                     </div>
                     <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="grande">
-                        <label class="form-check-label" for="grande">Grande</label>
+                        <input class="form-check-input" type="checkbox" id="tamanhoGrande">
+                        <label class="form-check-label" for="tamanhoGrande">Grande</label>
                     </div>
-                </div>
-
-                <!-- Filtro por Peso -->
-                <div class="card p-3">
-                    <h6 class="title-montserrat">Peso</h6>
+                    <!-- Para os tamanhos com unidades de medida, como 500ml e 2L -->
                     <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="peso1kg">
-                        <label class="form-check-label" for="peso1kg">1kg</label>
+                        <input class="form-check-input" type="checkbox" id="tamanho500ml">
+                        <label class="form-check-label" for="tamanho500ml">500ml</label>
                     </div>
                     <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="peso5kg">
-                        <label class="form-check-label" for="peso5kg">De 1,1kg até 5kg</label>
-                    </div>
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="peso10kg">
-                        <label class="form-check-label" for="peso10kg">De 5,1kg até 10kg</label>
-                    </div>
-                    <div class="form-check custom-checkbox">
-                        <input class="form-check-input" type="checkbox" id="peso10maiskg">
-                        <label class="form-check-label" for="peso10maiskg">10,1kg+</label>
+                        <input class="form-check-input" type="checkbox" id="tamanho2L">
+                        <label class="form-check-label" for="tamanho2L">2L</label>
                     </div>
                 </div>
             </aside>
@@ -130,7 +127,7 @@
             <!-- Área de Produtos -->
             <div class="col-md-9">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="title-montserrat">Ração</h4>
+                    <h4 class="title-montserrat">Acessórios</h4>
 
                     <!-- Botão de filtrar por -->
                     <div class="dropdown">
