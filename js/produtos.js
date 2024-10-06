@@ -130,6 +130,59 @@ document.addEventListener('DOMContentLoaded', function () {
                     const valorB = parseFloat(b);
                     return valorA - valorB;
                 });
+            } else if (chave === 'tamanho') {
+                const tamanhosArray = Array.from(atributos[chave]);
+                const grupos = {
+                    tamanhoDescritivo: [],
+                    volumeML: [],
+                    volumeL: [],
+                    pesoG: [],
+                    pesoKG: [],
+                    unidades: [],
+                    outros: []
+                };
+
+                const ordemTamanhoDescritivo = ['pequeno', 'medio', 'grande'];
+
+                tamanhosArray.forEach(tamanho => {
+                    const tamanhoLower = tamanho.toLowerCase();
+
+                    if (ordemTamanhoDescritivo.includes(tamanho)) {
+                        grupos.tamanhoDescritivo.push(tamanho);
+                    } else if (tamanhoLower.includes('ml')) {
+                        grupos.volumeML.push(tamanho);
+                    } else if (tamanhoLower.includes('l')) {
+                        grupos.volumeL.push(tamanho);
+                    } else if (tamanhoLower.includes('g')) {
+                        grupos.pesoG.push(tamanho);
+                    } else if (tamanhoLower.includes('kg')) {
+                        grupos.pesoKG.push(tamanho);
+                    } else if (tamanhoLower.includes('unidades')) {
+                        grupos.unidades.push(tamanho);
+                    } else {
+                        grupos.outros.push(tamanho);
+                    }
+                });
+
+                grupos.tamanhoDescritivo.sort((a, b) => {
+                    return ordemTamanhoDescritivo.indexOf(capitalizarPrimeiraLetra(a)) - ordemTamanhoDescritivo.indexOf(capitalizarPrimeiraLetra(b));
+                });
+                grupos.volumeML.sort((a, b) => parseFloat(a) - parseFloat(b));
+                grupos.volumeL.sort((a, b) => parseFloat(a) - parseFloat(b));
+                grupos.pesoG.sort((a, b) => parseFloat(a) - parseFloat(b));
+                grupos.pesoKG.sort((a, b) => parseFloat(a) - parseFloat(b));
+                grupos.unidades.sort((a, b) => parseFloat(a) - parseFloat(b));
+                grupos.outros.sort();
+
+                atributos[chave] = [
+                    ...grupos.tamanhoDescritivo,
+                    ...grupos.volumeML,
+                    ...grupos.volumeL,
+                    ...grupos.pesoG,
+                    ...grupos.pesoKG,
+                    ...grupos.unidades,
+                    ...grupos.outros
+                ];
             } else {
                 // Para os demais atributos, ordenar alfabeticamente
                 atributos[chave] = Array.from(atributos[chave]).sort();
