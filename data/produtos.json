@@ -5,11 +5,12 @@
     "imagem": "https://placehold.co/150x150?text=Ração+Premium+Filhotes+1kg",
     "descricao": "Ração premium para filhotes, sabor frango.",
     "preco": 29.9,
-    "avaliacao": 4.5,
+    "avaliacao": 4.2,
     "categoria": "ração",
     "idade": "filhotes",
     "tamanho": "pequena",
-    "peso": "1kg"
+    "peso": "1kg",
+    "novo": true
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "categoria": "ração",
     "idade": "adultos",
     "tamanho": "media",
-    "peso": "5kg"
+    "peso": "5kg",
+    "novo": true
   },
   {
     "id": 3,
@@ -29,11 +31,13 @@
     "imagem": "https://placehold.co/150x150?text=Ração+Sênior+3kg",
     "descricao": "Ração especial para cães idosos.",
     "preco": 59.9,
+    "precoOriginal": 69.9,
     "avaliacao": 4.2,
     "categoria": "ração",
     "idade": "senior",
     "tamanho": "pequena",
-    "peso": "3kg"
+    "peso": "3kg",
+    "novo": true
   },
   {
     "id": 4,
@@ -45,7 +49,8 @@
     "categoria": "ração",
     "idade": "filhotes",
     "tamanho": "grande",
-    "peso": "10kg"
+    "peso": "10kg",
+    "novo": true
   },
   {
     "id": 5,
@@ -57,7 +62,8 @@
     "categoria": "ração",
     "idade": "adultos",
     "tamanho": "pequena",
-    "peso": "2kg"
+    "peso": "2kg",
+    "novo": true
   },
   {
     "id": 6,
@@ -65,11 +71,13 @@
     "imagem": "https://placehold.co/150x150?text=Ração+Grain+Free+5kg",
     "descricao": "Ração sem grãos para cães com sensibilidades alimentares.",
     "preco": 89.9,
+    "precoOriginal": 99.9,
     "avaliacao": 4.6,
     "categoria": "ração",
     "idade": "adultos",
     "tamanho": "media",
-    "peso": "5kg"
+    "peso": "5kg",
+    "novo": true
   },
   {
     "id": 7,
@@ -81,7 +89,8 @@
     "categoria": "ração",
     "idade": "senior",
     "tamanho": "grande",
-    "peso": "15kg"
+    "peso": "15kg",
+    "novo": true
   },
   {
     "id": 8,
@@ -93,31 +102,35 @@
     "categoria": "ração",
     "idade": "filhotes",
     "tamanho": "pequena",
-    "peso": "1kg"
+    "peso": "1kg",
+    "novo": true
   },
   {
     "id": 9,
     "nome": "Ração Adultos Raças Grandes 10kg",
     "imagem": "https://placehold.co/150x150?text=Ração+Adultos+Raças+Grandes+10kg",
     "descricao": "Ração para cães adultos de raças grandes.",
-    "preco": 139.9,
+    "preco": 129.9,
+    "precoOriginal": 139.9,
     "avaliacao": 4.4,
     "categoria": "ração",
     "idade": "adultos",
     "tamanho": "grande",
-    "peso": "10kg"
+    "peso": "10kg",
+    "novo": true
   },
   {
     "id": 10,
     "nome": "Ração Sênior Raças Pequenas 2kg",
     "imagem": "https://placehold.co/150x150?text=Ração+Sênior+Raças+Pequenas+2kg",
     "descricao": "Alimento para cães idosos de raças pequenas.",
-    "preco": 49.9,
+    "preco": 44.9,
     "avaliacao": 4.0,
     "categoria": "ração",
     "idade": "senior",
     "tamanho": "pequena",
-    "peso": "2kg"
+    "peso": "2kg",
+    "novo": true
   },
   {
     "id": 11,
@@ -135,7 +148,8 @@
     "nome": "Corda Dental Média",
     "imagem": "https://placehold.co/150x150?text=Corda+Dental+Média",
     "descricao": "Corda para ajudar na saúde bucal do seu cão.",
-    "preco": 19.9,
+    "preco": 16.9,
+    "precoOriginal": 19.9,
     "avaliacao": 4.2,
     "categoria": "brinquedos",
     "tipo": "corda",
@@ -168,7 +182,8 @@
     "nome": "Brinquedo Interativo com Dispenser de Ração",
     "imagem": "https://placehold.co/150x150?text=Brinquedo+Interativo+com+Dispenser",
     "descricao": "Brinquedo que libera ração enquanto o cão brinca.",
-    "preco": 39.9,
+    "preco": 34.9,
+    "precoOriginal": 39.9,
     "avaliacao": 4.8,
     "categoria": "brinquedos",
     "tipo": "interativo",
@@ -201,7 +216,8 @@
     "nome": "Pelúcia em Forma de Animal",
     "imagem": "https://placehold.co/150x150?text=Pelúcia+em+Forma+de+Animal",
     "descricao": "Pelúcia divertida em formato de animais.",
-    "preco": 26.9,
+    "preco": 23.9,
+    "precoOriginal": 26.9,
     "avaliacao": 4.4,
     "categoria": "brinquedos",
     "tipo": "pelúcia",
@@ -223,7 +239,8 @@
     "nome": "Brinquedo Interativo de Inteligência",
     "imagem": "https://placehold.co/150x150?text=Brinquedo+Interativo+de+Inteligência",
     "descricao": "Estimula o raciocínio do seu pet.",
-    "preco": 49.9,
+    "preco": 44.9,
+    "precoOriginal": 49.9,
     "avaliacao": 4.9,
     "categoria": "brinquedos",
     "tipo": "interativo",
@@ -238,7 +255,8 @@
     "avaliacao": 4.5,
     "categoria": "higiene",
     "tipo": "shampoo",
-    "tamanho": "500ml"
+    "tamanho": "500ml",
+    "novo": true
   },
   {
     "id": 22,
@@ -256,7 +274,8 @@
     "nome": "Perfume para Cães 100ml",
     "imagem": "https://placehold.co/150x150?text=Perfume+para+Cães+100ml",
     "descricao": "Perfume suave para deixar seu pet cheiroso.",
-    "preco": 29.9,
+    "preco": 26.9,
+    "precoOriginal": 29.9,
     "avaliacao": 4.7,
     "categoria": "higiene",
     "tipo": "perfume",
@@ -278,7 +297,8 @@
     "nome": "Sabonete Antibacteriano 80g",
     "imagem": "https://placehold.co/150x150?text=Sabonete+Antibacteriano+80g",
     "descricao": "Sabonete para uma limpeza profunda.",
-    "preco": 9.9,
+    "preco": 8.9,
+    "precoOriginal": 9.9,
     "avaliacao": 4.2,
     "categoria": "higiene",
     "tipo": "sabonete",
@@ -300,7 +320,8 @@
     "nome": "Condicionador para Pelos Longos 300ml",
     "imagem": "https://placehold.co/150x150?text=Condicionador+Pelos+Longos+300ml",
     "descricao": "Desembaraça e hidrata pelos longos.",
-    "preco": 27.9,
+    "preco": 24.9,
+    "precoOriginal": 27.9,
     "avaliacao": 4.6,
     "categoria": "higiene",
     "tipo": "condicionador",
@@ -322,7 +343,8 @@
     "nome": "Lenços Umedecidos 100 Unidades",
     "imagem": "https://placehold.co/150x150?text=Lenços+Umedecidos+100+Unidades",
     "descricao": "Pacote econômico de lenços umedecidos.",
-    "preco": 24.9,
+    "preco": 21.9,
+    "precoOriginal": 24.9,
     "avaliacao": 4.7,
     "categoria": "higiene",
     "tipo": "lenço",
@@ -348,14 +370,16 @@
     "avaliacao": 4.8,
     "categoria": "acessórios",
     "tipo": "cama",
-    "tamanho": "pequeno"
+    "tamanho": "pequeno",
+    "novo": true
   },
   {
     "id": 32,
     "nome": "Coleira de Nylon Média",
     "imagem": "https://placehold.co/150x150?text=Coleira+de+Nylon+Média",
     "descricao": "Coleira resistente de nylon ajustável.",
-    "preco": 29.9,
+    "preco": 26.9,
+    "precoOriginal": 29.9,
     "avaliacao": 4.4,
     "categoria": "acessórios",
     "tipo": "coleira",
@@ -388,7 +412,8 @@
     "nome": "Bebedouro Automático 2L",
     "imagem": "https://placehold.co/150x150?text=Bebedouro+Automático+2L",
     "descricao": "Bebedouro que mantém a água sempre disponível.",
-    "preco": 49.9,
+    "preco": 44.9,
+    "precoOriginal": 49.9,
     "avaliacao": 4.6,
     "categoria": "acessórios",
     "tipo": "bebedouro",
@@ -421,7 +446,8 @@
     "nome": "Guia de Nylon Média",
     "imagem": "https://placehold.co/150x150?text=Guia+de+Nylon+Média",
     "descricao": "Guia resistente para passeios seguros.",
-    "preco": 24.9,
+    "preco": 22.9,
+    "precoOriginal": 24.9,
     "avaliacao": 4.2,
     "categoria": "acessórios",
     "tipo": "guia",

@@ -36,6 +36,8 @@
 
     <!-- Script para Componentes -->
     <script src="js/import-components.js" defer></script>
+
+    <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -81,130 +83,14 @@
             <div class="row text-center mb-4">
                 <h1 class="text-dark title-nerko">Novos Produtos</h1>
             </div>
-            <div class="row justify-content-center">
-                <!-- Produto 1 -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card zoom-effect h-100">
-                        <a href="#" class="product-link">
-                            <div class="product-image-container">
-                                <div class="badge-container">
-                                    <span class="badge bg-primary badge-new">Novo</span>
-                                </div>
-                                <img src="img/produtos/p1-whiskas-min.png" class="product-img"
-                                    alt="Ração Úmida Sabor Salmão">
-                            </div>
-                        </a>
-                        <div class="card-body text-center">
-                            <a href="#" class="product-link">
-                                <h6 class="card-title">Ração Úmida Sabor Salmão</h6>
-                            </a>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span>4.5/5</span>
-                            </div>
-                            <h6 class="price">R$3</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produto 2 -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card zoom-effect h-100">
-                        <a href="#" class="product-link">
-                            <div class="product-image-container">
-                                <div class="badge-container">
-                                    <span class="badge bg-primary badge-new">Novo</span>
-                                    <span class="badge bg-danger badge-discount">-20%</span>
-                                </div>
-                                <img src="img/produtos/p2-pedrigree-racaoseca-min.png" class="product-img"
-                                    alt="Ração Seca Adulto Raças Pequenas">
-                            </div>
-                        </a>
-                        <div class="card-body text-center">
-                            <a href="#" class="product-link">
-                                <h6 class="card-title">Ração Seca Adulto Raças Pequenas</h6>
-                            </a>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span>3.5/5</span>
-                            </div>
-                            <h6 class="price"><s>R$69</s> <span class="text-danger">R$55,2</span></h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produto 3 -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card zoom-effect h-100">
-                        <a href="#" class="product-link">
-                            <div class="product-image-container">
-                                <div class="badge-container">
-                                    <span class="badge bg-primary badge-new">Novo</span>
-                                </div>
-                                <img src="img/produtos/p3-lippydog-bifinho-min.png" class="product-img"
-                                    alt="Bifinho Lippy Dog Picanha">
-                            </div>
-                        </a>
-                        <div class="card-body text-center">
-                            <a href="#" class="product-link">
-                                <h6 class="card-title">Bifinho Lippy Dog Picanha</h6>
-                            </a>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span>4.5/5</span>
-                            </div>
-                            <h6 class="price">R$27</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produto 4 -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card zoom-effect h-100">
-                        <a href="#" class="product-link">
-                            <div class="product-image-container">
-                                <div class="badge-container">
-                                    <span class="badge bg-primary badge-new">Novo</span>
-                                    <span class="badge bg-danger badge-discount">-30%</span>
-                                </div>
-                                <img src="img/produtos/p4-pipicat-min.png" class="product-img"
-                                    alt="Areia Higiênica Pipicat Classic">
-                            </div>
-                        </a>
-                        <div class="card-body text-center">
-                            <a href="#" class="product-link">
-                                <h6 class="card-title">Areia Higiênica Pipicat Classic</h6>
-                            </a>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span>4.5/5</span>
-                            </div>
-                            <h6 class="price"><s>R$16</s> <span class="text-danger">R$11,2</span></h6>
-                        </div>
-                    </div>
-                </div>
+            <div class="row justify-content-center" id="novosProdutosContainer">
+                <!-- Produtos serão gerados aqui -->
             </div>
 
             <!-- Botão Ver Tudo -->
             <div class="row justify-content-center">
                 <div class="col-md-3 text-center">
-                    <a href="produtos.html" class="btn btn-primary">Ver tudo</a>
+                    <a href="produtos-racao.html" class="btn btn-primary">Ver tudo</a>
                 </div>
             </div>
         </section>
@@ -217,128 +103,14 @@
             <div class="row text-center mb-4">
                 <h1 class="text-dark title-nerko">Ofertas Especiais</h1>
             </div>
-            <div class="row justify-content-center">
-                <!-- Produto 1 -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card zoom-effect h-100">
-                        <a href="#" class="product-link">
-                            <div class="product-image-container">
-                                <div class="badge-container">
-                                    <span class="badge bg-danger badge-discount">-59%</span>
-                                </div>
-                                <img src="img/produtos/oferta-ferplast-gatos.png" class="product-img"
-                                    alt="Brinquedo Ferplast para Gatos Magic Circle">
-                            </div>
-                        </a>
-                        <div class="card-body text-center">
-                            <a href="#" class="product-link">
-                                <h6 class="card-title">Brinquedo Ferplast para Gatos Magic Circle</h6>
-                            </a>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span>4.0/5</span>
-                            </div>
-                            <h6 class="price"><s>R$379,99</s> <span class="text-danger">R$155,79</span></h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produto 2 -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card zoom-effect h-100">
-                        <a href="#" class="product-link">
-                            <div class="product-image-container">
-                                <div class="badge-container">
-                                    <span class="badge bg-danger badge-discount">-25%</span>
-                                </div>
-                                <img src="img/produtos/oferta-simparic.png" class="product-img"
-                                    alt="Antipulgas Simparic 40 mg para Cães">
-                            </div>
-                        </a>
-                        <div class="card-body text-center">
-                            <a href="#" class="product-link">
-                                <h6 class="card-title">Antipulgas Simparic 40 mg para Cães</h6>
-                            </a>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                                <span>4.5/5</span>
-                            </div>
-                            <h6 class="price"><s>R$122,99</s> <span class="text-danger">R$92,24</span></h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produto 3 -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card zoom-effect h-100">
-                        <a href="#" class="product-link">
-                            <div class="product-image-container">
-                                <div class="badge-container">
-                                    <span class="badge bg-danger badge-discount">-60%</span>
-                                </div>
-                                <img src="img/produtos/oferta-comedouro-furacao.png" class="product-img"
-                                    alt="Comedouro Duplo Furacão Pet Anti-Formigas">
-                            </div>
-                        </a>
-                        <div class="card-body text-center">
-                            <a href="#" class="product-link">
-                                <h6 class="card-title">Comedouro Duplo Furacão Pet Anti-Formigas</h6>
-                            </a>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span>4.0/5</span>
-                            </div>
-                            <h6 class="price"><s>R$50</s> <span class="text-danger">R$20</span></h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produto 4 -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card zoom-effect h-100">
-                        <a href="#" class="product-link">
-                            <div class="product-image-container">
-                                <div class="badge-container">
-                                    <span class="badge bg-danger badge-discount">-20%</span>
-                                </div>
-                                <img src="img/produtos/oferta-formula-natural.png" class="product-img"
-                                    alt="Ração Fórmula Natural Life Salmão 7kg">
-                            </div>
-                        </a>
-                        <div class="card-body text-center">
-                            <a href="#" class="product-link">
-                                <h6 class="card-title">Ração Fórmula Natural Life Salmão 7kg</h6>
-                            </a>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                                <span>4.5/5</span>
-                            </div>
-                            <h6 class="price"><s>R$215,99</s> <span class="text-danger">R$172,79</span></h6>
-                        </div>
-                    </div>
-                </div>
+            <div class="row justify-content-center" id="ofertasEspeciaisContainer">
+                <!-- Produtos serão gerados aqui -->
             </div>
 
             <!-- Botão Ver Tudo -->
             <div class="row justify-content-center">
                 <div class="col-md-3 text-center">
-                    <a href="produtos.html" class="btn btn-primary">Ver todas as ofertas</a>
+                    <a href="produtos-racao.html" class="btn btn-primary">Ver todas as ofertas</a>
                 </div>
             </div>
         </section>
