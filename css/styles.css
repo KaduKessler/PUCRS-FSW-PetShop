@@ -1305,3 +1305,21 @@ input[type="number"]::-webkit-outer-spin-button {
 #enderecoTeleBuscaContainer {
   display: none;
 }
+
+/* ==============================
+   Tributo a Viti
+   ============================== */
+.img-gallery {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.img-gallery:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}

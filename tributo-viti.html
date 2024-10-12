@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta Tags Essenciais -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Tributo à Viti - AmigoPet" />
+    <meta name="keywords" content="tributo, homenagem, Viti, pet" />
+
+    <!-- Título da Página -->
+    <title>AmigoPet - Tributo à Viti</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo-icone.png" />
+
+    <!-- Fontes Google -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nerko+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap JS e CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Ícones -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/c68e1af131.js" crossorigin="anonymous"></script>
+
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Script para Componentes -->
+    <script src="js/import-components.js" defer></script>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main>
+        <!-- Seção de Tributo à Viti -->
+        <section class="container my-5">
+            <div class="row text-center mb-4">
+                <h1 class="text-dark title-nerko">Em memória da nossa querida Viti</h1>
+                <p class="text-muted">
+                    <em>* 08/10/2022 - 11/10/2024 †</em>
+                </p>
+                <p class="text-muted">
+                    "Uma alma cheia de travessuras, cuja luz e alegria nunca serão esquecidas."
+                </p>
+
+                <!-- História da Viti -->
+                <div class="row text-center">
+                    <div class="col-md-8 mx-auto">
+                        <p class="text-muted">
+                            Em 2022, a Viti chegou em nossas vidas de forma inesperada. Sua mãe pulou no pátio de uma
+                            mulher, deu cria e logo foi embora, deixando três pequenos filhotes, entre eles a nossa
+                            Viti. Minha irmã a adotou com cerca de um mês de vida, cheia de energia e curiosidade.
+                        </p>
+                        <p class="text-muted">
+                            Inicialmente, pensamos em chamá-la de "Vite", que significa "rápido" em francês, pois ela
+                            era uma gatinha sapeca, sempre correndo e brincando pela casa. No entanto, com o tempo e
+                            pela pronuncia, seu
+                            nome se tornou "Viti", que combinava perfeitamente com sua personalidade.
+                        </p>
+                        <p class="text-muted">
+                            Durante seu primeiro ano, Viti foi uma fonte de alegria, sempre ativa e exploradora. Mas no
+                            final de 2023, ela começou a sentir dores, e após exames, descobrimos que ela tinha FelV,
+                            uma doença viral. Iniciamos o tratamento e, pouco depois, um tumor foi detectado e tratado
+                            com quimioterapia. Apesar de ter superado os tumores, a doença afetou sua medula, e ela
+                            começou a emagrecer.
+                        </p>
+                        <p class="text-muted">
+                            Mesmo com nossos esforços, incluindo uma transfusão de sangue, Viti não resistiu. Nos seus
+                            últimos dias, ela pesava apenas 1,8 kg, mas sua luta e energia sempre nos marcarão.
+                        </p>
+                        <p class="text-muted">
+                            Lembramos dela com muito carinho e gratidão por ter feito parte de nossas vidas, trazendo
+                            tantas memórias inesquecíveis. Desejamos que agora ela esteja em paz, descansando com todo o
+                            amor que sempre recebeu.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="custom-divider">
+
+            <!-- Galeria de Imagens Fixas e Quadradas -->
+            <div class="container">
+                <h2 class="text-center mb-3 title-nerko">Galeria de Memórias</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="https://i.postimg.cc/D0QhDdsW/IMG-20230705-185002.jpg" class="img-fluid img-gallery"
+                            alt="Viti 1" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            onclick="changeModalImage('https://i.postimg.cc/D0QhDdsW/IMG-20230705-185002.jpg')">
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="https://i.postimg.cc/W4KsJ4T4/IMG-20230831-191146.jpg" class="img-fluid img-gallery"
+                            alt="Viti 2" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            onclick="changeModalImage('https://i.postimg.cc/W4KsJ4T4/IMG-20230831-191146.jpg')">
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="https://i.postimg.cc/K88bqTYz/IMG-20230831-230122.jpg" class="img-fluid img-gallery"
+                            alt="Viti 3" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            onclick="changeModalImage('https://i.postimg.cc/K88bqTYz/IMG-20230831-230122.jpg')">
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="https://i.postimg.cc/26ZrdfS7/IMG-20230928-180618.jpg" class="img-fluid img-gallery"
+                            alt="Viti 4" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            onclick="changeModalImage('https://i.postimg.cc/26ZrdfS7/IMG-20230928-180618.jpg')">
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="https://i.postimg.cc/tJGy2m1Q/IMG-20231225-163802.jpg" class="img-fluid img-gallery"
+                            alt="Viti 5" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            onclick="changeModalImage('https://i.postimg.cc/tJGy2m1Q/IMG-20231225-163802.jpg')">
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="https://i.postimg.cc/L4jmnR7H/IMG-20240516-230823.jpg" class="img-fluid img-gallery"
+                            alt="Viti 6" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            onclick="changeModalImage('https://i.postimg.cc/L4jmnR7H/IMG-20240516-230823.jpg')">
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="https://i.postimg.cc/MKDxm5qN/IMG-20240916-140431.jpg" class="img-fluid img-gallery"
+                            alt="Viti 7" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            onclick="changeModalImage('https://i.postimg.cc/MKDxm5qN/IMG-20240916-140431.jpg')">
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="https://i.postimg.cc/RV94ty5w/IMG-20230514-WA0014.jpg" class="img-fluid img-gallery"
+                            alt="Viti 8" data-bs-toggle="modal" data-bs-target="#imageModal"
+                            onclick="changeModalImage('https://i.postimg.cc/RV94ty5w/IMG-20230514-WA0014.jpg')">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal para Exibir Imagem Ampliada -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <img id="modalImage" src="" class="img-fluid w-100 rounded" alt="Imagem ampliada">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script para trocar a imagem do modal -->
+    <script>
+        function changeModalImage(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+        }
+    </script>
+
+    <div id="footer"></div>
+</body>
+
+</html>
