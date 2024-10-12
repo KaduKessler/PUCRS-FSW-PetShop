@@ -15,7 +15,31 @@ AmigoPet é um projeto desenvolvido para a disciplina de **Fundamentos de Sistem
 
 ## ⚙️ Como Rodar Localmente o Projeto
 
-Para rodar o AmigoPet localmente, siga os passos abaixo:
+Para evitar problemas com CORS ao carregar componentes e produtos via `fetch()`, é necessário rodar um servidor local. Siga os passos abaixo:
+
+### Usando o **Live Server** no VSCode
+1. **Clone o repositório**:
+
+   ```bash
+   git clone https://github.com/KaduKessler/PUCRS-FSW-PetShop.git
+   ```
+
+2. **Navegue até a pasta do projeto**:
+
+   ```bash
+   cd PUCRS-FSW-PetShop
+   ```
+
+3. **Abra o projeto no VSCode**.
+
+4. **Instale a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)** no VSCode.
+
+5. **Clique com o botão direito no arquivo `index.html`** e selecione **"Open with Live Server"**.
+
+6. Pronto! O projeto será aberto no navegador em `http://127.0.0.1:5500`.
+
+### Usando Python HTTP Server
+Caso prefira não utilizar o Live Server e tenha Python instalado:
 
 1. **Clone o repositório**:
 
@@ -29,20 +53,22 @@ Para rodar o AmigoPet localmente, siga os passos abaixo:
    cd PUCRS-FSW-PetShop
    ```
 
-3. **Abra o arquivo `index.html`** no seu navegador de preferência:
+3. **Inicie o servidor HTTP do Python**:
 
-   - No terminal, você pode utilizar o seguinte comando:
-     ```bash
-     open index.html  # No Mac
-     start index.html  # No Windows
-     ```
+   ```bash
+   python -m http.server 8080
+   ```
 
-4. Pronto! O site estará rodando localmente.
+4. **Abra o navegador e acesse**:
+
+   ```bash
+   http://localhost:8080
+   ```
 
 ## 📁 Funcionalidades Extras
 
 Algumas funcionalidades implementadas no projeto:
 
 - 🐕 **Cadastro de Pets** com pré-visualização de imagem.
-- 🛒 **Carrinho de Compras** e **Filtros de Produtos**.
+- 🛒 **Carrinho de Compras** e **Filtros de Produtos** dinâmicos.
 - 🏠 **Serviços** como banho, tosa, hospedagem, e consultas veterinárias.
