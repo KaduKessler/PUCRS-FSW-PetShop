@@ -6,11 +6,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="AmigoPet - Login na sua conta" />
-    <meta name="keywords" content="login, petshop, AmigoPet" />
+    <meta name="description"
+        content="Acesse sua conta AmigoPet para gerenciar suas compras, agendar serviços e muito mais." />
+    <meta name="keywords" content="login, AmigoPet, petshop, login conta, compras, serviços" />
 
     <!-- Título da Página -->
     <title>Login - AmigoPet</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kadukessler.github.io/PUCRS-FSW-PetShop/login.html" />
+    <meta property="og:title" content="Login - AmigoPet" />
+    <meta property="og:description"
+        content="Acesse sua conta AmigoPet para gerenciar suas compras, agendar serviços e muito mais." />
+    <meta property="og:image" content="./img/logo-icone.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://kadukessler.github.io/PUCRS-FSW-PetShop/login.html" />
+    <meta property="twitter:title" content="Login - AmigoPet" />
+    <meta property="twitter:description"
+        content="Acesse sua conta AmigoPet para gerenciar suas compras, agendar serviços e muito mais." />
+    <meta property="twitter:image" content="./img/logo-icone.png" />
 
     <!-- Favicon -->
     <link rel="icon" href="img/logo-icone.png" />
@@ -60,7 +77,7 @@
                 </p>
             </div>
 
-            <div class="login-form w-100" style="max-width: 600px">
+            <div class="login-form w-100">
                 <form>
                     <div class="mb-3">
                         <label for="email" class="form-label">E-mail*</label>
@@ -73,7 +90,8 @@
                         <div class="input-wrapper">
                             <input type="password" class="form-control rounded-3 input-field" id="password"
                                 placeholder="Digite sua senha" />
-                            <button class="password-toggle-btn border-0 bg-transparent" type="button">
+                            <button class="password-toggle-btn border-0 bg-transparent" type="button"
+                                title="Mostrar/Ocultar Senha">
                                 <i class="fa-solid fa-eye"></i>
                             </button>
                         </div>
@@ -91,15 +109,15 @@
 
                 <div class="d-flex justify-content-between">
                     <button class="btn btn-outline-secondary w-100 me-2 rounded-3 social-btn" type="button"
-                        data-bs-toggle="modal" data-bs-target="#googleModal">
+                        data-bs-toggle="modal" data-bs-target="#googleModal" title="Login com Google">
                         <i class="fab fa-google"></i>
                     </button>
                     <button class="btn btn-outline-secondary w-100 mx-2 rounded-3 social-btn" type="button"
-                        data-bs-toggle="modal" data-bs-target="#githubModal">
+                        title="Login com GitHub" data-bs-toggle="modal" data-bs-target="#githubModal">
                         <i class="fab fa-github"></i>
                     </button>
                     <button class="btn btn-outline-secondary w-100 ms-2 rounded-3 social-btn" type="button"
-                        data-bs-toggle="modal" data-bs-target="#discordModal">
+                        title="Login com Discord" data-bs-toggle="modal" data-bs-target="#discordModal">
                         <i class="fab fa-discord"></i>
                     </button>
                 </div>

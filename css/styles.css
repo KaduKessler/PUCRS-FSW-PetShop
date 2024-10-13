@@ -529,6 +529,10 @@ footer a.footer-link:hover {
    Formulários (Login e Registro)
    ============================== */
 
+.login-form {
+  max-width: 600px;
+}
+
 .register-form {
   max-width: 600px;
 }
