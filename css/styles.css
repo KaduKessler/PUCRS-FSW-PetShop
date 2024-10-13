@@ -44,6 +44,11 @@ body {
   );
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* ==============================
    Cabeçalho e Navegação
    ============================== */
@@ -1069,7 +1074,7 @@ footer a.footer-link:hover {
   padding: 0.5rem;
 }
 
-/* Responsividade do Carrinho */
+/* Responsividade do Carrinho (Mobile) */
 @media (max-width: 768px) {
   .produto-item {
     padding: 10px;
@@ -1078,7 +1083,9 @@ footer a.footer-link:hover {
   .produto-item .col-md-2,
   .produto-item .col-lg-2,
   .produto-item .col-xl-2 {
-    max-width: 100px;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
   }
 
   .produto-item .col-md-3,
@@ -1086,15 +1093,65 @@ footer a.footer-link:hover {
   .produto-item .col-xl-3 {
     flex: 100%;
     text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .produto-item .col-md-3,
+  .produto-item input[type="number"] {
+    width: 60px;
+    margin: 0 auto;
+  }
+
+  .produto-item .col-md-3 .btn-link {
+    font-size: 16px;
+    padding: 0.3rem;
+  }
+
+  .produto-item .col-md-3 .preco-total-item {
+    font-size: 18px;
+  }
+
+  .produto-item .col-md-1 .btn-link {
+    font-size: 18px;
+  }
+}
+
+/* Layout Desktop */
+@media (min-width: 769px) {
+  .produto-item .row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .produto-item .col-md-2,
+  .produto-item .col-lg-2,
+  .produto-item .col-xl-2 {
+    flex: 0 0 auto;
+    max-width: 150px;
+  }
+
+  .produto-item .col-md-3,
+  .produto-item .col-lg-3,
+  .produto-item .col-xl-3 {
+    text-align: left;
+    flex: 1;
   }
 
   .produto-item input[type="number"] {
-    width: 50px;
+    width: 70px;
+  }
+
+  .produto-item .col-md-1,
+  .produto-item .col-lg-1,
+  .produto-item .col-xl-1 {
+    display: flex;
+    justify-content: flex-end;
   }
 
   .produto-item .btn-link {
-    font-size: 14px;
-    padding: 0.2rem;
+    font-size: 16px;
+    padding: 0.4rem;
   }
 }
 
@@ -1322,4 +1379,52 @@ input[type="number"]::-webkit-outer-spin-button {
 .img-gallery:hover {
   transform: scale(1.05);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes de fontes e margens em telas menores */
+@media (max-width: 768px) {
+  h1.title-nerko {
+    font-size: 1.8rem;
+  }
+
+  h2.title-nerko {
+    font-size: 1.5rem;
+  }
+
+  .container p {
+    font-size: 0.9rem;
+  }
+
+  .col-md-8 {
+    padding: 0 1.5rem;
+  }
+
+  /* Ajuste na galeria para dispositivos menores */
+  .img-gallery {
+    margin-bottom: 15px;
+  }
+
+  .container .row .col-md-3 {
+    margin-bottom: 15px;
+  }
+
+  /* Exibir duas imagens por linha em dispositivos menores */
+  .col-sm-6 {
+    max-width: 50%;
+  }
+}
+
+/* Ajustes para telas muito pequenas (smartphones) */
+@media (max-width: 576px) {
+  h1.title-nerko {
+    font-size: 1.5rem;
+  }
+
+  h2.title-nerko {
+    font-size: 1.2rem;
+  }
+
+  .col-sm-6 {
+    max-width: 100%;
+  }
 }
