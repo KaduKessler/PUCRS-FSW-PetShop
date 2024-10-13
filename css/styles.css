@@ -240,46 +240,19 @@ footer a.footer-link:hover {
 /* ==============================
    Página Inicial
    ============================== */
-
-/* Estilo do Banner (Carousel) */
-.custom-carousel {
-  width: 95%;
-  max-width: 1140px;
-  height: auto;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 30px auto;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.custom-carousel-img {
-  width: 100%;
-  height: 450px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 20px;
-}
-
-@media (max-width: 768px) {
-  .custom-carousel-img {
-    height: auto;
-    max-height: 200px;
-  }
-}
-
 /* Dicas (Carousel) */
-.dicas-carousel {
+.custom-carousel {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-.dicas-carousel .carousel-control-prev,
-.dicas-carousel .carousel-control-next {
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
   width: 5%;
 }
 
-.dicas-carousel .carousel-item img {
+.custom-carousel .carousel-item img {
   width: 100%;
   height: 450px;
   object-fit: cover;
@@ -287,12 +260,12 @@ footer a.footer-link:hover {
   transition: transform 0.5s ease;
 }
 
-.dicas-carousel .carousel-item:hover img {
+.custom-carousel .carousel-item:hover img {
   transform: scale(1.05);
 }
 
 /* Legenda do Carousel */
-.dicas-carousel .carousel-caption {
+.custom-carousel .carousel-caption {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   border-radius: 20px;
@@ -305,20 +278,20 @@ footer a.footer-link:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.dicas-carousel .carousel-caption h5 {
+.custom-carousel .carousel-caption h5 {
   font-size: 1.8rem;
   color: #fff;
   margin-bottom: 15px;
   font-weight: bold;
 }
 
-.dicas-carousel .carousel-caption p {
+.custom-carousel .carousel-caption p {
   color: #ccc;
   font-size: 1rem;
   margin-bottom: 20px;
 }
 
-.dicas-carousel .btn-primary {
+.custom-carousel .btn-primary {
   background-color: var(--primary-color);
   border: none;
   padding: 12px 25px;
@@ -331,7 +304,7 @@ footer a.footer-link:hover {
   text-decoration: none;
 }
 
-.dicas-carousel .btn-primary:hover {
+.custom-carousel .btn-primary:hover {
   background-color: var(--accent-color);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
