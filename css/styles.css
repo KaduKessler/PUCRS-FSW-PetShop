@@ -1383,6 +1383,49 @@ input[type="number"]::-webkit-outer-spin-button {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+.agradecimento-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.agradecimento-card:hover {
+  transform: scale(1.02); /* Aumento sutil */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra suave */
+}
+
+.agradecimento-title {
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  transition: color 0.3s ease-in-out;
+}
+
+.agradecimento-title:hover {
+  color: #63a6af; /* Mudança suave na cor do título */
+}
+
+.agradecimento-text {
+  color: #6c757d;
+}
+
+.agradecimento-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.agradecimento-link:hover {
+  background-color: #63a6af;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra no hover do link */
+}
+
 /* Ajustes de fontes e margens em telas menores */
 @media (max-width: 768px) {
   h1.title-nerko {
